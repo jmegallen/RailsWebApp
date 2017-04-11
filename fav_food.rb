@@ -1,5 +1,4 @@
-def fav_foods# code
-for this method goes in here
+def fav_foods# code for this method goes in here
 
 food_array = [] # instead of the brackets, you can also use Array.new to make a new empty array
 
