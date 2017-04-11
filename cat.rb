@@ -1,38 +1,32 @@
-class Cat
+class Pet
+  attr_reader :color, :breed
+  attr_accessor :name
+
+  def initialize(color, breed)
+    @color = color
+    @breed = breed
+    @hungry = true
+  end
+
+  def feed(food)
+    puts "Mmmm, " + food + "!"
+    @hungry = false
+  end
+
+  def hungry?
+    if @hungry
+      puts "I'm hungry!"
+    else
+      puts "I'm full!"
+    end
+    @hungry
+  end
 end
 
-kitty = Cat.new
-
-puts "Let's inspect our new cat:"
-puts kitty.inspect
-puts "What class does our new cat belong to?"
-puts kitty.class
-puts "Is our new cat an object?"
-puts kitty.is_a ? (Object)
-
-class Cat
-attr_reader: color, : breed
-attr_accessor: name
-def initialize(color, breed)@ color = color@ breed = breed@ hungry = true
-end
-
-def feed(food)
-puts "Mmmm, " + food + "!"@
-hungry = false
-end
-
-def hungry ?
-  if@ hungry
-puts "I'm hungry!"
-else
-  puts "I'm full!"
-end@ hungry
-end
-
-def speak
-puts "Meow!"
-end
-
+class Cat < Pet
+  def speak
+    puts "Meow!"
+  end
 end
 
 kitty = Cat.new("grey", "Persian")
