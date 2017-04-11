@@ -39,12 +39,12 @@ kitty.name = "Betsy"
 puts kitty.name
 
 puts "Is our cat hungry now?"
-kitty.hungry ?
+kitty.hungry?
 
 puts "Let's feed our cat"
 kitty.feed("tuna")
 puts "Is our cat hungry now?"
-kitty.hungry ?
+kitty.hungry?
 
 puts "Our cat can make noise"
 kitty.speak
