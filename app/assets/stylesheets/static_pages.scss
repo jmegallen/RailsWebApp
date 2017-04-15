@@ -1,3 +1,41 @@
 // Place all the styles related to the static_pages controller here.
+* {
+  box-sizing: border-box;
+}
+
+/*Typography*/
+
+h1, h2, h3, h4 {
+  font-family: 'Lora', Lucida, Georgia, serif;
+  color: #282C66;
+  text-shadow: 1px 1px 1px #282C66;
+}
+body, p, a {
+  font-family: 'Rubik', Trebuchet MS, Helvetica, sans-serif;
+  font-size: 1.25em;
+  color: #282C66;
+  margin: auto;
+}
+a {
+  font-weight: 400;
+  color: #282C66;
+  background-color: transparent;
+  margin: 0.25em;
+}
+h1 {
+  font-size: 5em;
+}
+h2 {
+  font-size: 2.5em;
+}
+h3 {
+  font-size: 1.75em;
+}
+h4 {
+  font-size: 1em;
+}
+img {
+  max-width: 100%;
+}
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
