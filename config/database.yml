@@ -11,7 +11,7 @@ default: &default
 
 development:
   <<: *default
-  database: db/development.postgresql
+  database: db/development_postgresql
   pool: 5
   timeout: 5000
 
@@ -20,12 +20,12 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: db/test.postgresql
+  database: db/test_postgresql
   pool: 5
   timeout: 5000
 
 production:
   <<: *default
-  database: db/production.postgresql
+  database: db/production_postgresql
   pool: 5
   timeout: 5000
