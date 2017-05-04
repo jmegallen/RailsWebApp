@@ -1,9 +1,7 @@
 // Place all the styles related to the products controller here.
-img {
-	max-width: 33.33333%;
-}
+
 .img-prod {
-	max-width: 33.33333%;
+	max-width: 90%;
 }
 .field {
 	color: black;
@@ -16,7 +14,16 @@ label {
 }
 .showpic {
   max-width: 50%;
-  
+}
+.newprodbut {
+	width: 18em;
+}
+.prodbut {
+	width: 6em;
+}
+.prodtile {
+	height: 35em;
+	padding: 1em;
 }
 
 // They will automatically be included in application.css.

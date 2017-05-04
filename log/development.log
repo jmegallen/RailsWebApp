@@ -5167,3 +5167,257 @@ Processing by ProductsController#show as HTML
 Completed 200 OK in 98ms (Views: 82.3ms | ActiveRecord: 6.4ms)
 
 
+  [1m[36mActiveRecord::SchemaMigration Load (16.8ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3746314354844354685);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddColorToProducts (20170504133627)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (42.3ms)[0m  [1m[35mALTER TABLE "products" DROP "price"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "products" DROP "color"[0m
+  [1m[35mSQL (4.6ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20170504133627"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(3746314354844354685)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3746314354844354685);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (23.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddColorToProducts (20170504133627)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (31.2ms)[0m  [1m[35mALTER TABLE "products" ADD "color" character varying[0m
+  [1m[35m (3.1ms)[0m  [1m[35mALTER TABLE "products" ADD "price" decimal[0m
+  [1m[35mSQL (2.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170504133627"]]
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(3746314354844354685)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/products" for ::1 at 2017-05-04 17:45:59 +0200
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (47.7ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (245.6ms)
+Completed 200 OK in 472ms (Views: 287.7ms | ActiveRecord: 136.6ms)
+
+
+Started GET "/products" for ::1 at 2017-05-04 17:46:59 +0200
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (81.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (128.6ms)
+Completed 200 OK in 365ms (Views: 249.2ms | ActiveRecord: 81.1ms)
+
+
+Started GET "/products" for ::1 at 2017-05-04 17:51:26 +0200
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (47.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (128.3ms)
+Completed 200 OK in 594ms (Views: 512.2ms | ActiveRecord: 47.4ms)
+
+
+Started GET "/products" for ::1 at 2017-05-04 17:51:53 +0200
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (18.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (56.6ms)
+Completed 200 OK in 361ms (Views: 317.4ms | ActiveRecord: 18.3ms)
+
+
+Started GET "/static_pages/index" for ::1 at 2017-05-04 17:53:23 +0200
+Processing by StaticPagesController#index as HTML
+  Rendering static_pages/index.html.erb within layouts/application
+  Rendered static_pages/index.html.erb within layouts/application (57.8ms)
+Completed 200 OK in 474ms (Views: 455.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products" for ::1 at 2017-05-04 17:53:29 +0200
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (116.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (174.3ms)
+Completed 200 OK in 445ms (Views: 213.1ms | ActiveRecord: 116.1ms)
+
+
+Started GET "/products" for ::1 at 2017-05-04 17:53:50 +0200
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (7.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (38.6ms)
+Completed 200 OK in 229ms (Views: 212.2ms | ActiveRecord: 7.3ms)
+
+
+Started GET "/products" for ::1 at 2017-05-04 17:54:14 +0200
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (4.5ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (53.2ms)
+Completed 200 OK in 201ms (Views: 176.0ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/products" for ::1 at 2017-05-04 17:55:04 +0200
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (2.7ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (70.3ms)
+Completed 200 OK in 216ms (Views: 196.0ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/static_pages/index" for ::1 at 2017-05-04 17:55:13 +0200
+Processing by StaticPagesController#index as HTML
+  Rendering static_pages/index.html.erb within layouts/application
+  Rendered static_pages/index.html.erb within layouts/application (37.0ms)
+Completed 200 OK in 188ms (Views: 169.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products" for ::1 at 2017-05-04 17:55:15 +0200
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (190.6ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (235.4ms)
+Completed 200 OK in 350ms (Views: 151.5ms | ActiveRecord: 190.6ms)
+
+
+Started GET "/static_pages/index" for ::1 at 2017-05-04 17:56:28 +0200
+Processing by StaticPagesController#index as HTML
+  Rendering static_pages/index.html.erb within layouts/application
+  Rendered static_pages/index.html.erb within layouts/application (77.9ms)
+Completed 200 OK in 663ms (Views: 633.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products" for ::1 at 2017-05-04 17:56:30 +0200
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (516.5ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (547.6ms)
+Completed 200 OK in 726ms (Views: 199.6ms | ActiveRecord: 516.5ms)
+
+
+Started GET "/products" for ::1 at 2017-05-04 17:57:05 +0200
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (7.7ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (55.2ms)
+Completed 200 OK in 254ms (Views: 226.7ms | ActiveRecord: 7.7ms)
+
+
+Started GET "/products" for ::1 at 2017-05-04 17:58:45 +0200
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (7.5ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (44.4ms)
+Completed 200 OK in 153ms (Views: 134.0ms | ActiveRecord: 7.5ms)
+
+
+Started DELETE "/products/5" for ::1 at 2017-05-04 17:59:27 +0200
+Processing by ProductsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"4VDQ3/eh2FK7fap/j2UTvatQjEWPFBBNJhvOqKuD8/+dUeEQGbXwCu16RYBEntkZnYoe85b4ccXMfMeKMGytjg==", "id"=>"5"}
+  [1m[36mProduct Load (67.9ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (23.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (65.3ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = $1[0m  [["id", 5]]
+  [1m[35m (12.9ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/products
+Completed 302 Found in 303ms (ActiveRecord: 169.7ms)
+
+
+Started GET "/products" for ::1 at 2017-05-04 17:59:28 +0200
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (7.9ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (34.4ms)
+Completed 200 OK in 138ms (Views: 124.6ms | ActiveRecord: 7.9ms)
+
+
+Started GET "/products" for ::1 at 2017-05-04 18:01:09 +0200
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (25.5ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (69.6ms)
+Completed 200 OK in 229ms (Views: 184.0ms | ActiveRecord: 25.5ms)
+
+
+Started GET "/products" for ::1 at 2017-05-04 18:04:46 +0200
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (30.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (96.9ms)
+Completed 200 OK in 439ms (Views: 387.6ms | ActiveRecord: 30.2ms)
+
+
+Started GET "/static_pages/index" for ::1 at 2017-05-04 18:05:20 +0200
+Processing by StaticPagesController#index as HTML
+  Rendering static_pages/index.html.erb within layouts/application
+  Rendered static_pages/index.html.erb within layouts/application (101.8ms)
+Completed 200 OK in 313ms (Views: 291.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products" for ::1 at 2017-05-04 18:05:23 +0200
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (1.8ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (98.3ms)
+Completed 200 OK in 450ms (Views: 405.7ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/products" for ::1 at 2017-05-04 18:05:36 +0200
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (13.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (56.3ms)
+Completed 200 OK in 165ms (Views: 131.4ms | ActiveRecord: 13.1ms)
+
+
+Started GET "/products" for ::1 at 2017-05-04 18:12:32 +0200
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (35.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (97.0ms)
+Completed 200 OK in 299ms (Views: 234.7ms | ActiveRecord: 35.1ms)
+
+
+Started GET "/products" for ::1 at 2017-05-04 18:12:57 +0200
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (41.8ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (111.4ms)
+Completed 200 OK in 449ms (Views: 366.0ms | ActiveRecord: 41.8ms)
+
+
+Started GET "/static_pages/index" for ::1 at 2017-05-04 18:13:07 +0200
+Processing by StaticPagesController#index as HTML
+  Rendering static_pages/index.html.erb within layouts/application
+  Rendered static_pages/index.html.erb within layouts/application (167.4ms)
+Completed 200 OK in 1650ms (Views: 1599.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products" for ::1 at 2017-05-04 18:13:12 +0200
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (267.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (386.9ms)
+Completed 200 OK in 516ms (Views: 231.3ms | ActiveRecord: 267.2ms)
+
+
+Started GET "/products" for ::1 at 2017-05-04 18:14:13 +0200
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (73.6ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (148.0ms)
+Completed 200 OK in 583ms (Views: 477.8ms | ActiveRecord: 73.6ms)
+
+
+Started GET "/products" for ::1 at 2017-05-04 18:14:40 +0200
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (113.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (196.3ms)
+Completed 200 OK in 485ms (Views: 334.7ms | ActiveRecord: 113.3ms)
+
+
+Started GET "/products" for ::1 at 2017-05-04 18:15:13 +0200
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (6.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (56.6ms)
+Completed 200 OK in 315ms (Views: 288.2ms | ActiveRecord: 6.1ms)
+
+
