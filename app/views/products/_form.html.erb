@@ -10,23 +10,34 @@
       </ul>
     </div>
   <% end %>
+  <div class="container minpage">
+    <div class="field">
+      <%= f.label :price %>
+      <%= f.text_field :price %>
+    </div>
 
-  <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  </div>
+    <div class="field">
+      <%= f.label :color %>
+      <%= f.text_field :color %>
+    </div>
 
-  <div class="field">
-    <%= f.label :description %>
-    <%= f.text_area :description %>
-  </div>
+    <div class="field">
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </div>
 
-  <div class="field">
-    <%= f.label :image_url %>
-    <%= f.text_field :image_url %>
-  </div>
+    <div class="field">
+      <%= f.label :description %>
+      <%= f.text_area :description %>
+    </div>
 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    <div class="field">
+      <%= f.label :image_url %>
+      <%= f.text_field :image_url %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+  </div> 
 <% end %>

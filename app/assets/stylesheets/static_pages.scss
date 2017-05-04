@@ -57,8 +57,13 @@ body {
 }
 
 .navbar-inverse {
-    background-color: #000000;
-    border: none;
+  background-color: #000000;
+  border: none;
+}
+
+.showpic {
+  max-width: 50%;
+  
 }
 
 
@@ -66,13 +71,11 @@ body {
  * Typo
  */
 
-h2 {
+.tophead {
   padding-top: 2em;
   padding-bottom: 2em;
 }
-p {
-  padding: 1em;
-}
+
 
 /*
  * Cover
