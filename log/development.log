@@ -5421,3 +5421,18 @@ Processing by ProductsController#index as HTML
 Completed 200 OK in 315ms (Views: 288.2ms | ActiveRecord: 6.1ms)
 
 
+Started GET "/static_pages/index" for ::1 at 2017-05-04 18:20:01 +0200
+Processing by StaticPagesController#index as HTML
+  Rendering static_pages/index.html.erb within layouts/application
+  Rendered static_pages/index.html.erb within layouts/application (78.3ms)
+Completed 200 OK in 461ms (Views: 410.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products" for ::1 at 2017-05-04 18:20:44 +0200
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (164.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (233.1ms)
+Completed 200 OK in 386ms (Views: 204.1ms | ActiveRecord: 164.4ms)
+
+
