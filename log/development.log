@@ -3266,3 +3266,12 @@ Processing by ProductsController#index as HTML
 Completed 200 OK in 303ms (Views: 279.5ms | ActiveRecord: 7.4ms)
 
 
+Started GET "/products" for ::1 at 2017-04-21 11:02:47 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (23.8ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (7.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (63.5ms)
+Completed 200 OK in 555ms (Views: 492.5ms | ActiveRecord: 37.4ms)
+
+
