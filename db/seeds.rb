@@ -5,3 +5,5 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Product.create(:name => "seed-generated product", :description => "I created this product without using the HTML form", :image_url => "https://cdn.mangobikes.com/wp-content/uploads/custom-ss.jpg")
