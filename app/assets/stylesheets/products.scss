@@ -2,6 +2,7 @@
 
 .img-prod {
 	max-width: 90%;
+	padding: 2em 2em 2em 2em;
 }
 .field {
 	color: black;
@@ -23,7 +24,13 @@ label {
 }
 .prodtile {
 	height: 35em;
-	padding: 1em;
+	padding: 2em 1em;
+	margin-top: 3em;
+}
+.footer {
+	padding-top: 6em;
+	clear: both;
+	display: block;
 }
 
 // They will automatically be included in application.css.
