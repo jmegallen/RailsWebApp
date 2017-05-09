@@ -5794,3 +5794,35 @@ Processing by ProductsController#index as HTML
 Completed 200 OK in 65ms (Views: 61.1ms | ActiveRecord: 0.6ms)
 
 
+Started GET "/products" for ::1 at 2017-05-09 08:17:16 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (23.8ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (12.7ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (66.7ms)
+Completed 200 OK in 567ms (Views: 502.1ms | ActiveRecord: 33.1ms)
+
+
+Started GET "/static_pages/index" for ::1 at 2017-05-09 08:17:26 +0200
+Processing by StaticPagesController#index as HTML
+  Rendering static_pages/index.html.erb within layouts/application
+  Rendered static_pages/index.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 96ms (Views: 73.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-05-09 08:17:41 +0200
+Processing by StaticPagesController#landing_page as HTML
+  [1m[36mProduct Load (4.6ms)[0m  [1m[34mSELECT  "products".* FROM "products" ORDER BY "products"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  Rendering static_pages/landing_page.html.erb within layouts/application
+  Rendered static_pages/landing_page.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 111ms (Views: 68.1ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/" for ::1 at 2017-05-09 09:19:38 +0200
+Processing by StaticPagesController#landing_page as HTML
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT  "products".* FROM "products" ORDER BY "products"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  Rendering static_pages/landing_page.html.erb within layouts/application
+  Rendered static_pages/landing_page.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 203ms (Views: 73.8ms | ActiveRecord: 72.5ms)
+
+
