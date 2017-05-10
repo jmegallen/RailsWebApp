@@ -5826,3 +5826,30 @@ Processing by StaticPagesController#landing_page as HTML
 Completed 200 OK in 203ms (Views: 73.8ms | ActiveRecord: 72.5ms)
 
 
+  [1m[35m (1.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (52.0ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Test Product"], ["description", "Lorem Ipsum"], ["image_url", "http://careerfoundry.com/images/bike.jpg"], ["created_at", 2017-05-09 11:30:44 UTC], ["updated_at", 2017-05-09 11:30:44 UTC]]
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (13.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3746314354844354685);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (26.8ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateOrders (20170509153750)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (92.4ms)[0m  [1m[35mCREATE TABLE "orders" ("id" serial primary key, "user_id" integer, "product_id" integer, "total" float)[0m
+  [1m[35m (3.7ms)[0m  [1m[35mCREATE  INDEX  "index_orders_on_user_id" ON "orders"  ("user_id")[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE  INDEX  "index_orders_on_product_id" ON "orders"  ("product_id")[0m
+  [1m[35mSQL (2.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170509153750"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (2.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(3746314354844354685)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (33.5ms)[0m  [1m[32mINSERT INTO "orders" ("product_id") VALUES ($1) RETURNING "id"[0m  [["product_id", 1]]
+  [1m[35m (17.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mProduct Load (20.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (2.5ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (10.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" IN (1, 10)[0m
+  [1m[36mProduct Load (22.7ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE (id = 1 AND price >= 30 OR color = false)[0m
+  [1m[36mProduct Load (12.5ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE (id = 1 AND price >= 30 OR colour = false)[0m
+  [1m[36mProduct Load (10.0ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrder Load (1.5ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE (product_id = 1)[0m
