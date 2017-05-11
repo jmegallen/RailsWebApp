@@ -47,7 +47,7 @@ body {
 .minpage {
   min-height: 40em;
   margin: auto;
-  padding: 2em;
+  padding: 6em 2em;
 }
 
 .row {
@@ -59,14 +59,24 @@ body {
 .navbar-inverse {
   background-color: #000000;
   border: none;
-  margin-bottom: 3em;
 }
 
 .showpic {
   max-width: 50%;
-  
 }
 
+.carousel-inner>.item>img {
+  height: 40em;
+  max-width: 100%;
+  margin: auto;
+}
+.carousel-caption {
+  bottom: 10px;
+  color: black;
+  text-align: center;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+  
 
 /*
  * Typo
