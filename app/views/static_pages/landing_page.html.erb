@@ -4,8 +4,8 @@
     <div id="carousel-example-generic" class="container-fluid carousel slide" data-ride="carousel">
       <!-- Indicators -->
       <ol class="carousel-indicators">
-        <% (0..@products.count-1).each do |i| %>
-          <li data-target="#carousel-example-generic" data-slide-to="<%= i+1 % @products.count %>" class="<%="active" if i == 0%>">
+        <% @products.each_with_index do |product, i| %>
+          <li data-target="#carousel-example-generic" data-slide-to=<%= i %> class="#{'active' if i == 0}">
           </li>
         <% end %>
       </ol>
