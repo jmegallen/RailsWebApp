@@ -1,32 +1,30 @@
+<p id="notice"><%= notice %></p>
+<div>
+  <strong>Image:</strong>
+  <%= image_tag(@product.image_url, class: "img-responsive showpic center-block") %>
+</div><br>
+<div>
+  <strong>Name:</strong>
+  <%= @product.name %>
+</div><br>
 
-<div class="container-fluid minpage">
-	<p id="notice"><%= notice %></p>
-	<div>
-	  <strong>Image:</strong>
-	  <%= image_tag(@product.image_url, class: "img-responsive showpic center-block") %>
-	</div>
-	<div>
-	  <strong>Name:</strong>
-	  <%= @product.name %>
-	</div>
+<div>
+  <strong>Colour:</strong>
+  <%= @product.colour %>
+</div><br>
 
-	<div>
-	  <strong>Colour:</strong>
-	  <%= @product.colour %>
-	</div>
-
-	<div>
-	  <strong>Price:</strong>
-	  <strong>$</strong><%= @product.price %>
-	</div>
-
-	<p>
-	  <strong>Description:</strong>
-	  <%= @product.description %>
-	</p>
-
-
-	<%= link_to 'Edit', edit_product_path(@product) %> |
-	<%= link_to 'Back', products_path %>
+<div>
+  <strong>Price:</strong>
+  <strong>$</strong><%= @product.price %>
 </div>
+
+<p>
+  <strong>Description:</strong>
+  <%= @product.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_product_path(@product) %> |
+<%= link_to 'Back', products_path %>
+
 
