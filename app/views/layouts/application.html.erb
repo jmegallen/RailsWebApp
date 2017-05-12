@@ -19,7 +19,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <%= link_to "Bike Shop", @static_pages_index_path, class: "navbar-brand" %>
+        <%= link_to "Bike Shop", static_pages_landing_page_path, class: "navbar-brand" %>
       </div>
 
       <!-- Collect the nav links, forms, and other content for toggling -->
@@ -33,7 +33,7 @@
         <% end %>
 
         <ul class="nav navbar-nav navbar-right">
-          <li class="active"><%= link_to "Bikes", @products %></li>
+          <li class="active"><%= link_to "Bikes", products_path %></li>
           <li class="active"><%= link_to "About", static_pages_about_path %></li>
           <li class="active"><%= link_to "Contact", static_pages_contact_path %></li>
           <li class="active"><a href="https://www.pinterest.de/search/pins/?q=bike%20fixie%20porn&rs=typed&term_meta[]=bike%7Ctyped&term_meta[]=fixie%7Ctyped&term_meta[]=porn%7Ctyped">Bike Porn</a></li>
