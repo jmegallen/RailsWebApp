@@ -9110,3 +9110,18 @@ Processing by StaticPagesController#about as HTML
 Completed 200 OK in 60ms (Views: 56.6ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/static_pages/about" for ::1 at 2017-05-12 16:35:29 +0200
+Processing by StaticPagesController#about as HTML
+  Rendering static_pages/about.html.erb within layouts/application
+  Rendered static_pages/about.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 108ms (Views: 100.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-05-12 16:35:31 +0200
+Processing by StaticPagesController#landing_page as HTML
+  Rendering static_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (3.0ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT $1[0m  [["LIMIT", 3]]
+  Rendered static_pages/landing_page.html.erb within layouts/application (16.3ms)
+Completed 200 OK in 91ms (Views: 79.7ms | ActiveRecord: 3.0ms)
+
+
