@@ -1,23 +1,21 @@
-<div class="container-fluid minpage">
-  <p id="notice"><%= notice %></p>
-  <div class="row">
-    <h1>Bikes</h1>
-  </div>
-  <div class="row">
+<p id="notice"><%= notice %></p>
+<div class="row">
+  <h1>Bikes</h1>
+</div>
+<div class="row">
 
-    <% cache @products do %>    
+  <% cache @products do %>    
     <%= render @products %>
-    <% end %>
-    
-    <div class="col-sm-2 col-md-4 prodtile">
-      <h3>Add New Bike</h3><br>
-      <img class="img-prod img-responsive center-block" src="https://www.bikester.se/fileadmin/mediapool/bkse/single-speed.jpg">
-      <h4>Good Prices</h4>
-      <h4>Many Colours</h4>
-      <p>Just ask...</p>
-      <div aria-label="..." class="btn-group-sm" role="group">
-        <button class="btn newprodbut btn-default" type="button"><%= link_to 'New Product', new_product_path %></button>
-      </div>
-    </div>    
-  </div>
+  <% end %>
+  
+  <div class="col-sm-2 col-md-4 prodtile">
+    <h3>Add New Bike</h3><br>
+    <img class="img-prod img-responsive center-block" src="https://www.bikester.se/fileadmin/mediapool/bkse/single-speed.jpg"><br>
+    <h4>Good Prices</h4>
+    <h4>Many Colours</h4>
+    <p>Just ask...</p>
+    <div aria-label="..." class="btn-group-sm" role="group">
+      <button class="btn newprodbut btn-default" type="button"><%= link_to 'New Product', new_product_path %></button>
+    </div>
+  </div>    
 </div>
