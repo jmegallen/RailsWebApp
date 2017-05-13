@@ -1,7 +1,12 @@
 <div class="row">
 	<h1>New Product</h1>
-
-	<%= render 'form', product: @product %>
-
-	<%= link_to 'Back', products_path %>
 </div>
+
+<div class="row">
+	<%= render 'form', product: @product %>
+</div>
+
+<div class="row">
+	<%= link_to 'Back', products_path, class:"btn btn-default"%>
+</div>
+

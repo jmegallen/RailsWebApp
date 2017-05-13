@@ -1,19 +1,18 @@
-<p id="notice"><%= notice %></p>
-<div>
+<div class="row">
   <strong>Image:</strong>
-  <%= image_tag(@product.image_url, class: "img-responsive showpic center-block") %>
-</div><br>
-<div>
+  <%= image_tag(@product.image_url, class:"img-responsive showpic center-block") %>
+</div>
+<div class="row">
   <strong>Name:</strong>
   <%= @product.name %>
-</div><br>
+</div>
 
-<div>
+<div class="row">
   <strong>Colour:</strong>
   <%= @product.colour %>
-</div><br>
+</div>
 
-<div>
+<div class="row">
   <strong>Price:</strong>
   <strong>$</strong><%= @product.price %>
 </div>
@@ -23,8 +22,8 @@
   <%= @product.description %>
 </p>
 
-
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>
+<%= link_to 'Back', products_path, class:"btn btn-default" %> |
+<%= link_to 'Edit', edit_product_path(@product), class:"btn btn-default"%> 
+<p id="notice"><%= notice %></p>
 
 
