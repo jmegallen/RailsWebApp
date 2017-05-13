@@ -10622,3 +10622,111 @@ Processing by ProductsController#index as HTML
 Completed 200 OK in 265ms (Views: 246.7ms | ActiveRecord: 1.7ms)
 
 
+Started GET "/" for ::1 at 2017-05-13 15:05:57 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (24.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StaticPagesController#landing_page as HTML
+  Rendering static_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (12.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT $1[0m  [["LIMIT", 3]]
+  Rendered static_pages/landing_page.html.erb within layouts/application (51.8ms)
+Completed 500 Internal Server Error in 739ms (ActiveRecord: 27.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `user_signed_in?' for #<#<Class:0x007fce31de5a88>:0x007fce31db7f70>):
+    43:           <li class="active"><%= link_to "Contact", static_pages_contact_path %></li>
+    44:           <li class="active"><a href="https://www.pinterest.de/search/pins/?q=bike%20fixie%20porn&rs=typed&term_meta[]=bike%7Ctyped&term_meta[]=fixie%7Ctyped&term_meta[]=porn%7Ctyped">Bike Porn</a></li>
+    45:           <li>
+    46:             <% if user_signed_in?%>
+    47:               <%= link_to('Accounts', users_url) %>
+    48:               <li><%= link_to('Logout', destroy_user_session_path, :method => :delete)%> </li>
+    49:               <% else%>
+  
+app/views/layouts/application.html.erb:46:in `_app_views_layouts_application_html_erb___133655835586683152_70261792388600'
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (10.9ms)
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.6ms)
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.3ms)
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (105.0ms)
+Started GET "/" for ::1 at 2017-05-13 15:58:59 +0200
+Processing by StaticPagesController#landing_page as HTML
+  Rendering static_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (7.6ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT $1[0m  [["LIMIT", 3]]
+  Rendered static_pages/landing_page.html.erb within layouts/application (25.2ms)
+Completed 500 Internal Server Error in 473ms (ActiveRecord: 7.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `user_signed_in?' for #<#<Class:0x007fce31de5a88>:0x007fce3335c6f0>):
+    43:           <li class="active"><%= link_to "Contact", static_pages_contact_path %></li>
+    44:           <li class="active"><a href="https://www.pinterest.de/search/pins/?q=bike%20fixie%20porn&rs=typed&term_meta[]=bike%7Ctyped&term_meta[]=fixie%7Ctyped&term_meta[]=porn%7Ctyped">Bike Porn</a></li>
+    45:          <!--  <li>
+    46:             <% if user_signed_in?%>
+    47:               <%= link_to('Accounts', users_url) %>
+    48:               <li><%= link_to('Logout', destroy_user_session_path, :method => :delete)%> </li>
+    49:               <% else%>
+  
+app/views/layouts/application.html.erb:46:in `_app_views_layouts_application_html_erb___133655835586683152_70261803835500'
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.0ms)
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (81.1ms)
+Started GET "/" for ::1 at 2017-05-13 15:59:25 +0200
+Processing by StaticPagesController#landing_page as HTML
+  Rendering static_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT $1[0m  [["LIMIT", 3]]
+  Rendered static_pages/landing_page.html.erb within layouts/application (3.7ms)
+Completed 500 Internal Server Error in 247ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `user_signed_in?' for #<#<Class:0x007fce31de5a88>:0x007fce3336c0a0>):
+    43:           <li class="active"><%= link_to "Contact", static_pages_contact_path %></li>
+    44:           <li class="active"><a href="https://www.pinterest.de/search/pins/?q=bike%20fixie%20porn&rs=typed&term_meta[]=bike%7Ctyped&term_meta[]=fixie%7Ctyped&term_meta[]=porn%7Ctyped">Bike Porn</a></li>
+    45:          <!--  <li>
+    46:             <% if user_signed_in?%>
+    47:               <%= link_to('Accounts', users_url) %>
+    48:               <li><%= link_to('Logout', destroy_user_session_path, :method => :delete)%> </li>
+    49:               <% else%>
+  
+app/views/layouts/application.html.erb:46:in `_app_views_layouts_application_html_erb___133655835586683152_70261804596160'
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (7.4ms)
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (100.8ms)
+Started GET "/" for ::1 at 2017-05-13 15:59:43 +0200
+Processing by StaticPagesController#landing_page as HTML
+  Rendering static_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (1.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT $1[0m  [["LIMIT", 3]]
+  Rendered static_pages/landing_page.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 50ms (Views: 46.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/products?utf8=%E2%9C%93&q=rim&commit=Search" for ::1 at 2017-05-13 16:00:27 +0200
+Processing by ProductsController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>"rim", "commit"=>"Search"}
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (34.5ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered collection of products/_product.html.erb [9 times] (22.9ms)
+  Rendered products/index.html.erb within layouts/application (83.9ms)
+Completed 200 OK in 200ms (Views: 150.4ms | ActiveRecord: 34.5ms)
+
+
+Started GET "/products/new" for ::1 at 2017-05-13 16:00:51 +0200
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (213.1ms)
+  Rendered products/new.html.erb within layouts/application (243.3ms)
+Completed 200 OK in 345ms (Views: 330.3ms | ActiveRecord: 0.0ms)
+
+
