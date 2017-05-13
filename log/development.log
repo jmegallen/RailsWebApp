@@ -10491,3 +10491,134 @@ Processing by ProductsController#edit as HTML
 Completed 200 OK in 80ms (Views: 74.7ms | ActiveRecord: 0.4ms)
 
 
+Started GET "/" for ::1 at 2017-05-13 13:49:13 +0200
+Processing by StaticPagesController#landing_page as HTML
+  Rendering static_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (6.5ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT $1[0m  [["LIMIT", 3]]
+  Rendered static_pages/landing_page.html.erb within layouts/application (44.6ms)
+Completed 200 OK in 209ms (Views: 176.9ms | ActiveRecord: 6.5ms)
+
+
+Started GET "/products" for ::1 at 2017-05-13 13:49:15 +0200
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (8.5ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered collection of products/_product.html.erb [9 times] (14.6ms)
+  Rendered products/index.html.erb within layouts/application (36.7ms)
+Completed 200 OK in 103ms (Views: 87.6ms | ActiveRecord: 8.5ms)
+
+
+Started GET "/products/new" for ::1 at 2017-05-13 13:49:22 +0200
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (14.4ms)
+  Rendered products/new.html.erb within layouts/application (18.9ms)
+Completed 200 OK in 79ms (Views: 72.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products" for ::1 at 2017-05-13 13:49:27 +0200
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (7.6ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered collection of products/_product.html.erb [9 times] (6.4ms)
+  Rendered products/index.html.erb within layouts/application (20.9ms)
+Completed 200 OK in 80ms (Views: 68.4ms | ActiveRecord: 7.6ms)
+
+
+Started GET "/products/8" for ::1 at 2017-05-13 13:49:28 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mProduct Load (2.9ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 109ms (Views: 101.1ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/products/8/edit" for ::1 at 2017-05-13 13:49:31 +0200
+Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mProduct Load (7.0ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering products/edit.html.erb within layouts/application
+  Rendered products/_form.html.erb (6.7ms)
+  Rendered products/edit.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 67ms (Views: 54.6ms | ActiveRecord: 7.0ms)
+
+
+Started PATCH "/products/8" for ::1 at 2017-05-13 13:49:58 +0200
+Processing by ProductsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lvLgkY5YNwQMRY41LUrspN3v5A+hhQth9VhcBHwsk4rq89FeYEwfXFpCYcrmsSYA6zV2ubhpaukfP1Um58PN+w==", "product"=>{"name"=>"Blue Rims", "colour"=>"Blue", "price"=>"20", "description"=>"Blue rims!!", "image_url"=>"https://cdn.shopify.com/s/files/1/1109/6048/products/37922_large.jpg?v=1484616750"}, "commit"=>"Update Product", "id"=>"8"}
+  [1m[36mProduct Load (3.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (19.5ms)[0m  [1m[33mUPDATE "products" SET "colour" = $1, "price" = $2, "updated_at" = $3 WHERE "products"."id" = $4[0m  [["colour", "Blue"], ["price", 0.2e2], ["updated_at", 2017-05-13 11:49:58 UTC], ["id", 8]]
+  [1m[35m (6.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/products/8
+Completed 302 Found in 87ms (ActiveRecord: 29.3ms)
+
+
+Started GET "/products/8" for ::1 at 2017-05-13 13:49:58 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 118ms (Views: 113.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/products/8/edit" for ::1 at 2017-05-13 13:50:02 +0200
+Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mProduct Load (6.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering products/edit.html.erb within layouts/application
+  Rendered products/_form.html.erb (11.3ms)
+  Rendered products/edit.html.erb within layouts/application (17.0ms)
+Completed 200 OK in 94ms (Views: 74.9ms | ActiveRecord: 6.2ms)
+
+
+Started PATCH "/products/8" for ::1 at 2017-05-13 13:50:15 +0200
+Processing by ProductsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9YKZcRPV8eLttCsElV3qMaacdvEEy1fKYGBcZb4158SJg6i+/cHZuruzxPtepiCVkEbkRx0nNkKKB1VHJdq5tQ==", "product"=>{"name"=>"Blue Rims", "colour"=>"White", "price"=>"20.0", "description"=>"Blue rims!!", "image_url"=>"https://cdn.shopify.com/s/files/1/1109/6048/products/37922_large.jpg?v=1484616750"}, "commit"=>"Update Product", "id"=>"8"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (27.0ms)[0m  [1m[33mUPDATE "products" SET "colour" = $1, "updated_at" = $2 WHERE "products"."id" = $3[0m  [["colour", "White"], ["updated_at", 2017-05-13 11:50:15 UTC], ["id", 8]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/products/8
+Completed 302 Found in 36ms (ActiveRecord: 28.5ms)
+
+
+Started GET "/products/8" for ::1 at 2017-05-13 13:50:15 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 35ms (Views: 31.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/products" for ::1 at 2017-05-13 13:58:02 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (17.9ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (7.6ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered collection of products/_product.html.erb [9 times] (8.0ms)
+  Rendered products/index.html.erb within layouts/application (71.6ms)
+Completed 200 OK in 539ms (Views: 477.8ms | ActiveRecord: 31.2ms)
+
+
+Started GET "/products/2" for ::1 at 2017-05-13 13:58:08 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProduct Load (1.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 55ms (Views: 43.8ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/products" for ::1 at 2017-05-13 14:02:07 +0200
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (1.7ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered collection of products/_product.html.erb [9 times] (7.2ms)
+  Rendered products/index.html.erb within layouts/application (29.3ms)
+Completed 200 OK in 265ms (Views: 246.7ms | ActiveRecord: 1.7ms)
+
+
