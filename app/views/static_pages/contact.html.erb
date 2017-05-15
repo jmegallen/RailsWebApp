@@ -9,6 +9,10 @@
     <h3>Germany</h3>
     <div id="map"></div>
   </div>
+  <h1>Contact Us</h1>
+  <%= flash[:notice] %>
+
+  <%= form_tag("/static_pages/thank_you") do %>
   <div class="col-xs-12 col-md-6">
     <div class="form-group" id="contactform">
       <div class="row">
@@ -26,4 +30,5 @@
       </div>  
     </div>
   </div>
+  <% end %>
 </div>
