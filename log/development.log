@@ -10730,3 +10730,409 @@ Processing by ProductsController#new as HTML
 Completed 200 OK in 345ms (Views: 330.3ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for ::1 at 2017-05-15 12:02:16 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (25.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StaticPagesController#landing_page as HTML
+  Rendering static_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (23.9ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT $1[0m  [["LIMIT", 3]]
+  Rendered static_pages/landing_page.html.erb within layouts/application (64.1ms)
+Completed 200 OK in 512ms (Views: 438.2ms | ActiveRecord: 35.2ms)
+
+
+Started GET "/static_pages/contact" for ::1 at 2017-05-15 12:02:21 +0200
+Processing by StaticPagesController#contact as HTML
+  Rendering static_pages/contact.html.erb within layouts/application
+  Rendered static_pages/contact.html.erb within layouts/application (3.9ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/JmeG/Desktop/RailsWebApp/app/views/static_pages/contact.html.erb:16: syntax error, unexpected tIDENTIFIER, expecting ')'
+_field class:"form-control" id:"name" placeholder:"Your name
+                              ^
+/Users/JmeG/Desktop/RailsWebApp/app/views/static_pages/contact.html.erb:16: syntax error, unexpected tIDENTIFIER, expecting ')'
+control" id:"name" placeholder:"Your name.." type:"text" );@
+                              ^
+/Users/JmeG/Desktop/RailsWebApp/app/views/static_pages/contact.html.erb:16: syntax error, unexpected tIDENTIFIER, expecting ')'
+placeholder:"Your name.." type:"text" );@output_buffer.safe_
+                              ^):
+  
+app/views/static_pages/contact.html.erb:16: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/static_pages/contact.html.erb:16: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/static_pages/contact.html.erb:16: syntax error, unexpected tIDENTIFIER, expecting ')'
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (9.9ms)
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.1ms)
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (96.1ms)
+Started GET "/static_pages/contact" for ::1 at 2017-05-15 12:02:46 +0200
+Processing by StaticPagesController#contact as HTML
+  Rendering static_pages/contact.html.erb within layouts/application
+  Rendered static_pages/contact.html.erb within layouts/application (10.3ms)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/JmeG/Desktop/RailsWebApp/app/views/static_pages/contact.html.erb:16: syntax error, unexpected tIDENTIFIER, expecting ')'
+ontrol", id:"name" placeholder:"Your name..", type:"text" );
+                              ^
+/Users/JmeG/Desktop/RailsWebApp/app/views/static_pages/contact.html.erb:16: syntax error, unexpected ',', expecting ')'
+me" placeholder:"Your name..", type:"text" );@output_buffer.
+                              ^):
+  
+app/views/static_pages/contact.html.erb:16: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/static_pages/contact.html.erb:16: syntax error, unexpected ',', expecting ')'
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (9.7ms)
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (8.5ms)
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (99.3ms)
+Started GET "/static_pages/contact" for ::1 at 2017-05-15 12:03:00 +0200
+Processing by StaticPagesController#contact as HTML
+  Rendering static_pages/contact.html.erb within layouts/application
+  Rendered static_pages/contact.html.erb within layouts/application (314.4ms)
+Completed 500 Internal Server Error in 321ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `f' for #<#<Class:0x007fcb7d85e490>:0x007fcb7dbf11e8>):
+    12:   <div class="col-xs-12 col-md-6">
+    13:     <div class="form-group" id="contactform">
+    14:       <h3>Name</h3>
+    15:       <%= f.label :name %>
+    16:       <%= f.text_field class:"form-control", id:"name", placeholder:"Your name..", type:"text" %>
+    17:       <h3>Phone</h3>
+    18:       <label for="phone"></label> 
+  
+app/views/static_pages/contact.html.erb:15:in `_app_views_static_pages_contact_html_erb__131881028913103502_70255982382520'
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (7.9ms)
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (86.3ms)
+Started GET "/static_pages/contact" for ::1 at 2017-05-15 12:04:34 +0200
+Processing by StaticPagesController#contact as HTML
+  Rendering static_pages/contact.html.erb within layouts/application
+  Rendered static_pages/contact.html.erb within layouts/application (576.9ms)
+Completed 500 Internal Server Error in 590ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `f' for #<#<Class:0x007fcb7d85e490>:0x007fcb7ff1acc8>):
+    12:   <div class="col-xs-12 col-md-6">
+    13:     <div class="form-group" id="contactform">
+    14:       <h3>Name</h3>
+    15:       <%= f.label :name, class:"col-form-label" %>
+    16:       <%= f.text_field :name, class:"form-control", id:"name", placeholder:"Your name..", type:"text" %>
+    17:       <h3>Phone</h3>
+    18:       <label for="phone"></label> 
+  
+app/views/static_pages/contact.html.erb:15:in `_app_views_static_pages_contact_html_erb__131881028913103502_70256000817960'
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.9ms)
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (80.1ms)
+Started GET "/static_pages/contact" for ::1 at 2017-05-15 12:07:36 +0200
+Processing by StaticPagesController#contact as HTML
+  Rendering static_pages/contact.html.erb within layouts/application
+  Rendered static_pages/contact.html.erb within layouts/application (428.7ms)
+Completed 500 Internal Server Error in 442ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `f' for #<#<Class:0x007fcb7d85e490>:0x007fcb7ff523a8>):
+    12:   <div class="col-xs-12 col-md-6">
+    13:     <div class="form-group" id="contactform">
+    14:       <h3>Name</h3>
+    15:       <%= f.label :name, class:"col-form-label" %>
+    16:       <%= f.text_field :name, nil, class:"form-control", id:"name", placeholder:"Your name..", type:"text" %>
+    17:       <h3>Phone</h3>
+    18:       <label for="phone"></label> 
+  
+app/views/static_pages/contact.html.erb:15:in `_app_views_static_pages_contact_html_erb__131881028913103502_70256000931580'
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.3ms)
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (87.7ms)
+Started GET "/static_pages/contact" for ::1 at 2017-05-15 12:08:02 +0200
+Processing by StaticPagesController#contact as HTML
+  Rendering static_pages/contact.html.erb within layouts/application
+  Rendered static_pages/contact.html.erb within layouts/application (440.1ms)
+Completed 500 Internal Server Error in 455ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `f' for #<#<Class:0x007fcb7d85e490>:0x007fcb8025bdd8>):
+    12:   <div class="col-xs-12 col-md-6">
+    13:     <div class="form-group" id="contactform">
+    14:       <h3>Name</h3>
+    15:       <%= f.label :name %>
+    16:       <%= f.text_field :name, nil, class:"form-control", id:"name", placeholder:"Your name..", type:"text" %>
+    17:       <h3>Phone</h3>
+    18:       <label for="phone"></label> 
+  
+app/views/static_pages/contact.html.erb:15:in `_app_views_static_pages_contact_html_erb__131881028913103502_70256002533960'
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (11.4ms)
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (121.7ms)
+Started GET "/static_pages/contact" for ::1 at 2017-05-15 12:09:09 +0200
+Processing by StaticPagesController#contact as HTML
+  Rendering static_pages/contact.html.erb within layouts/application
+  Rendered static_pages/contact.html.erb within layouts/application (10.5ms)
+Completed 200 OK in 156ms (Views: 146.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/static_pages/contact" for ::1 at 2017-05-15 12:10:15 +0200
+Processing by StaticPagesController#contact as HTML
+  Rendering static_pages/contact.html.erb within layouts/application
+  Rendered static_pages/contact.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 65ms (Views: 62.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/static_pages/contact" for ::1 at 2017-05-15 12:10:41 +0200
+Processing by StaticPagesController#contact as HTML
+  Rendering static_pages/contact.html.erb within layouts/application
+  Rendered static_pages/contact.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 56ms (Views: 54.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/static_pages/contact" for ::1 at 2017-05-15 12:10:46 +0200
+Processing by StaticPagesController#contact as HTML
+  Rendering static_pages/contact.html.erb within layouts/application
+  Rendered static_pages/contact.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 104ms (Views: 95.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/static_pages/contact" for ::1 at 2017-05-15 12:11:45 +0200
+Processing by StaticPagesController#contact as HTML
+  Rendering static_pages/contact.html.erb within layouts/application
+  Rendered static_pages/contact.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 118ms (Views: 103.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/static_pages/contact" for ::1 at 2017-05-15 12:12:34 +0200
+Processing by StaticPagesController#contact as HTML
+  Rendering static_pages/contact.html.erb within layouts/application
+  Rendered static_pages/contact.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 118ms (Views: 111.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/static_pages/contact" for ::1 at 2017-05-15 12:14:13 +0200
+Processing by StaticPagesController#contact as HTML
+  Rendering static_pages/contact.html.erb within layouts/application
+  Rendered static_pages/contact.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 100ms (Views: 92.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/static_pages/contact" for ::1 at 2017-05-15 12:16:33 +0200
+Processing by StaticPagesController#contact as HTML
+  Rendering static_pages/contact.html.erb within layouts/application
+  Rendered static_pages/contact.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 119ms (Views: 116.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/static_pages/contact" for ::1 at 2017-05-15 12:17:01 +0200
+Processing by StaticPagesController#contact as HTML
+  Rendering static_pages/contact.html.erb within layouts/application
+  Rendered static_pages/contact.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 58ms (Views: 51.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/static_pages/contact" for ::1 at 2017-05-15 12:18:59 +0200
+Processing by StaticPagesController#contact as HTML
+  Rendering static_pages/contact.html.erb within layouts/application
+  Rendered static_pages/contact.html.erb within layouts/application (10.2ms)
+Completed 200 OK in 119ms (Views: 110.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/static_pages/contact" for ::1 at 2017-05-15 12:19:36 +0200
+Processing by StaticPagesController#contact as HTML
+  Rendering static_pages/contact.html.erb within layouts/application
+  Rendered static_pages/contact.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 72ms (Views: 70.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/static_pages/contact" for ::1 at 2017-05-15 12:21:04 +0200
+Processing by StaticPagesController#contact as HTML
+  Rendering static_pages/contact.html.erb within layouts/application
+  Rendered static_pages/contact.html.erb within layouts/application (4.7ms)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/JmeG/Desktop/RailsWebApp/app/views/static_pages/contact.html.erb:24: syntax error, unexpected tIDENTIFIER, expecting ')'
+sage..", id:"message-box" type:"text", rows:"5", required: "
+                              ^
+/Users/JmeG/Desktop/RailsWebApp/app/views/static_pages/contact.html.erb:24: syntax error, unexpected ',', expecting ')'
+ id:"message-box" type:"text", rows:"5", required: "True" );
+                              ^
+/Users/JmeG/Desktop/RailsWebApp/app/views/static_pages/contact.html.erb:24: syntax error, unexpected ',', expecting ')'
+ge-box" type:"text", rows:"5", required: "True" );@output_bu
+                              ^):
+  
+app/views/static_pages/contact.html.erb:24: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/static_pages/contact.html.erb:24: syntax error, unexpected ',', expecting ')'
+app/views/static_pages/contact.html.erb:24: syntax error, unexpected ',', expecting ')'
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (9.3ms)
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.0ms)
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (133.3ms)
+Started GET "/static_pages/contact" for ::1 at 2017-05-15 12:21:23 +0200
+Processing by StaticPagesController#contact as HTML
+  Rendering static_pages/contact.html.erb within layouts/application
+  Rendered static_pages/contact.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 47ms (Views: 44.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/static_pages/contact" for ::1 at 2017-05-15 12:21:43 +0200
+Processing by StaticPagesController#contact as HTML
+  Rendering static_pages/contact.html.erb within layouts/application
+  Rendered static_pages/contact.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 92ms (Views: 82.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/static_pages/contact" for ::1 at 2017-05-15 12:22:19 +0200
+Processing by StaticPagesController#contact as HTML
+  Rendering static_pages/contact.html.erb within layouts/application
+  Rendered static_pages/contact.html.erb within layouts/application (420.3ms)
+Completed 500 Internal Server Error in 426ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `f' for #<#<Class:0x007fcb7d85e490>:0x007fcb7ff99a78>):
+    20:       <h3><%= label_tag :message, nil %></h3>
+    21:       <%= text_area_tag :message, nil, class:"form-control", placeholder:"Your message..", id:"message-box", type:"text", rows:"5", required: "True" %>
+    22:       <p></p>
+    23:       <%= f.submit class:"btn btn-default" %>
+    24:     </div>
+    25:   </div>
+    26: </div>
+  
+app/views/static_pages/contact.html.erb:23:in `_app_views_static_pages_contact_html_erb__131881028913103502_70256001078600'
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (8.7ms)
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.3ms)
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (87.9ms)
+Started GET "/static_pages/contact" for ::1 at 2017-05-15 12:22:46 +0200
+Processing by StaticPagesController#contact as HTML
+  Rendering static_pages/contact.html.erb within layouts/application
+  Rendered static_pages/contact.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 57ms (Views: 54.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/static_pages/contact" for ::1 at 2017-05-15 12:23:40 +0200
+Processing by StaticPagesController#contact as HTML
+  Rendering static_pages/contact.html.erb within layouts/application
+  Rendered static_pages/contact.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 113ms (Views: 101.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/static_pages/contact" for ::1 at 2017-05-15 12:24:23 +0200
+Processing by StaticPagesController#contact as HTML
+  Rendering static_pages/contact.html.erb within layouts/application
+  Rendered static_pages/contact.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 88ms (Views: 85.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-05-15 12:24:26 +0200
+Processing by StaticPagesController#landing_page as HTML
+  Rendering static_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (2.6ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT $1[0m  [["LIMIT", 3]]
+  Rendered static_pages/landing_page.html.erb within layouts/application (13.8ms)
+Completed 200 OK in 79ms (Views: 64.4ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/static_pages/contact" for ::1 at 2017-05-15 12:24:28 +0200
+Processing by StaticPagesController#contact as HTML
+  Rendering static_pages/contact.html.erb within layouts/application
+  Rendered static_pages/contact.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 61ms (Views: 56.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/static_pages/contact" for ::1 at 2017-05-15 12:25:17 +0200
+Processing by StaticPagesController#contact as HTML
+  Rendering static_pages/contact.html.erb within layouts/application
+  Rendered static_pages/contact.html.erb within layouts/application (10.4ms)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/JmeG/Desktop/RailsWebApp/app/views/static_pages/contact.html.erb:24: syntax error, unexpected keyword_class, expecting ')'
+nd=( submit_tag "Submit" class:"btn btn-default", id:"subbut
+                              ^
+/Users/JmeG/Desktop/RailsWebApp/app/views/static_pages/contact.html.erb:24: syntax error, unexpected ',', expecting &. or :: or '[' or '.'
+bmit" class:"btn btn-default", id:"subbut", type:"submit" );
+                              ^
+/Users/JmeG/Desktop/RailsWebApp/app/views/static_pages/contact.html.erb:24: syntax error, unexpected ',', expecting ')'
+btn btn-default", id:"subbut", type:"submit" );@output_buffe
+                              ^):
+  
+app/views/static_pages/contact.html.erb:24: syntax error, unexpected keyword_class, expecting ')'
+app/views/static_pages/contact.html.erb:24: syntax error, unexpected ',', expecting &. or :: or '[' or '.'
+app/views/static_pages/contact.html.erb:24: syntax error, unexpected ',', expecting ')'
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (13.7ms)
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (8.7ms)
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (103.4ms)
+Started GET "/static_pages/contact" for ::1 at 2017-05-15 12:25:35 +0200
+Processing by StaticPagesController#contact as HTML
+  Rendering static_pages/contact.html.erb within layouts/application
+  Rendered static_pages/contact.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 57ms (Views: 55.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/static_pages/contact" for ::1 at 2017-05-15 12:25:55 +0200
+Processing by StaticPagesController#contact as HTML
+  Rendering static_pages/contact.html.erb within layouts/application
+  Rendered static_pages/contact.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 45ms (Views: 42.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/static_pages/contact" for ::1 at 2017-05-15 12:27:29 +0200
+Processing by StaticPagesController#contact as HTML
+  Rendering static_pages/contact.html.erb within layouts/application
+  Rendered static_pages/contact.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 83ms (Views: 80.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/static_pages/contact" for ::1 at 2017-05-15 12:27:54 +0200
+Processing by StaticPagesController#contact as HTML
+  Rendering static_pages/contact.html.erb within layouts/application
+  Rendered static_pages/contact.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 104ms (Views: 73.0ms | ActiveRecord: 0.0ms)
+
+

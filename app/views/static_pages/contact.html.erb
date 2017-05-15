@@ -11,12 +11,19 @@
   </div>
   <div class="col-xs-12 col-md-6">
     <div class="form-group" id="contactform">
-      <h3>Name</h3><label for="name"></label> <input class="form-control" id="name" placeholder="Your name.." type="text">
-      <h3>Phone</h3><label for="phone"></label> <input class="form-control" id="phone" placeholder="Your telephone.." type="text">
-      <h3>Email address</h3><label for="name"></label> <input class="form-control" id="emailinput" placeholder="Your email.." required="required" type="email">
-      <h3>Message</h3><label for="message"></label> 
-      <textarea class="form-control" cols="25" id="message-box" placeholder="Your message here...." rows="5" style="resize:none"></textarea>
-      <p></p><button class="btn btn-default" id="subbut" type="submit">Submit</button>
+      <div class="row">
+        <h3><%= label_tag :name, nil %></h3>
+        <%= text_field_tag :name, nil, class:"form-control", placeholder:"Your name..", type:"text", required: "True" %>
+        <h3><%= label_tag :phone, nil %></h3>
+        <%= text_field_tag :phone, nil, class:"form-control", placeholder:"Your telephone..", type:"text", required: "True" %>
+        <h3><%= label_tag :email, nil %></h3>
+        <%= text_field_tag :email, nil, class:"form-control", placeholder:"Your email..", type:"text", required: "True" %>
+        <h3><%= label_tag :message, nil %></h3>
+        <%= text_area_tag :message, nil, class:"form-control", placeholder:"Your message..", id:"message-box", type:"text", rows:"5", required: "True" %> 
+      </div>
+      <div class="row">
+        <%= submit_tag "Submit", class:"btn btn-default", id:"subbut", type:"submit" %>
+      </div>  
     </div>
   </div>
 </div>
