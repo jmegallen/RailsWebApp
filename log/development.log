@@ -12248,3 +12248,117 @@ Processing by ProductsController#index as HTML
 Completed 200 OK in 101ms (Views: 95.6ms | ActiveRecord: 1.5ms)
 
 
+Started GET "/products" for ::1 at 2017-05-15 15:51:37 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered collection of products/_product.html.erb [9 times] (10.3ms)
+  Rendered products/index.html.erb within layouts/application (45.7ms)
+Completed 200 OK in 510ms (Views: 468.8ms | ActiveRecord: 6.3ms)
+
+
+Started GET "/" for ::1 at 2017-05-15 15:51:40 +0200
+Processing by StaticPagesController#landing_page as HTML
+  Rendering static_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (1.0ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT $1[0m  [["LIMIT", 3]]
+  Rendered static_pages/landing_page.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 77ms (Views: 65.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/static_pages/contact" for ::1 at 2017-05-15 15:51:42 +0200
+Processing by StaticPagesController#contact as HTML
+  Rendering static_pages/contact.html.erb within layouts/application
+  Rendered static_pages/contact.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 59ms (Views: 55.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products?utf8=%E2%9C%93&q=rim&commit=Search" for ::1 at 2017-05-15 15:51:47 +0200
+Processing by ProductsController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>"rim", "commit"=>"Search"}
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered collection of products/_product.html.erb [9 times] (5.3ms)
+  Rendered products/index.html.erb within layouts/application (10.8ms)
+Completed 200 OK in 53ms (Views: 49.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2017-05-15 15:52:58 +0200
+Processing by StaticPagesController#landing_page as HTML
+  Rendering static_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT $1[0m  [["LIMIT", 3]]
+  Rendered static_pages/landing_page.html.erb within layouts/application (21.7ms)
+Completed 200 OK in 109ms (Views: 94.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/products" for ::1 at 2017-05-15 15:53:00 +0200
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (28.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered collection of products/_product.html.erb [9 times] (9.1ms)
+  Rendered products/index.html.erb within layouts/application (43.7ms)
+Completed 200 OK in 92ms (Views: 56.2ms | ActiveRecord: 28.1ms)
+
+
+Started GET "/static_pages/about" for ::1 at 2017-05-15 15:53:02 +0200
+Processing by StaticPagesController#about as HTML
+  Rendering static_pages/about.html.erb within layouts/application
+  Rendered static_pages/about.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 58ms (Views: 54.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/static_pages/contact" for ::1 at 2017-05-15 15:53:04 +0200
+Processing by StaticPagesController#contact as HTML
+  Rendering static_pages/contact.html.erb within layouts/application
+  Rendered static_pages/contact.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 53ms (Views: 50.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products" for ::1 at 2017-05-15 15:53:08 +0200
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (5.5ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered collection of products/_product.html.erb [9 times] (9.0ms)
+  Rendered products/index.html.erb within layouts/application (21.4ms)
+Completed 200 OK in 80ms (Views: 70.5ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/products/1/edit" for ::1 at 2017-05-15 15:53:11 +0200
+Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering products/edit.html.erb within layouts/application
+  Rendered products/_form.html.erb (108.5ms)
+  Rendered products/edit.html.erb within layouts/application (112.5ms)
+Completed 200 OK in 194ms (Views: 153.3ms | ActiveRecord: 4.3ms)
+
+
+Started PATCH "/products/1" for ::1 at 2017-05-15 15:53:30 +0200
+Processing by ProductsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4ApkgrLYfA7PI6/QwEn2j/pvHupTQWN17ZgOeS7ag+OcC1VNXMxUVpkkQC8LsjwrzLWMXEqtAv0H/wdbtTXdkg==", "product"=>{"name"=>"Ali Boba Bike", "colour"=>"Dark Blue", "price"=>"109", "rimsize"=>"26 inch", "description"=>"Ali Boba Bike", "image_url"=>"https://ae01.alicdn.com/kf/HTB13s3IIVXXXXaSXXXXq6xXFXXXg/savorello-fixie-bicycle-Fixed-gear-bike-vintage-fixed-gear-Retro-bicycle-DIY-British-man-fixie-bike.jpg"}, "commit"=>"Update Product", "id"=>"1"}
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.6ms)[0m  [1m[33mUPDATE "products" SET "colour" = $1, "price" = $2, "rimsize" = $3, "updated_at" = $4 WHERE "products"."id" = $5[0m  [["colour", "Dark Blue"], ["price", 0.109e3], ["rimsize", "26 inch"], ["updated_at", 2017-05-15 13:53:30 UTC], ["id", 1]]
+  [1m[35m (12.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/products/1
+Completed 302 Found in 39ms (ActiveRecord: 16.4ms)
+
+
+Started GET "/products/1" for ::1 at 2017-05-15 15:53:30 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 64ms (Views: 59.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/products" for ::1 at 2017-05-15 15:53:39 +0200
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (1.9ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered collection of products/_product.html.erb [9 times] (6.9ms)
+  Rendered products/index.html.erb within layouts/application (17.6ms)
+Completed 200 OK in 77ms (Views: 71.2ms | ActiveRecord: 1.9ms)
+
+
