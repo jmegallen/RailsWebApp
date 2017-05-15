@@ -57,7 +57,7 @@ group :development do
 end
 
 group :development do
-  #gem 'pg'
+  gem 'pg'
 end
 
 ruby '2.4.0'
