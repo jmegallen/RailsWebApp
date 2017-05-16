@@ -25,10 +25,10 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         
-        <%= form_tag("/products", method: "GET", class: "navbar-form navbar-right") do %> 
+        <%= form_tag("/products", method: "get", class:"navbar-form navbar-right") do %> 
           <div class="form-group">
-            <%= label_tag(:q, "Search for:", class: "hidden") %>
-            <%= text_field_tag(:q, "", type:"text", class:"form-control", placeholder: "Search") %>
+            <%= label_tag(:q, "Search for:", class:"hidden") %>
+            <%= text_field_tag(:q, "", type:"text", class:"form-control", placeholder:"Search") %>
           </div>
           <%= submit_tag("Search", class:"btn btn-default") %>     
         <% end %>
