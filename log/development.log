@@ -12669,3 +12669,232 @@ yo
 Completed 200 OK in 839ms (Views: 41.7ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/rails/mailers/user_mailer" for ::1 at 2017-05-16 10:16:07 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (25.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"internal"=>true, "path"=>"user_mailer"}
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/railties-5.0.2/lib/rails/templates/rails/mailers/mailer.html.erb within layouts/application
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/railties-5.0.2/lib/rails/templates/rails/mailers/mailer.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 50ms (Views: 30.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/rails/mailers/user_mailer/contact_form" for ::1 at 2017-05-16 10:16:12 +0200
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"internal"=>true, "path"=>"user_mailer/contact_form"}
+  Rendering user_mailer/contact_form.html.erb within layouts/mailer
+  Rendered user_mailer/contact_form.html.erb within layouts/mailer (0.6ms)
+UserMailer#contact_form: processed outbound mail in 341.8ms
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/railties-5.0.2/lib/rails/templates/rails/mailers/email.html.erb
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/railties-5.0.2/lib/rails/templates/rails/mailers/email.html.erb (5.7ms)
+Completed 200 OK in 364ms (Views: 11.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/rails/mailers/user_mailer/contact_form?part=text%2Fhtml" for ::1 at 2017-05-16 10:16:12 +0200
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"part"=>"text/html", "internal"=>true, "path"=>"user_mailer/contact_form"}
+  Rendering user_mailer/contact_form.html.erb within layouts/mailer
+  Rendered user_mailer/contact_form.html.erb within layouts/mailer (0.8ms)
+UserMailer#contact_form: processed outbound mail in 38.7ms
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 43ms (Views: 2.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/rails/mailers/user_mailer/contact_form" for ::1 at 2017-05-16 10:40:03 +0200
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"internal"=>true, "path"=>"user_mailer/contact_form"}
+  Rendering user_mailer/contact_form.html.erb within layouts/mailer
+  Rendered user_mailer/contact_form.html.erb within layouts/mailer (13.6ms)
+UserMailer#contact_form: processed outbound mail in 98.3ms
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/railties-5.0.2/lib/rails/templates/rails/mailers/email.html.erb
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/railties-5.0.2/lib/rails/templates/rails/mailers/email.html.erb (22.2ms)
+Completed 200 OK in 234ms (Views: 43.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/rails/mailers/user_mailer/contact_form?part=text%2Fhtml" for ::1 at 2017-05-16 10:40:04 +0200
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"part"=>"text/html", "internal"=>true, "path"=>"user_mailer/contact_form"}
+  Rendering user_mailer/contact_form.html.erb within layouts/mailer
+  Rendered user_mailer/contact_form.html.erb within layouts/mailer (0.9ms)
+UserMailer#contact_form: processed outbound mail in 41.1ms
+  Rendering text template
+  Rendered text template (0.1ms)
+Completed 200 OK in 50ms (Views: 1.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/rails/mailers/user_mailer/contact_form" for ::1 at 2017-05-16 11:40:50 +0200
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"internal"=>true, "path"=>"user_mailer/contact_form"}
+  Rendering user_mailer/contact_form.html.erb within layouts/mailer
+  Rendered user_mailer/contact_form.html.erb within layouts/mailer (48.5ms)
+UserMailer#contact_form: processed outbound mail in 137.5ms
+Completed 500 Internal Server Error in 201ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/JmeG/Desktop/RailsWebApp/app/views/user_mailer/contact_form.html.erb:61: syntax error, unexpected tIDENTIFIER, expecting =>
+g-responsive", width="120" alt="Ontytung" border="0") );@out
+                              ^
+/Users/JmeG/Desktop/RailsWebApp/app/views/user_mailer/contact_form.html.erb:61: syntax error, unexpected tIDENTIFIER, expecting ')'
+th="120" alt="Ontytung" border="0") );@output_buffer.safe_ap
+                              ^
+/Users/JmeG/Desktop/RailsWebApp/app/views/user_mailer/contact_form.html.erb:61: syntax error, unexpected ')', expecting keyword_end
+" alt="Ontytung" border="0") );@output_buffer.safe_append='	
+                              ^):
+  
+app/views/user_mailer/contact_form.html.erb:61: syntax error, unexpected tIDENTIFIER, expecting =>
+app/views/user_mailer/contact_form.html.erb:61: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/user_mailer/contact_form.html.erb:61: syntax error, unexpected ')', expecting keyword_end
+app/mailers/user_mailer.rb:6:in `contact_form'
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (16.4ms)
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (15.3ms)
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (6.0ms)
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (127.6ms)
+Started GET "/rails/mailers/user_mailer/contact_form" for ::1 at 2017-05-16 11:42:38 +0200
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"internal"=>true, "path"=>"user_mailer/contact_form"}
+  Rendering user_mailer/contact_form.html.erb within layouts/mailer
+  Rendered user_mailer/contact_form.html.erb within layouts/mailer (6.9ms)
+UserMailer#contact_form: processed outbound mail in 38.8ms
+Completed 500 Internal Server Error in 78ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/JmeG/Desktop/RailsWebApp/app/views/user_mailer/contact_form.html.erb:61: syntax error, unexpected tIDENTIFIER, expecting ')'
+g-responsive", width:"120" alt:"Ontytung" border:"0") );@out
+                              ^
+/Users/JmeG/Desktop/RailsWebApp/app/views/user_mailer/contact_form.html.erb:61: syntax error, unexpected tIDENTIFIER, expecting ')'
+th:"120" alt:"Ontytung" border:"0") );@output_buffer.safe_ap
+                              ^
+/Users/JmeG/Desktop/RailsWebApp/app/views/user_mailer/contact_form.html.erb:61: syntax error, unexpected ')', expecting keyword_end
+" alt:"Ontytung" border:"0") );@output_buffer.safe_append='	
+                              ^):
+  
+app/views/user_mailer/contact_form.html.erb:61: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/user_mailer/contact_form.html.erb:61: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/user_mailer/contact_form.html.erb:61: syntax error, unexpected ')', expecting keyword_end
+app/mailers/user_mailer.rb:6:in `contact_form'
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (9.4ms)
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.2ms)
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (96.0ms)
+Started GET "/rails/mailers/user_mailer/contact_form" for ::1 at 2017-05-16 11:43:00 +0200
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"internal"=>true, "path"=>"user_mailer/contact_form"}
+  Rendering user_mailer/contact_form.html.erb within layouts/mailer
+  Rendered user_mailer/contact_form.html.erb within layouts/mailer (313.9ms)
+UserMailer#contact_form: processed outbound mail in 345.3ms
+Completed 500 Internal Server Error in 358ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `root_path' for #<#<Class:0x007f99899a72c8>:0x007f998ae56188>
+Did you mean?  font_path):
+    57: 		<!-- padding -->
+    58: 		<table width="90%" border="0" cellspacing="0" cellpadding="0"><div style="height: 30px; line-height: 30px; font-size: 10px;"></div>
+    59: 			<tr><td align="center">
+    60: 							<%= link_to "Bike Shop", root_path , class: "navbar-brand" %>	
+    61: 							<%= image_tag("https://upload.wikimedia.org/wikipedia/commons/4/41/Left_side_of_Flying_Pigeon.jpg", class:"img-responsive", width:"120", alt:"Ontytung", border:"0") %>	
+    62: 					</td>
+    63: 					<td align="right">
+  
+app/views/user_mailer/contact_form.html.erb:60:in `_app_views_user_mailer_contact_form_html_erb___3426972026639667727_70148718507660'
+app/mailers/user_mailer.rb:6:in `contact_form'
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (18.6ms)
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.4ms)
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (112.3ms)
+Started GET "/rails/mailers/user_mailer/contact_form" for ::1 at 2017-05-16 11:43:24 +0200
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"internal"=>true, "path"=>"user_mailer/contact_form"}
+  Rendering user_mailer/contact_form.html.erb within layouts/mailer
+  Rendered user_mailer/contact_form.html.erb within layouts/mailer (97.5ms)
+UserMailer#contact_form: processed outbound mail in 125.1ms
+Completed 500 Internal Server Error in 139ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `root_path' for #<#<Class:0x007f99899a72c8>:0x007f998c76ea30>
+Did you mean?  font_path):
+    57: 		<!-- padding -->
+    58: 		<table width="90%" border="0" cellspacing="0" cellpadding="0"><div style="height: 30px; line-height: 30px; font-size: 10px;"></div>
+    59: 			<tr><td align="center">
+    60: 							<%= link_to "Bike Shop", root_path , class:"navbar-brand" %>	
+    61: 							<%= image_tag("https://upload.wikimedia.org/wikipedia/commons/4/41/Left_side_of_Flying_Pigeon.jpg", class:"img-responsive", width:"120", alt:"Ontytung", border:"0") %>	
+    62: 					</td>
+    63: 					<td align="right">
+  
+app/views/user_mailer/contact_form.html.erb:60:in `_app_views_user_mailer_contact_form_html_erb___3426972026639667727_70148731665120'
+app/mailers/user_mailer.rb:6:in `contact_form'
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (16.2ms)
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.1ms)
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (92.9ms)
+Started GET "/rails/mailers/user_mailer/contact_form" for ::1 at 2017-05-16 11:43:55 +0200
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"internal"=>true, "path"=>"user_mailer/contact_form"}
+  Rendering user_mailer/contact_form.html.erb within layouts/mailer
+  Rendered user_mailer/contact_form.html.erb within layouts/mailer (52.8ms)
+UserMailer#contact_form: processed outbound mail in 69.3ms
+Completed 500 Internal Server Error in 71ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `root_path' for #<#<Class:0x007f99899a72c8>:0x007f998acdd658>
+Did you mean?  font_path):
+    103: 			</td></tr>
+    104: 			<tr><td align="center">
+    105: 				<div style="line-height: 24px;">
+    106: 					<%= link_to "Bike Shop", root_path , class: "btn btn-danger block-center", target:"_blank" %>
+    107: 				</div>
+    108: 				<!-- padding --><div style="height: 60px; line-height: 60px; font-size: 10px;"></div>
+    109: 			</td></tr>
+  
+app/views/user_mailer/contact_form.html.erb:106:in `_app_views_user_mailer_contact_form_html_erb___3426972026639667727_70148717736180'
+app/mailers/user_mailer.rb:6:in `contact_form'
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (16.5ms)
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (10.0ms)
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (104.9ms)
+Started GET "/rails/mailers/user_mailer/contact_form" for ::1 at 2017-05-16 11:46:33 +0200
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"internal"=>true, "path"=>"user_mailer/contact_form"}
+  Rendering user_mailer/contact_form.html.erb within layouts/mailer
+  Rendered user_mailer/contact_form.html.erb within layouts/mailer (7.0ms)
+UserMailer#contact_form: processed outbound mail in 61.8ms
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/railties-5.0.2/lib/rails/templates/rails/mailers/email.html.erb
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/railties-5.0.2/lib/rails/templates/rails/mailers/email.html.erb (44.3ms)
+Completed 200 OK in 136ms (Views: 56.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/rails/mailers/user_mailer/contact_form?part=text%2Fhtml" for ::1 at 2017-05-16 11:46:34 +0200
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"part"=>"text/html", "internal"=>true, "path"=>"user_mailer/contact_form"}
+  Rendering user_mailer/contact_form.html.erb within layouts/mailer
+  Rendered user_mailer/contact_form.html.erb within layouts/mailer (2.2ms)
+UserMailer#contact_form: processed outbound mail in 31.9ms
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 45ms (Views: 2.2ms | ActiveRecord: 0.0ms)
+
+
