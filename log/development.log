@@ -13034,3 +13034,32 @@ Processing by ProductsController#index as HTML
 Completed 200 OK in 35ms (Views: 31.1ms | ActiveRecord: 1.2ms)
 
 
+Started GET "/static_pages/contact" for ::1 at 2017-05-16 13:10:59 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StaticPagesController#contact as HTML
+  Rendering static_pages/contact.html.erb within layouts/application
+  Rendered static_pages/contact.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 393ms (Views: 375.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/static_pages/thank_you" for ::1 at 2017-05-16 13:11:17 +0200
+Processing by StaticPagesController#thank_you as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+PtoiVtj5ywFGOmt+fjlzb2WerH8I5V9aVer2CnLaq6E+llGtXfPdFMfBlIyAy9pi0zoB+XP9PWDMKL6siQ03w==", "name"=>"Jamie Gallen", "phone"=>"0176 87641738", "email"=>"jmegallen@gmail.com", "message"=>"Hell yeah............", "commit"=>"Submit"}
+ActionMailer::Base#mail: processed outbound mail in 274.2ms
+Sent mail to jmegallen@gmail.com (560.3ms)
+Date: Tue, 16 May 2017 13:11:18 +0200
+From: jmegallen@gmail.com
+To: jmegallen@gmail.com
+Message-ID: <591ade562661c_3c73fccec2e54849534b@localhost.mail>
+Subject: A new contact form message from Jamie Gallen
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Hell yeah............
+  Rendering static_pages/thank_you.html.erb within layouts/application
+  Rendered static_pages/thank_you.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 891ms (Views: 41.4ms | ActiveRecord: 0.0ms)
+
+
