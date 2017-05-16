@@ -25,16 +25,12 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         
-        <%= form_tag("/products", method: "get", class: "navbar-form navbar-right") do %> 
-          <div class="input-group">          
-            <%= text_field_tag(:q, type="text", class: "form-control", placeholder: "Search", value: "") %>
+        <%= form_tag("/products", method: "GET", class: "navbar-form navbar-right") do %> 
+          <div class="form-group">
+            <%= label_tag(:q, "Search for:", class: "hidden") %>
+            <%= text_field_tag(:q, "", type:"text", class:"form-control", placeholder: "Search") %>
           </div>
-          <%= submit_tag("Search", class:"btn btn-default") %>   
-<!--           <div class="form-group">
-            <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
-            <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
-            <%= submit_tag("Log In", class:"btn btn-default") %>  
-          </div>   -->   
+          <%= submit_tag("Search", class:"btn btn-default") %>     
         <% end %>
 
         <ul class="nav navbar-nav navbar-right">
