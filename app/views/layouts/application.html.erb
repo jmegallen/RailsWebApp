@@ -24,19 +24,28 @@
 
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        
+
+        <!-- Sign up Log in -->
+
+        <div class="navbar-form navbar-right">
+          <% if user_signed_in? %>
+            <%= link_to('Logout', destroy_user_session_path, :method => :delete, class:"btn btn-default" ) %>
+          <% else %>
+            <%= link_to('Login', new_user_session_path, class:"btn btn-default" ) %>
+          <%= link_to('Register', new_user_path, class:"btn btn-default" ) %>  
+          <% end %>
+        </div>
+
+
+        <!-- Search Box -->
         <%= form_tag("/products", method: "get", class:"navbar-form navbar-right") do %> 
           <div class="form-group">
             <%= label_tag(:q, "Search for:", class:"hidden") %>
             <%= text_field_tag(:q, "", type:"text", class:"form-control", placeholder:"Search") %>
           </div>
-          <%= submit_tag("Search", class:"btn btn-default") %>   
-<!--           <div class="form-group">
-            <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
-            <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
-            <%= submit_tag("Log In", class:"btn btn-default") %>  
-          </div> -->  
+        <%= submit_tag("Search", class:"btn btn-default") %>
         <% end %>
+
 
         <ul class="nav navbar-nav navbar-right">
           <li class="active"><%= link_to "Bikes", products_path %></li>
@@ -50,6 +59,11 @@
   </nav>  
   
   <section class="container-fluid minpage">
+
+    <!-- Flash Notice Tags -->
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+
     <%= yield %>
   </section>
   
@@ -60,4 +74,5 @@
   </footer><!-- footer -->
 
 </body>
+
 </html>
