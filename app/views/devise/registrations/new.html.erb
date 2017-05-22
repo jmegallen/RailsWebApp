@@ -7,31 +7,45 @@
 
   <div class="form-group">
     <div class="col-sm-4 col-md-offset-4">
-      <%= f.label :email %><br />
-      <%= f.email_field :email, autofocus: true %>
+      <%= f.label :first_name, hidden: true %>
+      <%= f.text_field :first_name, autofocus: true, required: true, class:"form-control", placeholder:"First Name" %>
     </div>
   </div>
 
   <div class="form-group">
     <div class="col-sm-4 col-md-offset-4">
-      <%= f.label :password %>
+      <%= f.label :last_name, hidden: true %>
+      <%= f.text_field :last_name, autofocus: true, required: true, class:"form-control", placeholder: "Last Name" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-4 col-md-offset-4">
+      <%= f.label :email, hidden: true %>
+      <%= f.email_field :email, autofocus: true, required: true, class:"form-control", placeholder:"Email"  %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-4 col-md-offset-4">
+      <%= f.label :password, hidden: true %>
       <% if @minimum_password_length %>
       <em>(<%= @minimum_password_length %> characters minimum)</em>
-      <% end %><br />
-      <%= f.password_field :password, autocomplete: "off" %>
+      <% end %>
+      <%= f.password_field :password, autocomplete: "off", class:"form-control", placeholder:"Password"  %>
     </div>
   </div>
 
   <div class="form-group">
     <div class="col-sm-4 col-md-offset-4">
-      <%= f.label :password_confirmation %><br />
-      <%= f.password_field :password_confirmation, autocomplete: "off" %>
+      <%= f.label :password_confirmation, hidden: true %>
+      <%= f.password_field :password_confirmation, autocomplete: "off", class:"form-control", placeholder:"Password Confirmation"  %>
     </div>
   </div>
 
   <div class="row">
     <div class="col-sm-4 col-md-offset-4">
-      <%= f.submit "Sign up" %>
+      <%= f.submit "Sign up", class:"btn btn-default" %>
     </div>  
   </div>
   <% end %>
