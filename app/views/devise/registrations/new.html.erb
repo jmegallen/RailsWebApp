@@ -7,45 +7,37 @@
 
   <div class="form-group">
     <div class="col-sm-4 col-md-offset-4">
-      <div class="field">
-        <%= f.label :email %><br />
-        <%= f.email_field :email, autofocus: true %>
-      </div>
+      <%= f.label :email %><br />
+      <%= f.email_field :email, autofocus: true %>
     </div>
   </div>
 
   <div class="form-group">
     <div class="col-sm-4 col-md-offset-4">
-      <div class="field">
-        <%= f.label :password %>
-        <% if @minimum_password_length %>
-        <em>(<%= @minimum_password_length %> characters minimum)</em>
-        <% end %><br />
-        <%= f.password_field :password, autocomplete: "off" %>
-      </div>
+      <%= f.label :password %>
+      <% if @minimum_password_length %>
+      <em>(<%= @minimum_password_length %> characters minimum)</em>
+      <% end %><br />
+      <%= f.password_field :password, autocomplete: "off" %>
     </div>
   </div>
 
   <div class="form-group">
     <div class="col-sm-4 col-md-offset-4">
-      <div class="field">
-        <%= f.label :password_confirmation %><br />
-        <%= f.password_field :password_confirmation, autocomplete: "off" %>
-      </div>
+      <%= f.label :password_confirmation %><br />
+      <%= f.password_field :password_confirmation, autocomplete: "off" %>
     </div>
   </div>
 
   <div class="row">
     <div class="col-sm-4 col-md-offset-4">
-      <div class="actions">
-        <%= f.submit "Sign up" %>
-      </div>
+      <%= f.submit "Sign up" %>
     </div>  
   </div>
   <% end %>
 
   <div class="row">
-  <%= render "devise/shared/links" %>
+    <%= render "devise/shared/links" %>
   </div>
-  
+
 </div>
