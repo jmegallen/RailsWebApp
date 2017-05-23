@@ -1,14 +1,14 @@
 <style>
 
 	body {
-	    padding: 0;
-	    margin: 0;
+			padding: 0;
+			margin: 0;
 	}
 
 	html { -webkit-text-size-adjust:none; -ms-text-size-adjust: none;}
 
 	@media only screen and (max-device-width: 680px), only screen and (max-width: 680px) {
-	  *[class="table_width_100"] {
+		*[class="table_width_100"] {
 			width: 96% !important;
 		}
 		*[class="border-right_mob"] {
@@ -47,98 +47,98 @@
 
 <div align="center" class="notification" id="mailsub">
 
-  <table border="0" cellpadding="0" cellspacing="0" style="min-width: 300px;" style="max-width: 680px;" width="100%">
+	<table border="0" cellpadding="0" cellspacing="0" style="min-width: 300px;" style="max-width: 680px;" width="100%">
 
-  	<!--header -->
-    <tr>
-      <td align="center" bgcolor="#EFF3F8">
-      	<div style="height: 50px; line-height: 50px; font-size: 10px;"></div>
-        <table border="0" cellpadding="0" cellspacing="0" class="table_width_100" style="max-width: 680px; min-width: 300px;" width="100%">
-          <tr>
-            <td align="center">
-              <%= image_tag("https://upload.wikimedia.org/wikipedia/commons/4/41/Left_side_of_Flying_Pigeon.jpg", class:"img-responsive", width:"360", alt:"Ontytung", border:"0") %>
-            </td>
-          </tr>
-        </table>
-      </td>
-    </tr>
+		<!--header -->
+		<tr>
+			<td align="center" bgcolor="#EFF3F8">
+				<div style="height: 50px; line-height: 50px; font-size: 10px;"></div>
+				<table border="0" cellpadding="0" cellspacing="0" class="table_width_100" style="max-width: 680px; min-width: 300px;" width="100%">
+					<tr>
+						<td align="center">
+							<%= image_tag("https://upload.wikimedia.org/wikipedia/commons/4/41/Left_side_of_Flying_Pigeon.jpg", class:"img-responsive", width:"360", alt:"Ontytung", border:"0") %>
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
 
-    <!--content 1 -->
-    <tr>
-      <td align="center" bgcolor="#FBFCFD">
-        <table border="0" cellpadding="0" cellspacing="0" width="90%">
-          <tr>
-            <td align="center">
-              <!-- padding -->
-              <div style="height: 60px; line-height: 60px; font-size: 10px;"></div>
-              <div style="line-height: 44px;">
-                <font color="#57697E" face="" size="5" style="font-size: 34px;">
+		<!--content 1 -->
+		<tr>
+			<td align="center" bgcolor="#FBFCFD">
+				<table border="0" cellpadding="0" cellspacing="0" width="90%">
+					<tr>
+						<td align="center">
+							<!-- padding -->
+							<div style="height: 60px; line-height: 60px; font-size: 10px;"></div>
+							<div style="line-height: 44px;">
+								<font color="#57697E" face="" size="5" style="font-size: 34px;">
 									<span style="font-family:">
 										Welcome Berlin Bikes :)
 									</span>
 								</font>
-              </div>
-              <!-- padding -->
-              <div style="height: 40px; line-height: 40px; font-size: 10px;"></div>
-            </td>
-          </tr>
-          <tr>
-            <td align="center">
-              <div style="line-height: 24px;">
-                <font color="#57697E" face="" size="4" style="font-size: 15px;">
+							</div>
+							<!-- padding -->
+							<div style="height: 40px; line-height: 40px; font-size: 10px;"></div>
+						</td>
+					</tr>
+					<tr>
+						<td align="center">
+							<div style="line-height: 24px;">
+								<font color="#57697E" face="" size="4" style="font-size: 15px;">
 									<span style="font-family:">
 										Dear <%= @name %>
 									</span>
 								</font>
-              </div>
-              <!-- padding -->
-              <div style="height: 40px; line-height: 40px; font-size: 10px;"></div>
-            </td>
-          </tr>
-          <tr>
-            <td align="center">
-              <div style="line-height: 24px;">
-                <font color="#57697E" face="" size="4" style="font-size: 15px;">
+							</div>
+							<!-- padding -->
+							<div style="height: 40px; line-height: 40px; font-size: 10px;"></div>
+						</td>
+					</tr>
+					<tr>
+						<td align="center">
+							<div style="line-height: 24px;">
+								<font color="#57697E" face="" size="4" style="font-size: 15px;">
 									<span style="font-family:">
 										We will send you a voucher for a discounted bike very soon......
 									</span>
 								</font>
-              </div>
+							</div>
 							<!-- padding -->
-              <div style="height: 40px; line-height: 40px; font-size: 10px;"></div>
-            </td>
-          </tr>
-          <tr>
-            <td align="center">
-              <div style="line-height: 24px;">
-              	<%= link_to "Bike Shop", root_path , class: "btn btn-danger block-center", target:"_blank" %>
-                <%= link_to "Bike Shop", "https://jmebikeshop.herokuapp.com/" , class: "btn btn-danger block-center", target:"_blank" %>
-              </div>
-              <!-- padding -->
-              <div style="height: 60px; line-height: 60px; font-size: 10px;">
-              </div>
-            </td>
-          </tr>
-        </table>
-      </td>
-    </tr><!--content 1 END-->
+							<div style="height: 40px; line-height: 40px; font-size: 10px;"></div>
+						</td>
+					</tr>
+					<tr>
+						<td align="center">
+							<div style="line-height: 24px;">
+								<%= link_to "Bike Shop", root_path , class: "btn btn-danger block-center", target:"_blank" %>
+								<%= link_to "Bike Shop", "https://jmebikeshop.herokuapp.com/" , class: "btn btn-danger block-center", target:"_blank" %>
+							</div>
+							<!-- padding -->
+							<div style="height: 60px; line-height: 60px; font-size: 10px;">
+							</div>
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr><!--content 1 END-->
 
-    <!--footer -->
-    <tr>
-      <td align="center" bgcolor="#FFFFFF" class="iage_footer">
-        <table border="0" cellpadding="0" cellspacing="0" width="100%">
-          <tr>
-            <td align="center" style="padding:20px;flaot:left;width:100%; text-align:center;">
-            	<font color="#96A5B5" face="" size="3" style="font-size: 13px;">
-            		<span style="font-family:">
-            			2017 Ontytung
-            		</span>
-            	</font>
-            </td>
-          </tr>
-        </table>
-      </td>
-    </tr><!--footer END-->
+		<!--footer -->
+		<tr>
+			<td align="center" bgcolor="#FFFFFF" class="iage_footer">
+				<table border="0" cellpadding="0" cellspacing="0" width="100%">
+					<tr>
+						<td align="center" style="padding:20px;flaot:left;width:100%; text-align:center;">
+							<font color="#96A5B5" face="" size="3" style="font-size: 13px;">
+								<span style="font-family:">
+									2017 Ontytung
+								</span>
+							</font>
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr><!--footer END-->
 
-  </table>
+	</table>
 </div>
