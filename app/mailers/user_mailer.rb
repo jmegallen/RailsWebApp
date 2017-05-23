@@ -16,10 +16,10 @@ class UserMailer < ApplicationMailer
 	end
 
 	def welcome_message(email, name)
-	@message = message
-	mail(:from => 'jmegallen@gmail.com',
-			 :to => email,
-		 	 :subject => "Welcome to world of Berlin bikes.....")
+		@message = message
+		mail(:from => 'jmegallen@gmail.com',
+				 :to => email,
+			 	 :subject => "Welcome to world of Berlin bikes.....")
 	end
 
 	def welcome_mailer
