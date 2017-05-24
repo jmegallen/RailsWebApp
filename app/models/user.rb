@@ -1,7 +1,13 @@
-class User < ApplicationRecord
+class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
+  # :lockable, :timeoutable, :confirmable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-	has_many :orders
+  has_many :orders
+
+  after_create :welcome_mail
+  def welcome_mail
+    UserMailer.welcome_mail(self).deliver
+  end
+
 end
