@@ -6,6 +6,7 @@ class UserMailerPreview < ActionMailer::Preview
   end
 
   def welcome_message
-    UserMailer.welcome_mail("john@example.com")
+    UserMailer.welcome_mail(:to => 'jamie1882@ymail.com',
+                            :subject => "Welcome to #{@appname}!")
   end
 end

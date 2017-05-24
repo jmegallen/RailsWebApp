@@ -3,12 +3,11 @@ class User < ActiveRecord::Base
   # :lockable, :timeoutable, :confirmable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-	has_many :orders
+  has_many :orders
 
-  # after:create :welcome_mail
-  # def welcome_mail
-  #   Usermailer.welcome_mail(self).deliver
-  #   # redirect_to root_path, alert: "Thank you for joining us"
-  # end  
+  after_create :welcome_mail
+  def welcome_mail
+    UserMailer.welcome_mail(self).deliver
+  end
 
 end
