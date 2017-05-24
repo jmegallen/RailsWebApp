@@ -6,6 +6,6 @@ class UserMailerPreview < ActionMailer::Preview
   end
 
   def welcome_message
-    UserMailer.welcome_mail()
+    UserMailer.welcome_mail("john@example.com")
   end
 end
