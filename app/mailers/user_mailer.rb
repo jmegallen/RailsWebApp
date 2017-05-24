@@ -22,11 +22,11 @@ class UserMailer < ApplicationMailer
           :name => "Jimmi")
   end
   
-  after:create
-  def welcome_message
-    @name = params[:name]
-    @email = params[:email]
-    UserMailer.welcome_mail(@email, @name).deliver_now
-  end
+  # after:create
+  # def welcome_message
+  #   @name = params[:name]
+  #   @email = params[:email]
+  #   UserMailer.welcome_mail(@email, @name).deliver_now
+  # end
 
 end
