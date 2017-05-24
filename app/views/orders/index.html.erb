@@ -1,0 +1,26 @@
+<h1>Orders</h1>
+
+<% @orders.each do |order| %>
+
+  <% @products.each do |product| %>
+
+  <% if order.product_id == product.id %>
+  <div class="row order_row">
+    <div class="col-xs-12 col-sm-6 products">
+      <%= image_tag(product.image_url, class: "img-responsive") %>
+    </div>
+  </div>
+  <div class="row order_row">
+    <div class="col-xs-12 col-sm-6 products">
+      <ul>
+        <li>Order Id: <%= order.id%> </li>
+        <li>Product Id: <%= order.product_id %> </li>
+        <li>Product Name: <%= product.name %> </li>
+        <li>Product Color: <%= product.colour %> </li>
+        <li>Product Color: <%= product.price %> </li>
+      </ul>
+    </div>
+  </div>  
+    <% end %> 
+  <% end %> 
+<% end %> 
