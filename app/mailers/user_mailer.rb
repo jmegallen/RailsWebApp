@@ -15,7 +15,7 @@ class UserMailer < ApplicationMailer
     UserMailer.contact_form(@email, @name, @message).deliver_now
   end
 
-  def welcome_mail(user)
+  def welcome(user)
     @appname = "Berlin Bikes"
     mail( :to => 'jmegallen@gmail.com',
           :subject => "Welcome to #{@appname}!",
