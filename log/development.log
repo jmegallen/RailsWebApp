@@ -21767,3 +21767,664 @@ Processing by StaticPagesController#landing_page as HTML
 Completed 200 OK in 62ms (Views: 50.2ms | ActiveRecord: 3.7ms)
 
 
+Started GET "/" for 127.0.0.1 at 2017-05-24 10:54:16 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (12.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StaticPagesController#landing_page as HTML
+  Rendering static_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (12.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT $1[0m  [["LIMIT", 3]]
+  Rendered static_pages/landing_page.html.erb within layouts/application (47.0ms)
+  [1m[36mUser Load (36.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+Completed 200 OK in 591ms (Views: 496.1ms | ActiveRecord: 72.2ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2017-05-24 10:54:19 +0200
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"+gNDq+6vIJZradv8bMIytxpXCqNksZMzVEPyR4teGbGqvtaAfVILp41aQPdViCDrLqRy7iu4Kx1QkMzkSvllPw=="}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 24ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-05-24 10:54:20 +0200
+Processing by StaticPagesController#landing_page as HTML
+  Rendering static_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT $1[0m  [["LIMIT", 3]]
+  Rendered static_pages/landing_page.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 46ms (Views: 43.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2017-05-24 10:54:23 +0200
+  
+ActionController::RoutingError (uninitialized constant Users):
+  
+activesupport (5.0.3) lib/active_support/inflector/methods.rb:268:in `const_get'
+activesupport (5.0.3) lib/active_support/inflector/methods.rb:268:in `block in constantize'
+activesupport (5.0.3) lib/active_support/inflector/methods.rb:266:in `each'
+activesupport (5.0.3) lib/active_support/inflector/methods.rb:266:in `inject'
+activesupport (5.0.3) lib/active_support/inflector/methods.rb:266:in `constantize'
+actionpack (5.0.3) lib/action_dispatch/http/request.rb:81:in `controller_class'
+actionpack (5.0.3) lib/action_dispatch/routing/route_set.rb:44:in `controller'
+actionpack (5.0.3) lib/action_dispatch/routing/route_set.rb:30:in `serve'
+actionpack (5.0.3) lib/action_dispatch/routing/mapper.rb:16:in `block in <class:Constraints>'
+actionpack (5.0.3) lib/action_dispatch/routing/mapper.rb:46:in `serve'
+actionpack (5.0.3) lib/action_dispatch/journey/router.rb:39:in `block in serve'
+actionpack (5.0.3) lib/action_dispatch/journey/router.rb:26:in `each'
+actionpack (5.0.3) lib/action_dispatch/journey/router.rb:26:in `serve'
+actionpack (5.0.3) lib/action_dispatch/routing/route_set.rb:725:in `call'
+warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+warden (1.2.7) lib/warden/manager.rb:35:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.0.3) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.0.3) lib/active_record/migration.rb:553:in `call'
+actionpack (5.0.3) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.3) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.3) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.3) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.3) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.3) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.3) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.3) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.3) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.3) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.3) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered collection of /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb [41 times] (21.7ms)
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (12.1ms)
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (148.2ms)
+Started GET "/users/sign_up" for 127.0.0.1 at 2017-05-24 10:57:03 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.5ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (26.7ms)
+Completed 200 OK in 118ms (Views: 73.6ms | ActiveRecord: 6.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-05-24 11:05:43 +0200
+Processing by StaticPagesController#landing_page as HTML
+  Rendering static_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (6.6ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT $1[0m  [["LIMIT", 3]]
+  Rendered static_pages/landing_page.html.erb within layouts/application (53.4ms)
+Completed 200 OK in 142ms (Views: 107.4ms | ActiveRecord: 19.8ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2017-05-24 11:05:46 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.9ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (19.8ms)
+Completed 200 OK in 111ms (Views: 75.1ms | ActiveRecord: 4.8ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-05-24 11:06:12 +0200
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"j4JWgUdpZXzJiC+uEnYhfxS8UIu3m40kQ1GGCyzWg/yCvNTHiw+Pb3b6H4GZpIVhvwzh4OibeEhMAAMmlSUtGA==", "user"=>{"first_name"=>"Tom", "last_name"=>"Galli", "email"=>"test@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+Unpermitted parameters: first_name, last_name
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (12.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (19.3ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "email", "encrypted_password") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2017-05-24 09:06:12.897265"], ["updated_at", "2017-05-24 09:06:12.897265"], ["email", "test@gmail.com"], ["encrypted_password", "$2a$11$z8LgtG.z/F1cKp9mfp69oOOEdXV9FdEopO/9vv8sFrXTWVukZEJfO"]]
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.8ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "sign_in_count" = $2, "current_sign_in_at" = $3, "last_sign_in_at" = $4, "current_sign_in_ip" = $5, "last_sign_in_ip" = $6 WHERE "users"."id" = $7[0m  [["updated_at", "2017-05-24 09:06:12.922410"], ["sign_in_count", 1], ["current_sign_in_at", "2017-05-24 09:06:12.921509"], ["last_sign_in_at", "2017-05-24 09:06:12.921509"], ["current_sign_in_ip", "127.0.0.1/32"], ["last_sign_in_ip", "127.0.0.1/32"], ["id", 10]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 305ms (ActiveRecord: 37.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-05-24 11:06:12 +0200
+Processing by StaticPagesController#landing_page as HTML
+  Rendering static_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT $1[0m  [["LIMIT", 3]]
+  Rendered static_pages/landing_page.html.erb within layouts/application (2.7ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+Completed 200 OK in 78ms (Views: 74.3ms | ActiveRecord: 0.8ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2017-05-24 11:07:06 +0200
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"36lv7IrnZkV/PU6rKeP8giz/X/xYKr2OqTQ/pU5nSkDSl+2qRoGMVsBPfoSiMVich0/ulwcqSOKmZbqI95TkpA=="}
+  [1m[36mUser Load (6.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 25ms (ActiveRecord: 7.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-05-24 11:07:06 +0200
+Processing by StaticPagesController#landing_page as HTML
+  Rendering static_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT $1[0m  [["LIMIT", 3]]
+  Rendered static_pages/landing_page.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 68ms (Views: 61.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/static_pages/contact" for 127.0.0.1 at 2017-05-24 11:16:49 +0200
+Processing by StaticPagesController#contact as HTML
+  Rendering static_pages/contact.html.erb within layouts/application
+  Rendered static_pages/contact.html.erb within layouts/application (12.5ms)
+Completed 200 OK in 121ms (Views: 115.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2017-05-24 11:16:52 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (5.5ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (28.5ms)
+Completed 200 OK in 189ms (Views: 128.4ms | ActiveRecord: 34.9ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-05-24 11:17:11 +0200
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uExpF8MjvbsYo85TPYF6V/LvTAR/t6o3xGdba0NhOmf5IMVR8Jnr0V1tCDe7sKH+vexjwqHs4BocB8YT7qQeFg==", "user"=>{"first_name"=>"Gee", "last_name"=>"Wizz", "email"=>"gee@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+Unpermitted parameters: first_name, last_name
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (13.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "gee@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "email", "encrypted_password") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2017-05-24 09:17:12.181489"], ["updated_at", "2017-05-24 09:17:12.181489"], ["email", "gee@gmail.com"], ["encrypted_password", "$2a$11$zsRVfnicQAX26VZlSJl/Ie0rWLsJSnoVxoQiIfM87e826edfPbbv2"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (3.3ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "sign_in_count" = $2, "current_sign_in_at" = $3, "last_sign_in_at" = $4, "current_sign_in_ip" = $5, "last_sign_in_ip" = $6 WHERE "users"."id" = $7[0m  [["updated_at", "2017-05-24 09:17:12.188442"], ["sign_in_count", 1], ["current_sign_in_at", "2017-05-24 09:17:12.186705"], ["last_sign_in_at", "2017-05-24 09:17:12.186705"], ["current_sign_in_ip", "127.0.0.1/32"], ["last_sign_in_ip", "127.0.0.1/32"], ["id", 11]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 254ms (ActiveRecord: 18.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-05-24 11:17:12 +0200
+Processing by StaticPagesController#landing_page as HTML
+  Rendering static_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT $1[0m  [["LIMIT", 3]]
+  Rendered static_pages/landing_page.html.erb within layouts/application (34.0ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+Completed 200 OK in 112ms (Views: 92.3ms | ActiveRecord: 10.8ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2017-05-24 11:20:02 +0200
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"ou6jDu389Ygh/nd5r22KqMRLmzdnULUJu7XNymZOuLjjgg9I3kaj4mQwsR0pXFEBi0i08bkL/yRj1VCyy4ucyQ=="}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 52ms (ActiveRecord: 15.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-05-24 11:20:02 +0200
+Processing by StaticPagesController#landing_page as HTML
+  Rendering static_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT $1[0m  [["LIMIT", 3]]
+  Rendered static_pages/landing_page.html.erb within layouts/application (23.5ms)
+Completed 200 OK in 79ms (Views: 62.0ms | ActiveRecord: 8.5ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2017-05-24 11:20:04 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.7ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (14.9ms)
+Completed 200 OK in 68ms (Views: 66.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-05-24 11:20:33 +0200
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AWYSqLd1WCzDNfuXiRepykMfDhYq2dK4hY1joj+ov7TixhCi2XJggjii6EjCQwWqlWI/PEovwaKKGYUiz5e1Pg==", "user"=>{"first_name"=>"Baby", "last_name"=>"Tee", "email"=>"bt@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+Unpermitted parameters: first_name, last_name
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "bt@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "email", "encrypted_password") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2017-05-24 09:20:33.290588"], ["updated_at", "2017-05-24 09:20:33.290588"], ["email", "bt@gmail.com"], ["encrypted_password", "$2a$11$muE8tF0PFiGfpneyPl9P3.KmZ7kQGV3W5lNoj/RE3wflpE8lWtvca"]]
+  [1m[35m (8.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.9ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "sign_in_count" = $2, "current_sign_in_at" = $3, "last_sign_in_at" = $4, "current_sign_in_ip" = $5, "last_sign_in_ip" = $6 WHERE "users"."id" = $7[0m  [["updated_at", "2017-05-24 09:20:33.303692"], ["sign_in_count", 1], ["current_sign_in_at", "2017-05-24 09:20:33.302914"], ["last_sign_in_at", "2017-05-24 09:20:33.302914"], ["current_sign_in_ip", "127.0.0.1/32"], ["last_sign_in_ip", "127.0.0.1/32"], ["id", 12]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 231ms (ActiveRecord: 13.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-05-24 11:20:33 +0200
+Processing by StaticPagesController#landing_page as HTML
+  Rendering static_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT $1[0m  [["LIMIT", 3]]
+  Rendered static_pages/landing_page.html.erb within layouts/application (3.7ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+Completed 200 OK in 50ms (Views: 46.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/static_pages/contact" for 127.0.0.1 at 2017-05-24 11:22:07 +0200
+Processing by StaticPagesController#contact as HTML
+  Rendering static_pages/contact.html.erb within layouts/application
+  Rendered static_pages/contact.html.erb within layouts/application (2.6ms)
+Started GET "/static_pages/contact" for 127.0.0.1 at 2017-05-24 11:22:08 +0200
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+Completed 200 OK in 78ms (Views: 74.7ms | ActiveRecord: 0.5ms)
+
+
+Processing by StaticPagesController#contact as HTML
+  Rendering static_pages/contact.html.erb within layouts/application
+  Rendered static_pages/contact.html.erb within layouts/application (1.8ms)
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+Completed 200 OK in 60ms (Views: 55.9ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/static_pages/thank_you" for 127.0.0.1 at 2017-05-24 11:22:26 +0200
+Processing by StaticPagesController#thank_you as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3IF04PtmuilOqeelaQyiVIc6dd1hSZUNxAOjw3ff2IU/IXbqlWGCh7U+9HoiWA40UUdE9wG/hhfLl0VDh+DSDw==", "name"=>"Jay", "phone"=>"Gee", "email"=>"jay@gmail.com", "message"=>"badsdd", "commit"=>"Submit"}
+  Rendering user_mailer/contact_form.html.erb within layouts/mailer
+  Rendered user_mailer/contact_form.html.erb within layouts/mailer (1.2ms)
+UserMailer#contact_form: processed outbound mail in 418.6ms
+Sent mail to jmegallen@gmail.com (588.7ms)
+Date: Wed, 24 May 2017 11:22:27 +0200
+From: jay@gmail.com
+To: jmegallen@gmail.com
+Message-ID: <592550d36663f_70553fe0bf2499f814523@localhost.mail>
+Subject: A new contact form message from Jay
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <style>
+
+  body {
+      padding: 0;
+      margin: 0;
+  }
+
+  html { -webkit-text-size-adjust:none; -ms-text-size-adjust: none;}
+
+  @media only screen and (max-device-width: 680px), only screen and (max-width: 680px) { 
+    *[class="table_width_100"] {
+      width: 96% !important;
+    }
+    *[class="border-right_mob"] {
+      border-right: 1px solid #dddddd;
+    }
+    *[class="mob_100"] {
+      width: 100% !important;
+    }
+    *[class="mob_center"] {
+      text-align: center !important;
+    }
+    *[class="mob_center_bl"] {
+      float: none !important;
+      display: block !important;
+      margin: 0px auto;
+    } 
+    .iage_footer a {
+      text-decoration: none;
+      color: #929ca8;
+    }
+    img.mob_display_none {
+      width: 0px !important;
+      height: 0px !important;
+      display: none !important;
+    }
+    img.mob_width_50 {
+      width: 40% !important;
+      height: auto !important;
+    }
+  }
+  .table_width_100 {
+    width: 680px;
+  }
+
+</style>
+
+<div align="center" class="notification" id="mailsub">
+
+  <table border="0" cellpadding="0" cellspacing="0" style="min-width: 300px;" style="max-width: 680px;" width="100%">
+
+    <!--header -->
+    <tr>
+      <td align="center" bgcolor="#EFF3F8">
+        <div style="height: 50px; line-height: 50px; font-size: 10px;"></div>
+        <table border="0" cellpadding="0" cellspacing="0" class="table_width_100" style="max-width: 680px; min-width: 300px;" width="100%">
+          <tr>
+            <td align="center">
+              <img class="img-responsive" width="360" alt="Ontytung" border="0" src="https://upload.wikimedia.org/wikipedia/commons/4/41/Left_side_of_Flying_Pigeon.jpg" />
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>      
+
+    <!--content 1 -->
+    <tr>
+      <td align="center" bgcolor="#FBFCFD">
+        <table border="0" cellpadding="0" cellspacing="0" width="90%">
+          <tr>
+            <td align="center">
+              <!-- padding -->
+              <div style="height: 60px; line-height: 60px; font-size: 10px;"></div>
+              <div style="line-height: 44px;">
+                <font color="#57697E" face="" size="5" style="font-size: 34px;"><span style="font-family:">Thanks for the info....</span></font>
+              </div>
+              <!-- padding -->
+              <div style="height: 40px; line-height: 40px; font-size: 10px;"></div>
+            </td>
+          </tr>
+          <tr>
+            <td align="center">
+              <div style="line-height: 24px;">
+                <font color="#57697E" face="" size="4" style="font-size: 15px;"><span style="font-family:">We will contact you asap, with a response to your query.</span></font>
+              </div>
+              <!-- padding -->
+              <div style="height: 40px; line-height: 40px; font-size: 10px;"></div>
+            </td>
+          </tr>
+          <tr>
+            <td align="center">
+              <div style="line-height: 24px;">
+                <font color="#57697E" face="" size="4" style="font-size: 15px;"><span style="font-family:">badsdd</span></font>
+              </div><!-- padding -->
+              <div style="height: 40px; line-height: 40px; font-size: 10px;"></div>
+            </td>
+          </tr>
+          <tr>
+            <td align="center">
+              <div style="line-height: 24px;">
+                <a class="btn btn-danger block-center" target="_blank" href="https://jmebikeshop.herokuapp.com/">Bike Shop</a>
+              </div>
+              <!-- padding -->
+              <div style="height: 60px; line-height: 60px; font-size: 10px;">
+              </div>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr><!--content 1 END-->
+
+    <!--footer -->
+    <tr>
+      <td align="center" bgcolor="#FFFFFF" class="iage_footer">
+        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+          <tr>
+            <td align="center" style="padding:20px;flaot:left;width:100%; text-align:center;">
+              <font color="#96A5B5" face="" size="3" style="font-size: 13px;">
+                <span style="font-family:">
+                  2017 Ontytung
+                </span>
+              </font>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr><!--footer END-->
+    
+  </table>
+</div>
+  </body>
+</html>
+
+  Rendering static_pages/thank_you.html.erb within layouts/application
+  Rendered static_pages/thank_you.html.erb within layouts/application (0.8ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+Completed 200 OK in 1108ms (Views: 37.8ms | ActiveRecord: 1.0ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2017-05-24 11:22:56 +0200
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2017-05-24 11:22:56 +0200
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"eTAgi6SeddQvIybAS/SWf8BysLgkx6YcAa2xBtJOfRWakCKByplNetS0NR8AoDofFg+BkkQxtQYOOVeGInF3nw=="}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 58ms (ActiveRecord: 1.7ms)
+
+
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"eTAgi6SeddQvIybAS/SWf8BysLgkx6YcAa2xBtJOfRWakCKByplNetS0NR8AoDofFg+BkkQxtQYOOVeGInF3nw=="}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 24ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-05-24 11:22:56 +0200
+Processing by StaticPagesController#landing_page as HTML
+  Rendering static_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (1.7ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT $1[0m  [["LIMIT", 3]]
+  Rendered static_pages/landing_page.html.erb within layouts/application (34.8ms)
+Completed 200 OK in 98ms (Views: 64.4ms | ActiveRecord: 23.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2017-05-24 11:22:58 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.5ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (43.5ms)
+Completed 200 OK in 81ms (Views: 79.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-05-24 11:23:16 +0200
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"R4KHv0P2OqYl2OW76U23+p33xgN+RDFskNM5FdEZx4W/lO0mTvPIglb+P5SSVtCvbyGpM7700oan7FtzUylPWA==", "user"=>{"first_name"=>"Silly", "last_name"=>"Bean", "email"=>"silly@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+Unpermitted parameters: first_name, last_name
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "silly@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (11.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "email", "encrypted_password") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2017-05-24 09:23:17.050371"], ["updated_at", "2017-05-24 09:23:17.050371"], ["email", "silly@gmail.com"], ["encrypted_password", "$2a$11$JBsPzZFecZYTeBbokl9Y1uXePtECs8O9kaMQ.X6ukiVoiHrGCOqJm"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.6ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "sign_in_count" = $2, "current_sign_in_at" = $3, "last_sign_in_at" = $4, "current_sign_in_ip" = $5, "last_sign_in_ip" = $6 WHERE "users"."id" = $7[0m  [["updated_at", "2017-05-24 09:23:17.066047"], ["sign_in_count", 1], ["current_sign_in_at", "2017-05-24 09:23:17.065035"], ["last_sign_in_at", "2017-05-24 09:23:17.065035"], ["current_sign_in_ip", "127.0.0.1/32"], ["last_sign_in_ip", "127.0.0.1/32"], ["id", 13]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 222ms (ActiveRecord: 16.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-05-24 11:23:17 +0200
+Processing by StaticPagesController#landing_page as HTML
+  Rendering static_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT $1[0m  [["LIMIT", 3]]
+  Rendered static_pages/landing_page.html.erb within layouts/application (2.8ms)
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 200 OK in 37ms (Views: 33.3ms | ActiveRecord: 1.6ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2017-05-24 11:27:07 +0200
+  
+SyntaxError (/Users/JmeG/Desktop/RailsWebApp/app/models/user.rb:8: syntax error, unexpected ':', expecting keyword_end
+  after:create :welcome_mail
+                ^):
+  
+app/models/user.rb:8: syntax error, unexpected ':', expecting keyword_end
+config/routes.rb:3:in `block in <top (required)>'
+config/routes.rb:1:in `<top (required)>'
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (10.2ms)
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.7ms)
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (101.4ms)
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2017-05-24 11:27:40 +0200
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"eqyfMyGHP5k9BL1PrQROIg4a8ul7x7i9+QJgqABCsqmCuvWqLILNvU4iZ2DWHyl3/Myd2bt3W1fOPQLOgnI6dA=="}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 48ms (ActiveRecord: 8.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-05-24 11:27:40 +0200
+Processing by StaticPagesController#landing_page as HTML
+  Rendering static_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT $1[0m  [["LIMIT", 3]]
+  Rendered static_pages/landing_page.html.erb within layouts/application (18.7ms)
+Completed 200 OK in 81ms (Views: 65.3ms | ActiveRecord: 6.5ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2017-05-24 11:27:43 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.4ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 45ms (Views: 43.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-05-24 11:28:00 +0200
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YmS9//ckhupj/3b2OfALw7ONVlDyUMOjjtEwAVNJWvM/dBOBfvaww74TULV7cqbwSBN0zJYzXgtAF0xAIk9KBw==", "user"=>{"first_name"=>"Hippy", "last_name"=>"Man", "email"=>"hip@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+Unpermitted parameters: first_name, last_name
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hip@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "email", "encrypted_password") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2017-05-24 09:28:00.673002"], ["updated_at", "2017-05-24 09:28:00.673002"], ["email", "hip@gmail.com"], ["encrypted_password", "$2a$11$65IjujSFPhF76mkQLDiBW.nfQEcXkW5g93AzZaAd/KFf8C7a4cJAa"]]
+  [1m[35m (7.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "sign_in_count" = $2, "current_sign_in_at" = $3, "last_sign_in_at" = $4, "current_sign_in_ip" = $5, "last_sign_in_ip" = $6 WHERE "users"."id" = $7[0m  [["updated_at", "2017-05-24 09:28:00.685437"], ["sign_in_count", 1], ["current_sign_in_at", "2017-05-24 09:28:00.684479"], ["last_sign_in_at", "2017-05-24 09:28:00.684479"], ["current_sign_in_ip", "127.0.0.1/32"], ["last_sign_in_ip", "127.0.0.1/32"], ["id", 14]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 234ms (ActiveRecord: 10.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-05-24 11:28:00 +0200
+Processing by StaticPagesController#landing_page as HTML
+  Rendering static_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT $1[0m  [["LIMIT", 3]]
+  Rendered static_pages/landing_page.html.erb within layouts/application (2.3ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+Completed 200 OK in 43ms (Views: 40.0ms | ActiveRecord: 0.8ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2017-05-24 11:40:34 +0200
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"kwMo7AesyZI9q2aFiaPSxEV1zZEmYFoDM8qiAJSzMlHOE4aSjn7/u+BHQMbLIX/3vuvvDUIDx6v9DN5B5bUipQ=="}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 45ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-05-24 11:40:34 +0200
+Processing by StaticPagesController#landing_page as HTML
+  Rendering static_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (1.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT $1[0m  [["LIMIT", 3]]
+  Rendered static_pages/landing_page.html.erb within layouts/application (25.5ms)
+Completed 200 OK in 98ms (Views: 75.2ms | ActiveRecord: 9.7ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2017-05-24 11:40:37 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.4ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 50ms (Views: 47.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-05-24 11:40:54 +0200
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1oQIo6DeCfV1DaxFS7L+J887ZDB9cmMUnt945OhJibgUo8TKnOwQF180kf+CRnUxIldNkRfIwXV90FMtx86fDQ==", "user"=>{"first_name"=>"J", "last_name"=>"g", "email"=>"jg@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+Unpermitted parameters: first_name, last_name
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jg@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "email", "encrypted_password") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2017-05-24 09:40:55.123752"], ["updated_at", "2017-05-24 09:40:55.123752"], ["email", "jg@gmail.com"], ["encrypted_password", "$2a$11$0uYKhRozUFA9l0TsmFbpY.K24z7ultb/8pb/n8dXw14mxsl5to0V2"]]
+  [1m[35m (8.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.9ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "sign_in_count" = $2, "current_sign_in_at" = $3, "last_sign_in_at" = $4, "current_sign_in_ip" = $5, "last_sign_in_ip" = $6 WHERE "users"."id" = $7[0m  [["updated_at", "2017-05-24 09:40:55.136799"], ["sign_in_count", 1], ["current_sign_in_at", "2017-05-24 09:40:55.135816"], ["last_sign_in_at", "2017-05-24 09:40:55.135816"], ["current_sign_in_ip", "127.0.0.1/32"], ["last_sign_in_ip", "127.0.0.1/32"], ["id", 15]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 225ms (ActiveRecord: 12.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-05-24 11:40:55 +0200
+Processing by StaticPagesController#landing_page as HTML
+  Rendering static_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT $1[0m  [["LIMIT", 3]]
+  Rendered static_pages/landing_page.html.erb within layouts/application (2.4ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+Completed 200 OK in 44ms (Views: 40.5ms | ActiveRecord: 1.5ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2017-05-24 11:42:59 +0200
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"IwG9uLFXkTggs4K/COIYJxhVZWOPyIafwgFBH/SBpzXhJnHRjWWI2gqKvwXBFpMx9TlMwuVyJP4hDmrW2waxgA=="}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 39ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-05-24 11:42:59 +0200
+Processing by StaticPagesController#landing_page as HTML
+  Rendering static_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT $1[0m  [["LIMIT", 3]]
+  Rendered static_pages/landing_page.html.erb within layouts/application (34.9ms)
+Completed 200 OK in 123ms (Views: 94.2ms | ActiveRecord: 17.6ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2017-05-24 11:43:01 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.9ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (55.6ms)
+Completed 200 OK in 117ms (Views: 113.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-05-24 11:43:25 +0200
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"elDchxknh2b0i2zlD48S9+vCcOa2lRfeweKOzM10DxX3Z4Y6CJoR7o4hpla8/vgWV3ieBdWIpuSPWvVF1CS8nQ==", "user"=>{"first_name"=>"t", "last_name"=>"g", "email"=>"tg@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+Unpermitted parameters: first_name, last_name
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "tg@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "email", "encrypted_password") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2017-05-24 09:43:26.043685"], ["updated_at", "2017-05-24 09:43:26.043685"], ["email", "tg@gmail.com"], ["encrypted_password", "$2a$11$xSZymvODlCaQ.yuCXuBobeEmt4L4To/dYYR3PqW9hRIqqA5mjsr1y"]]
+  [1m[35m (9.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "sign_in_count" = $2, "current_sign_in_at" = $3, "last_sign_in_at" = $4, "current_sign_in_ip" = $5, "last_sign_in_ip" = $6 WHERE "users"."id" = $7[0m  [["updated_at", "2017-05-24 09:43:26.058193"], ["sign_in_count", 1], ["current_sign_in_at", "2017-05-24 09:43:26.057242"], ["last_sign_in_at", "2017-05-24 09:43:26.057242"], ["current_sign_in_ip", "127.0.0.1/32"], ["last_sign_in_ip", "127.0.0.1/32"], ["id", 16]]
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 247ms (ActiveRecord: 17.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-05-24 11:43:26 +0200
+Processing by StaticPagesController#landing_page as HTML
+  Rendering static_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT $1[0m  [["LIMIT", 3]]
+  Rendered static_pages/landing_page.html.erb within layouts/application (3.1ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+Completed 200 OK in 46ms (Views: 42.5ms | ActiveRecord: 1.3ms)
+
+
