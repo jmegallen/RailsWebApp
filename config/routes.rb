@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   
   resources :users
 
-  resources :products
+  resources :products do
+    resources :comments
+  end
 
   resources :orders, only: [:index, :show, :create, :destroy]
   
