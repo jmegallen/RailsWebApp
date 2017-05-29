@@ -27757,3 +27757,177 @@ Processing by ProductsController#show as HTML
 Completed 200 OK in 94ms (Views: 89.0ms | ActiveRecord: 1.6ms)
 
 
+Started GET "/static_pages/contact" for 127.0.0.1 at 2017-05-29 04:41:34 +0200
+Processing by StaticPagesController#contact as HTML
+  Rendering static_pages/contact.html.erb within layouts/application
+  Rendered static_pages/contact.html.erb within layouts/application (2.8ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 61ms (Views: 57.7ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/static_pages/thank_you" for 127.0.0.1 at 2017-05-29 04:41:48 +0200
+Processing by StaticPagesController#thank_you as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pWqX0mLZdszXyHFOqF+6OH+MQo0JNfxMr41lAa3kg9EndwRMlFe7EY8TmKnNRZOCyi5v0heMRMFOiIqFl3NLJQ==", "name"=>"Jamie Gallen", "phone"=>"17687641738", "email"=>"jmegallen@gmail.com", "message"=>"Testing 456", "commit"=>"Submit"}
+  Rendering user_mailer/contact_form.html.erb within layouts/mailer
+  Rendered user_mailer/contact_form.html.erb within layouts/mailer (1.2ms)
+UserMailer#contact_form: processed outbound mail in 25.5ms
+Sent mail to jmegallen@gmail.com (1261.2ms)
+Date: Mon, 29 May 2017 04:41:49 +0200
+From: jmegallen@gmail.com
+To: jmegallen@gmail.com
+Message-ID: <592b8a6ddbc4_92f3fc575b90d8c7093b@pc20.home.mail>
+Subject: A new contact form message from Jamie Gallen
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <style>
+
+  body {
+      padding: 0;
+      margin: 0;
+  }
+
+  html { -webkit-text-size-adjust:none; -ms-text-size-adjust: none;}
+
+  @media only screen and (max-device-width: 680px), only screen and (max-width: 680px) { 
+    *[class="table_width_100"] {
+      width: 96% !important;
+    }
+    *[class="border-right_mob"] {
+      border-right: 1px solid #dddddd;
+    }
+    *[class="mob_100"] {
+      width: 100% !important;
+    }
+    *[class="mob_center"] {
+      text-align: center !important;
+    }
+    *[class="mob_center_bl"] {
+      float: none !important;
+      display: block !important;
+      margin: 0px auto;
+    } 
+    .iage_footer a {
+      text-decoration: none;
+      color: #929ca8;
+    }
+    img.mob_display_none {
+      width: 0px !important;
+      height: 0px !important;
+      display: none !important;
+    }
+    img.mob_width_50 {
+      width: 40% !important;
+      height: auto !important;
+    }
+  }
+  .table_width_100 {
+    width: 680px;
+  }
+
+</style>
+
+<div align="center" class="notification" id="mailsub">
+
+  <table border="0" cellpadding="0" cellspacing="0" style="min-width: 300px;" style="max-width: 680px;" width="100%">
+
+    <!--header -->
+    <tr>
+      <td align="center" bgcolor="#EFF3F8">
+        <div style="height: 50px; line-height: 50px; font-size: 10px;"></div>
+        <table border="0" cellpadding="0" cellspacing="0" class="table_width_100" style="max-width: 680px; min-width: 300px;" width="100%">
+          <tr>
+            <td align="center">
+              <img class="img-responsive" width="360" alt="Ontytung" border="0" src="https://upload.wikimedia.org/wikipedia/commons/4/41/Left_side_of_Flying_Pigeon.jpg" />
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>      
+
+    <!--content 1 -->
+    <tr>
+      <td align="center" bgcolor="#FBFCFD">
+        <table border="0" cellpadding="0" cellspacing="0" width="90%">
+          <tr>
+            <td align="center">
+              <!-- padding -->
+              <div style="height: 60px; line-height: 60px; font-size: 10px;"></div>
+              <div style="line-height: 44px;">
+                <font color="#57697E" face="" size="5" style="font-size: 34px;"><span style="font-family:">Thanks for the info....</span></font>
+              </div>
+              <!-- padding -->
+              <div style="height: 40px; line-height: 40px; font-size: 10px;"></div>
+            </td>
+          </tr>
+          <tr>
+            <td align="center">
+              <div style="line-height: 24px;">
+                <font color="#57697E" face="" size="4" style="font-size: 15px;"><span style="font-family:">We will contact you asap, with a response to your query.</span></font>
+              </div>
+              <!-- padding -->
+              <div style="height: 40px; line-height: 40px; font-size: 10px;"></div>
+            </td>
+          </tr>
+          <tr>
+            <td align="center">
+              <div style="line-height: 24px;">
+                <font color="#57697E" face="" size="4" style="font-size: 15px;"><span style="font-family:">Testing 456</span></font>
+              </div><!-- padding -->
+              <div style="height: 40px; line-height: 40px; font-size: 10px;"></div>
+            </td>
+          </tr>
+          <tr>
+            <td align="center">
+              <div style="line-height: 24px;">
+                <a class="btn btn-danger block-center" target="_blank" href="https://jmebikeshop.herokuapp.com/">Bike Shop</a>
+              </div>
+              <!-- padding -->
+              <div style="height: 60px; line-height: 60px; font-size: 10px;">
+              </div>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr><!--content 1 END-->
+
+    <!--footer -->
+    <tr>
+      <td align="center" bgcolor="#FFFFFF" class="iage_footer">
+        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+          <tr>
+            <td align="center" style="padding:20px;flaot:left;width:100%; text-align:center;">
+              <font color="#96A5B5" face="" size="3" style="font-size: 13px;">
+                <span style="font-family:">
+                  2017 Ontytung
+                </span>
+              </font>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr><!--footer END-->
+    
+  </table>
+</div>
+  </body>
+</html>
+
+  Rendering static_pages/thank_you.html.erb within layouts/application
+  Rendered static_pages/thank_you.html.erb within layouts/application (1.4ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 1390ms (Views: 58.3ms | ActiveRecord: 0.6ms)
+
+
