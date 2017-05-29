@@ -6,6 +6,9 @@ class User < ApplicationRecord
   has_many :orders
   has_many :comments
 
+  validates :first_name, presence: true 
+  validates :last_name, presence: true
+
   after_create :welcome_mail
   def welcome_mail
     UserMailer.welcome_mail(self).deliver
