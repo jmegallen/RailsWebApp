@@ -1,9 +1,9 @@
 <form>
   <% @comments.each do |comment| %>
+    <div class="rated" data-score="<%= comment.rating %>"></div>
     <div class="row form-group">
       <input class="form-control" type="text" placeholder="<%= comment.user_first_name %> commented <%= "#{time_ago_in_words(comment.created_at)} ago" %>" readonly>
-      <input class="form-control" type="text" placeholder="<%= "Rating: #{comment.rating}/5" %>" readonly>
       <input class="form-control" type="text" rows="3" placeholder="<%= comment.body %>" readonly>
-    </div>
+    </div>   
   <% end %>
 </form>
