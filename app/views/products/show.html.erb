@@ -1,32 +1,20 @@
-<div class="row">
-  <strong>Image:</strong>
-  <%= image_tag(@product.image_url, class:"img-responsive showpic center-block") %>
-</div>
-<div class="row">
-  <strong>Name:</strong>
-  <%= @product.name %>
-</div>
-
-<div class="row">
-  <strong>Colour:</strong>
-  <%= @product.colour %>
-</div>
-
-<div class="row">
-  <strong>Price:</strong>
-  <strong>€</strong><%= @product.price %>
-</div>
-
-<p>
-  <strong>Description:</strong>
-  <%= @product.description %>
-</p>
-
-<%= render 'new_comment' %>
-
-<%= link_to 'Back', products_path, class:"btn btn-default" %> |
-<%= link_to 'Edit', edit_product_path(@product), class:"btn btn-default"%> 
-
-<%= render 'comments' %>
-
 <p id="notice"><%= notice %></p>
+
+<div class="row col-sm-12 col-md-8">
+  <%= image_tag(@product.image_url, class:"card-img-top") %>
+  <div class="card-block">
+    <h4 class="card-title"><%= @product.name %></h4>
+    <div class="rated" data-score="<%= @product.average_rating %>">Average Rating: </div>
+    <p class="card-text"><%= @product.description %></p>
+    <p class="card-text"><small class="text-muted"><strong>Colour:</strong><%= @product.colour %></small></p>
+    <p class="card-text"><small class="text-muted"><strong>Rim Size:</strong><%= @product.rimsize %></small></p>
+    <p class="card-text"><small class="text-muted"><strong>Price:</strong><strong>€</strong><%= @product.price %></small></p>
+  </div>
+  <%= link_to 'Back', products_path, class:"btn btn-default" %> |
+  <%= link_to 'Edit', edit_product_path(@product), class:"btn btn-default"%>
+</div>  
+<div class="row col-sm-12 col-md-4 form-group">
+  <%= render 'new_comment' %>
+  <%= render 'comments' %>
+</div> 
+
