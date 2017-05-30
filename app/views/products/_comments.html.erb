@@ -1,10 +1,9 @@
-<div class="product-reviews">
-    <% @comments.each do |comment| %>
-        <div class="row">
-            <hr>
-            <p><%= comment.user_first_name %> <small><em><%= "#{time_ago_in_words(comment.created_at)} ago" %></em></small></p>
-            <p><%= "Rating: #{comment.rating}/5" %></p>
-            <p><%= comment.body %></p>
-        </div>
-    <% end %>
-</div>
+<form>
+  <% @comments.each do |comment| %>
+    <div class="row form-group">
+      <input class="form-control" type="text" placeholder="<%= comment.user_first_name %> commented <%= "#{time_ago_in_words(comment.created_at)} ago" %>" readonly>
+      <input class="form-control" type="text" placeholder="<%= "Rating: #{comment.rating}/5" %>" readonly>
+      <input class="form-control" type="text" rows="3" placeholder="<%= comment.body %>" readonly>
+    </div>
+  <% end %>
+</form>
