@@ -10,4 +10,5 @@ class Comment < ApplicationRecord
   delegate :first_name, to: :user, allow_nil: true, prefix: true
 
   scope :rating_desc, -> { order(rating: :desc) }
+  scope :rating_aesc, -> { order(rating: :aesc) }
 end
