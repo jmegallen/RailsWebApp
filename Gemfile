@@ -39,7 +39,6 @@ gem 'jbuilder', '~> 2.5'
 
 # Added Gems
 
-
 gem 'devise'
 
 gem 'will_paginate', '~> 3.1.1'
