@@ -10,6 +10,8 @@ Rails.application.routes.draw do
 
   resources :orders, only: [:index, :show, :create, :destroy]
   
+  get 'users/index'
+
   get 'static_pages/about'
 
   get 'static_pages/contact'
