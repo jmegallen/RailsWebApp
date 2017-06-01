@@ -38,7 +38,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 # Added Gems
-
+gem 'pg'
 gem 'devise'
 
 gem 'will_paginate', '~> 3.1.1'
