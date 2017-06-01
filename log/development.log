@@ -32574,3 +32574,427 @@ Processing by ProductsController#show as HTML
 Completed 200 OK in 145ms (Views: 76.1ms | ActiveRecord: 35.0ms)
 
 
+Started GET "/sign_up" for 127.0.0.1 at 2017-06-01 19:29:53 +0200
+Processing by UserRegistrationsController#new as HTML
+  Parameters: {"authenticity_token"=>"d5sgCSYxePbVeRI40gqRJWbxH8XXn44FU9/V+1/jtsx1IUawwB/mDGL6fVrIBPXE0dTPgN0VOAbqTD96nV/r3g=="}
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (17.9ms)
+Completed 200 OK in 139ms (Views: 110.3ms | ActiveRecord: 7.8ms)
+
+
+Started POST "/" for 127.0.0.1 at 2017-06-01 19:30:20 +0200
+Processing by UserRegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AOR7+Y+zNXwnb6t86wCX4eB3BMbjdI3wXKVNPuuuv/kCXh1AaZ2rhpDsxB7xDvMAV1LUg+n+O/PlNqe/KRLi6w==", "user"=>{"first_name"=>"Luke", "last_name"=>"Gall", "email"=>"lukeg@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "lukeg@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (9.6ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "created_at", "updated_at", "email", "encrypted_password") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["first_name", "Luke"], ["last_name", "Gall"], ["created_at", "2017-06-01 17:30:20.191651"], ["updated_at", "2017-06-01 17:30:20.191651"], ["email", "lukeg@gmail.com"], ["encrypted_password", "$2a$11$ukJTo8i52f8cTXBeEbBuzO84AVzf6Xo7Yjg.zvl/vGsH3dyB0fxHC"]]
+  Rendering user_mailer/welcome_mail.html.erb within layouts/mailer
+  Rendered user_mailer/welcome_mail.html.erb within layouts/mailer (1.7ms)
+UserMailer#welcome_mail: processed outbound mail in 27.4ms
+Sent mail to lukeg@gmail.com (423.6ms)
+Date: Thu, 01 Jun 2017 19:30:20 +0200
+From: jimmi@g.com
+To: lukeg@gmail.com
+Message-ID: <59304f2c46972_65c3fe3decdc63c8926b@JmeMca.local.mail>
+Subject: Welcome to Berlin Bikes
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <style>
+
+  body {
+      padding: 0;
+      margin: 0;
+  }
+
+  html { -webkit-text-size-adjust:none; -ms-text-size-adjust: none;}
+
+  @media only screen and (max-device-width: 680px), only screen and (max-width: 680px) {
+    *[class="table_width_100"] {
+      width: 96% !important;
+    }
+    *[class="border-right_mob"] {
+      border-right: 1px solid #dddddd;
+    }
+    *[class="mob_100"] {
+      width: 100% !important;
+    }
+    *[class="mob_center"] {
+      text-align: center !important;
+    }
+    *[class="mob_center_bl"] {
+      float: none !important;
+      display: block !important;
+      margin: 0px auto;
+    }
+    .iage_footer a {
+      text-decoration: none;
+      color: #929ca8;
+    }
+    img.mob_display_none {
+      width: 0px !important;
+      height: 0px !important;
+      display: none !important;
+    }
+    img.mob_width_50 {
+      width: 40% !important;
+      height: auto !important;
+    }
+  }
+  .table_width_100 {
+    width: 680px;
+  }
+
+</style>
+
+<div align="center" class="notification" id="mailsub">
+
+  <table border="0" cellpadding="0" cellspacing="0" style="min-width: 300px;" style="max-width: 680px;" width="100%">
+
+    <!--header -->
+    <tr>
+      <td align="center" bgcolor="#EFF3F8">
+        <div style="height: 50px; line-height: 50px; font-size: 10px;"></div>
+        <table border="0" cellpadding="0" cellspacing="0" class="table_width_100" style="max-width: 680px; min-width: 300px;" width="100%">
+          <tr>
+            <td align="center">
+              <img class="img-responsive" width="360" alt="Ontytung" border="0" src="https://upload.wikimedia.org/wikipedia/commons/4/41/Left_side_of_Flying_Pigeon.jpg" />
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+
+    <!--content 1 -->
+    <tr>
+      <td align="center" bgcolor="#FBFCFD">
+        <table border="0" cellpadding="0" cellspacing="0" width="90%">
+          <tr>
+            <td align="center">
+              <!-- padding -->
+              <div style="height: 60px; line-height: 60px; font-size: 10px;"></div>
+              <div style="line-height: 44px;">
+                <font color="#57697E" face="" size="5" style="font-size: 34px;">
+                  <span style="font-family:">
+                    Welcome Berlin Bikes :)
+                  </span>
+                </font>
+              </div>
+              <!-- padding -->
+              <div style="height: 40px; line-height: 40px; font-size: 10px;"></div>
+            </td>
+          </tr>
+          <tr>
+            <td align="center">
+              <div style="line-height: 24px;">
+                <font color="#57697E" face="" size="4" style="font-size: 15px;">
+                  <span style="font-family:">
+                    Dear Sir/Madame
+                  </span>
+                </font>
+              </div>
+              <!-- padding -->
+              <div style="height: 40px; line-height: 40px; font-size: 10px;"></div>
+            </td>
+          </tr>
+          <tr>
+            <td align="center">
+              <div style="line-height: 24px;">
+                <font color="#57697E" face="" size="4" style="font-size: 15px;">
+                  <span style="font-family:">
+                    We will send you a voucher for a discounted bike very soon......
+                  </span>
+                </font>
+              </div>
+              <!-- padding -->
+              <div style="height: 40px; line-height: 40px; font-size: 10px;"></div>
+            </td>
+          </tr>
+          <tr>
+            <td align="center">
+              <div style="line-height: 24px;">
+                <a class="btn btn-danger block-center" target="_blank" href="https://jmebikeshop.herokuapp.com/">Bike Shop</a>
+              </div>
+              <!-- padding -->
+              <div style="height: 60px; line-height: 60px; font-size: 10px;">
+              </div>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr><!--content 1 END-->
+
+    <!--footer -->
+    <tr>
+      <td align="center" bgcolor="#FFFFFF" class="iage_footer">
+        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+          <tr>
+            <td align="center" style="padding:20px;flaot:left;width:100%; text-align:center;">
+              <font color="#96A5B5" face="" size="3" style="font-size: 13px;">
+                <span style="font-family:">
+                  2017 Ontytung
+                </span>
+              </font>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr><!--footer END-->
+
+  </table>
+</div>
+
+  </body>
+</html>
+
+  [1m[35m (9.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "sign_in_count" = $2, "current_sign_in_at" = $3, "last_sign_in_at" = $4, "current_sign_in_ip" = $5, "last_sign_in_ip" = $6 WHERE "users"."id" = $7[0m  [["updated_at", "2017-06-01 17:30:20.725247"], ["sign_in_count", 1], ["current_sign_in_at", "2017-06-01 17:30:20.723053"], ["last_sign_in_at", "2017-06-01 17:30:20.723053"], ["current_sign_in_ip", "127.0.0.1/32"], ["last_sign_in_ip", "127.0.0.1/32"], ["id", 5]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/users
+Completed 500 Internal Server Error in 748ms (ActiveRecord: 21.8ms)
+
+
+  
+NoMethodError (undefined method `welcome' for UserMailer:Class):
+  
+app/controllers/user_registrations_controller.rb:7:in `create'
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.3ms)
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.3ms)
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (85.1ms)
+Started POST "/" for 127.0.0.1 at 2017-06-01 19:30:47 +0200
+Processing by UserRegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AOR7+Y+zNXwnb6t86wCX4eB3BMbjdI3wXKVNPuuuv/kCXh1AaZ2rhpDsxB7xDvMAV1LUg+n+O/PlNqe/KRLi6w==", "user"=>{"first_name"=>"Luke", "last_name"=>"Gall", "email"=>"lukeg@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "lukeg@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.3ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 273ms (Views: 54.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/sign_up" for 127.0.0.1 at 2017-06-01 19:30:56 +0200
+Processing by UserRegistrationsController#new as HTML
+  Parameters: {"authenticity_token"=>"FBT3o/uzYIQPXuzuZSd4ucxaahrGAMeWKEe5sx1H1aEWrpEaHZ3+frjdg4x/KRxYe3+6X8yKcZWR1FMy3/uIsw=="}
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (10.4ms)
+Completed 200 OK in 64ms (Views: 62.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/" for 127.0.0.1 at 2017-06-01 19:31:15 +0200
+Processing by UserRegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"66q5r5aNHOGElG1/k0SSVIz+vk+XehYVDwAE7ekxMEfpEN8WcKOCGzMXAh2JSva1O9tuCp3woBa2k+5sK41tVQ==", "user"=>{"first_name"=>"Nicky", "last_name"=>"Gallen", "email"=>"nickyg@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (2.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "nickyg@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "created_at", "updated_at", "email", "encrypted_password") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["first_name", "Nicky"], ["last_name", "Gallen"], ["created_at", "2017-06-01 17:31:15.341601"], ["updated_at", "2017-06-01 17:31:15.341601"], ["email", "nickyg@gmail.com"], ["encrypted_password", "$2a$11$f5TTfWMQwBhSA1aGAi5KveWBVHsJqFt9hAE2vGjXLiKdsUUwT5UCe"]]
+  Rendering user_mailer/welcome_mail.html.erb within layouts/mailer
+  Rendered user_mailer/welcome_mail.html.erb within layouts/mailer (1.2ms)
+UserMailer#welcome_mail: processed outbound mail in 18.8ms
+Sent mail to nickyg@gmail.com (377.2ms)
+Date: Thu, 01 Jun 2017 19:31:15 +0200
+From: jimmi@g.com
+To: nickyg@gmail.com
+Message-ID: <59304f635a9d7_65c3fe3decdc40c89315@JmeMca.local.mail>
+Subject: Welcome to Berlin Bikes
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <style>
+
+  body {
+      padding: 0;
+      margin: 0;
+  }
+
+  html { -webkit-text-size-adjust:none; -ms-text-size-adjust: none;}
+
+  @media only screen and (max-device-width: 680px), only screen and (max-width: 680px) {
+    *[class="table_width_100"] {
+      width: 96% !important;
+    }
+    *[class="border-right_mob"] {
+      border-right: 1px solid #dddddd;
+    }
+    *[class="mob_100"] {
+      width: 100% !important;
+    }
+    *[class="mob_center"] {
+      text-align: center !important;
+    }
+    *[class="mob_center_bl"] {
+      float: none !important;
+      display: block !important;
+      margin: 0px auto;
+    }
+    .iage_footer a {
+      text-decoration: none;
+      color: #929ca8;
+    }
+    img.mob_display_none {
+      width: 0px !important;
+      height: 0px !important;
+      display: none !important;
+    }
+    img.mob_width_50 {
+      width: 40% !important;
+      height: auto !important;
+    }
+  }
+  .table_width_100 {
+    width: 680px;
+  }
+
+</style>
+
+<div align="center" class="notification" id="mailsub">
+
+  <table border="0" cellpadding="0" cellspacing="0" style="min-width: 300px;" style="max-width: 680px;" width="100%">
+
+    <!--header -->
+    <tr>
+      <td align="center" bgcolor="#EFF3F8">
+        <div style="height: 50px; line-height: 50px; font-size: 10px;"></div>
+        <table border="0" cellpadding="0" cellspacing="0" class="table_width_100" style="max-width: 680px; min-width: 300px;" width="100%">
+          <tr>
+            <td align="center">
+              <img class="img-responsive" width="360" alt="Ontytung" border="0" src="https://upload.wikimedia.org/wikipedia/commons/4/41/Left_side_of_Flying_Pigeon.jpg" />
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+
+    <!--content 1 -->
+    <tr>
+      <td align="center" bgcolor="#FBFCFD">
+        <table border="0" cellpadding="0" cellspacing="0" width="90%">
+          <tr>
+            <td align="center">
+              <!-- padding -->
+              <div style="height: 60px; line-height: 60px; font-size: 10px;"></div>
+              <div style="line-height: 44px;">
+                <font color="#57697E" face="" size="5" style="font-size: 34px;">
+                  <span style="font-family:">
+                    Welcome Berlin Bikes :)
+                  </span>
+                </font>
+              </div>
+              <!-- padding -->
+              <div style="height: 40px; line-height: 40px; font-size: 10px;"></div>
+            </td>
+          </tr>
+          <tr>
+            <td align="center">
+              <div style="line-height: 24px;">
+                <font color="#57697E" face="" size="4" style="font-size: 15px;">
+                  <span style="font-family:">
+                    Dear Sir/Madame
+                  </span>
+                </font>
+              </div>
+              <!-- padding -->
+              <div style="height: 40px; line-height: 40px; font-size: 10px;"></div>
+            </td>
+          </tr>
+          <tr>
+            <td align="center">
+              <div style="line-height: 24px;">
+                <font color="#57697E" face="" size="4" style="font-size: 15px;">
+                  <span style="font-family:">
+                    We will send you a voucher for a discounted bike very soon......
+                  </span>
+                </font>
+              </div>
+              <!-- padding -->
+              <div style="height: 40px; line-height: 40px; font-size: 10px;"></div>
+            </td>
+          </tr>
+          <tr>
+            <td align="center">
+              <div style="line-height: 24px;">
+                <a class="btn btn-danger block-center" target="_blank" href="https://jmebikeshop.herokuapp.com/">Bike Shop</a>
+              </div>
+              <!-- padding -->
+              <div style="height: 60px; line-height: 60px; font-size: 10px;">
+              </div>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr><!--content 1 END-->
+
+    <!--footer -->
+    <tr>
+      <td align="center" bgcolor="#FFFFFF" class="iage_footer">
+        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+          <tr>
+            <td align="center" style="padding:20px;flaot:left;width:100%; text-align:center;">
+              <font color="#96A5B5" face="" size="3" style="font-size: 13px;">
+                <span style="font-family:">
+                  2017 Ontytung
+                </span>
+              </font>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr><!--footer END-->
+
+  </table>
+</div>
+
+  </body>
+</html>
+
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "sign_in_count" = $2, "current_sign_in_at" = $3, "last_sign_in_at" = $4, "current_sign_in_ip" = $5, "last_sign_in_ip" = $6 WHERE "users"."id" = $7[0m  [["updated_at", "2017-06-01 17:31:15.752850"], ["sign_in_count", 1], ["current_sign_in_at", "2017-06-01 17:31:15.751199"], ["last_sign_in_at", "2017-06-01 17:31:15.751199"], ["current_sign_in_ip", "127.0.0.1/32"], ["last_sign_in_ip", "127.0.0.1/32"], ["id", 6]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/users
+Completed 500 Internal Server Error in 634ms (ActiveRecord: 5.3ms)
+
+
+  
+NoMethodError (undefined method `welcome' for UserMailer:Class):
+  
+app/controllers/user_registrations_controller.rb:7:in `create'
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.8ms)
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (19.5ms)
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (90.4ms)
