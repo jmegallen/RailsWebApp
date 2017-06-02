@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   
   get 'users/index'
 
+  post 'payments/create'
+
   get 'static_pages/about'
 
   get 'static_pages/contact'
