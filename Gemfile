@@ -40,6 +40,7 @@ gem 'jbuilder', '~> 2.5'
 # Added Gems
 
 gem 'rails-controller-testing'
+gem "factory_girl_rails", "~> 4.0"
 gem 'pg'
 gem 'devise'
 gem 'will_paginate', '~> 3.1.1'
