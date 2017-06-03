@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   
   resources :users
 
+  resources :payments, only: [:new, :create]
+
   resources :products do
     resources :comments
   end
