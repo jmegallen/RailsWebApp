@@ -34208,3 +34208,48 @@ app/controllers/payments_controller.rb:13:in `create'
   Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
   Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
   Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (91.4ms)
+Started GET "/products" for 127.0.0.1 at 2017-06-03 19:19:31 +0200
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (1.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered collection of products/_product.html.erb [5 times] (4.4ms)
+  Rendered products/index.html.erb within layouts/application (11.7ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 125ms (Views: 82.7ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/products/3" for 127.0.0.1 at 2017-06-03 19:19:34 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering products/show.html.erb within layouts/application
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT AVG("comments"."rating") FROM "comments" WHERE "comments"."product_id" = $1[0m  [["product_id", 3]]
+  Rendered shared/_stripe_checkout_button.html.erb (0.9ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered products/_new_comment.html.erb (5.3ms)
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."product_id" = $1 ORDER BY created_at DESC LIMIT $2 OFFSET $3[0m  [["product_id", 3], ["LIMIT", 3], ["OFFSET", 0]]
+  Rendered products/_comments.html.erb (2.0ms)
+  Rendered products/show.html.erb within layouts/application (20.4ms)
+Completed 200 OK in 81ms (Views: 65.1ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/payments/create" for 127.0.0.1 at 2017-06-03 19:19:44 +0200
+Processing by PaymentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6HsK2ZepRwPisd2aiy0J+5Sq0RrSmLfc6DIrGeTKvPnLwxudn/gOIPLEowUhooatbIV9Qh4QOisTr5zy+6FMew==", "product_id"=>"3", "stripeToken"=>"tok_1AQfubLiVzgWNOcJsWXwWJHc", "stripeTokenType"=>"card", "stripeEmail"=>"jmegallen@gmail.com"}
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 908ms (ActiveRecord: 1.1ms)
+
+
+  
+Stripe::AuthenticationError (Invalid API Key provided: ssk_test_********************3sh1):
+  
+app/controllers/payments_controller.rb:13:in `create'
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.5ms)
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.2ms)
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (84.5ms)
