@@ -17,8 +17,7 @@ class PaymentsController < ApplicationController
       charge = Stripe::Charge.create(
         :amount => (@product.price * 100).to_i, # amount in cents, again
         :currency => "eur",
-        # description => "Berlin Bikes",
-        # receipt_email  => params[:stripeEmail]
+        :customer => user_id,
         :description => params[:stripeEmail],
       )
 
