@@ -1,6 +1,9 @@
 class PaymentsController < ApplicationController
-  # POST /payments
-  # POST /payments.json
+  before_action :authenticate_user!
+
+  def new
+  end
+
   def create
     @product = Product.find(params[:product_id])
     @user = current_user
@@ -13,7 +16,7 @@ class PaymentsController < ApplicationController
         source: token,
         # description: "Berlin Bikes",
         # receipt_email: params[:stripeEmail]
-        description: params[:stripeEmail]
+        # description: params[:stripeEmail]
       )
       
       customer = Stripe::Customer.create(
