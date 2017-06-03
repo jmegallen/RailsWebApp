@@ -14,6 +14,7 @@
     <div class="rated row" data-score="<%= @product.average_rating %>">Average Rating: </div>
     <p class="card-text"><small class="text-muted"><strong>Price:</strong><strong>€</strong><%= @product.price %></small></p>
     <%= form_tag "/payments/create" do %>
+      <%= hidden_field_tag(:product_id, @product.id) %>
       <%= render partial: "shared/stripe_checkout_button", class:"btn btn-default"  %>
     <% end %>
   </div>
