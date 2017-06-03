@@ -1,5 +1,7 @@
 class PaymentsController < ApplicationController
 
+Stripe.api_key = Rails.configuration.stripe[:secret_key]
+
   def create
     @product = Product.find(params[:product_id])
     @user = current_user
@@ -12,6 +14,7 @@ class PaymentsController < ApplicationController
         :currency => "eur",
         :source => token,
         :description => params[:stripeEmail]
+        # :metadata => {"@order_id" => 6735},
       )
 
       if charge.paid
