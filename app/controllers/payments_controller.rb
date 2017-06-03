@@ -9,13 +9,15 @@ class PaymentsController < ApplicationController
     begin
       charge = Stripe::Charge.create(
         amount: (@product.price * 100).to_i, # amount in cents, again
-        currency: "usd",
+        currency: "eur",
         source: token,
-        description: params[:stripeEmail]
+        description: "Berlin Bikes"
+        receipt_email: params[:stripeEmail]
       )
 
     if charge.paid
       Order.create(product_id: @product.id, user_id: @user.id, total: @product.price)
+      flash[:notice] = "Enjoy riding #{@product.name}"
     end
 
     rescue Stripe::CardError => e
@@ -23,6 +25,7 @@ class PaymentsController < ApplicationController
       body = e.json_body
       err = body[:error]
       flash[:error] = "Unfortunately, there was an error processing your payment: #{err[:message]}"
+      edirect_to new_charge_path
     end
 
     redirect_to product_path(@product)
