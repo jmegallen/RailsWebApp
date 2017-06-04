@@ -14,12 +14,19 @@ class UserMailer < ApplicationMailer
     @name = params[:name]
     @email = params[:email]
     @message = params[:message]
-    UserMailer.contact_form(@email, @name, @message).deliver_now
+    @phone = params[:phone]
+    UserMailer.contact_form(@email, @name, @phone, @message).deliver_now
   end
 
   def welcome_mail(user)
     @user = user
-    mail to: user.email, subject: "Welcome to Berlin Bikes", from: "jimmi@g.com"
+    mail to: user.email, subject: "Welcome to Berlin Bikes"
+  end
+
+  def payment_received(order)
+    @name = order.user.name
+    @email = params[:stripeEmail]
+    mail to: @email, subject: "Thank you for your order."
   end
 
 end
