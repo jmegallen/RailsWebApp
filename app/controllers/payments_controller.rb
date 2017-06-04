@@ -1,8 +1,41 @@
-class PaymentsController < ApplicationController
-  # before_action :authenticate_user!
+# class PaymentsController < ApplicationController
+#   # before_action :authenticate_user!
 
-  def new
-  end
+#   def new
+#   end
+
+#   def create
+#     @product = Product.find(params[:product_id])
+#     @user = current_user
+#     token = params[:stripeToken]
+#     # Create the charge on Stripe's servers - this will charge the user's card
+#     begin
+#       charge = Stripe::Charge.create(
+#         :source => token,
+#         :amount => (@product.price * 100).to_i, # amount in cents, again
+#         :currency => "eur",
+#         :description => params[:stripeEmail],
+#       )
+
+#     if charge.paid
+#       Order.create(product_id: @product.id, user_id: @user.id, total: @product.price)
+#       flash[:notice] = "Enjoy riding #{@product.name}"
+#       UserMailer.payment_received(@email, @name).deliver_now
+#     end
+
+#     rescue Stripe::CardError => e
+#       # The card has been declined
+#       body = e.json_body
+#       err = body[:error]
+#       flash[:error] = "Unfortunately, there was an error processing your payment: #{err[:message]}"
+#       edirect_to new_charge_path
+#     end
+
+#     redirect_to product_path(@product)
+#   end
+# end
+
+class PaymentsController < ApplicationController
 
   def create
     @product = Product.find(params[:product_id])
@@ -11,26 +44,25 @@ class PaymentsController < ApplicationController
     # Create the charge on Stripe's servers - this will charge the user's card
     begin
       charge = Stripe::Charge.create(
-        :source => token,
-        :amount => (@product.price * 100).to_i, # amount in cents, again
+        :amount => @product.price*100, # amount in cents, again
         :currency => "eur",
-        :description => params[:stripeEmail],
+        :source => token,
+        :description => params[:stripeEmail]
       )
 
-    if charge.paid
-      Order.create(product_id: @product.id, user_id: @user.id, total: @product.price)
-      flash[:notice] = "Enjoy riding #{@product.name}"
-      UserMailer.payment_received(@email, @name).deliver_now
-    end
+      if charge.paid
+        Order.create()
+      end
 
     rescue Stripe::CardError => e
       # The card has been declined
       body = e.json_body
       err = body[:error]
       flash[:error] = "Unfortunately, there was an error processing your payment: #{err[:message]}"
-      edirect_to new_charge_path
     end
 
     redirect_to product_path(@product)
+
   end
+
 end
