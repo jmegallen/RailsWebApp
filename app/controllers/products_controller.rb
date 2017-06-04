@@ -6,14 +6,12 @@ class ProductsController < ApplicationController
   def index
     if params[:q]
       search_term = params[:q]
-      if Rails.env.production?
-        @products = Product.where("name ilike ?", "%#{search_term}%")
-      else
-        @products = Product.where("name LIKE ?", "%#{search_term}%")
-      end
+      like_operator = Rails.env.production? ? 'ilike' : 'LIKE'
+      @products = Product.where("name #{like_operator} ?", "%#{search_term}%")
     else
       @products = Product.all
     end
+    @products = @product.order("created_at DESC").paginate(:page => params[:page], per_page: 6)
   end
 
   # GET /products/1
