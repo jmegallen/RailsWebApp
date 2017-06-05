@@ -4,8 +4,10 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
+    byebug
     @products = params[:q].present? ? Product.search(params[:q]) : Product.all
     @products = @products.order("created_at DESC").paginate(:page => params[:page], per_page: 6)
+    logger.debug "Search Results: #{@products.length}"
   end
 
   # GET /products/1

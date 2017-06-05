@@ -3,6 +3,7 @@ class UserRegistrationsController < Devise::RegistrationsController
   def create
     
     super
+    byebug
     if @user.persisted?
       UserMailer.welcome_mail(@user).deliver_now
     end
