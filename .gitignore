@@ -10,6 +10,7 @@
 !/log/.keep
 /tmp
 .byebug_history
+.secrets.yml
 
 ### OSX ###
 *.DS_Store  
