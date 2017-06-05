@@ -1,5 +1,6 @@
 class PaymentsController < ApplicationController
   # before_action :authenticate_user!
+  require "stripe"
 
   def new
   end
@@ -12,15 +13,15 @@ class PaymentsController < ApplicationController
     begin
       charge = Stripe::Charge.create(
         :source => token,
-        :amount => (@product.price * 100).to_i, # amount in cents, again
+        :amount => @product.price, # amount in cents, again
         :currency => "eur",
-        :description => params[:stripeEmail],
+        :description => params[:stripeEmail]
       )
 
     if charge.paid
       Order.create(product_id: @product.id, user_id: @user.id, total: @product.price)
       flash[:notice] = "Enjoy riding #{@product.name}"
-      UserMailer.payment_received(@email, @name).deliver_now
+      # UserMailer.payment_received(@email, @name).deliver_now
     end
 
     rescue Stripe::CardError => e
@@ -28,7 +29,7 @@ class PaymentsController < ApplicationController
       body = e.json_body
       err = body[:error]
       flash[:error] = "Unfortunately, there was an error processing your payment: #{err[:message]}"
-      edirect_to new_charge_path
+      redirect_to new_charge_path
     end
 
     redirect_to product_path(@product)
