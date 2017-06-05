@@ -26,7 +26,7 @@ class UserMailer < ApplicationMailer
   def payment_received(user, product)
     @user = user
     @product = product
-    @name = user.name
+    @name = params[:name]
     mail to: user.email, subject: "Thank you for your order."
   end
 
