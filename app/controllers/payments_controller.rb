@@ -1,6 +1,6 @@
 class PaymentsController < ApplicationController
   # before_action :authenticate_user!
-  require "stripe"
+  # require "stripe"
 
   def new
   end
@@ -13,7 +13,7 @@ class PaymentsController < ApplicationController
     begin
       charge = Stripe::Charge.create(
         :source => token,
-        :amount => @product.price, # amount in cents, again
+        :amount => (@product.price * 100).to_i, # amount in cents, again
         :currency => "eur",
         :description => params[:stripeEmail]
       )
