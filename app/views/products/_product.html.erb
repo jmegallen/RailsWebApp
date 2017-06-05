@@ -1,6 +1,8 @@
-<% logger.debug "Product: #{product.name}" %>
 <div class="col-sm-2 col-md-4 prodtile">
-  <h3><%= product.name %></h3><%= image_tag(product.image_url, class: "img-prod img-responsive center-block") %>
+  <h3><%= product.name %></h3>
+  <div>
+   <%= image_tag( product.image_url, width:"400", class:"img-responsive img-zoom", data_zoom_image: product.image_url ) %>
+ </div>
   <h4><strong>€</strong><%= product.price %></h4>
   <h4><%= product.colour %></h4>
   <p><%= product.description %></p>
