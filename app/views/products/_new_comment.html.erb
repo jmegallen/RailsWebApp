@@ -1,6 +1,6 @@
 <% if signed_in? %>
   <h4>How much love?</h4>
-  <%= form_for([@product, @product.comments.build]) do |f| %>
+  <%= form_for([@product, @product.comments.build], remote: true) do |f| %>
     <div class="row form-group">
       <%= f.label :body, "Comment" %><br>
       <%= f.text_area :body, class:"form-control", rows:"5", type:"text", placeholder:"Tell us what you think?" %>

@@ -10,7 +10,7 @@
   </div>
 
   <div class="card-block col-sm-12 col-md-6">
-    <div class="rated row" data-score="<%= @product.average_rating %>">Average Rating: </div>
+    <div class="rated row" id="#average-rating" data-score="<%= @product.average_rating %>">Average Rating: </div>
     <p class="card-text"><small class="text-muted"><strong>Price:</strong><strong>€</strong><%= @product.price %></small></p>
     <%= form_tag "/payments/create" do %>
       <%= hidden_field_tag(:product_id, @product.id) %>
