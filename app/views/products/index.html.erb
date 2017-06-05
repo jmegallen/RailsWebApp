@@ -3,9 +3,11 @@
   <%= link_to 'New Product', new_product_path, class:"btn newprodbut btn-default", type:"button" %>
 </div>
 <div class="row">
+
   <% cache @products do %>    
     <%= render @products %>
-  <% end %>    
+  <% end %>
+
 </div>
 <div class="apple_pagination">
   <%= will_paginate @products %>
