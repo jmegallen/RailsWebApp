@@ -23,10 +23,10 @@ class UserMailer < ApplicationMailer
     mail to: user.email, subject: "Welcome to Berlin Bikes"
   end
 
-  def payment_received(order)
-    @name = params[:name]
-    @email = params[:stripeEmail]
-    mail to: @email, subject: "Thank you for your order."
+  def payment_received(user, product)
+    @user = user
+    @product = product
+    mail to: user.email, subject: "Thank you for your order."
   end
 
 end
