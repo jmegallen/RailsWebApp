@@ -53,6 +53,7 @@ GEM
       execjs
     coffee-script-source (1.12.2)
     concurrent-ruby (1.0.5)
+    dalli (2.7.6)
     devise (4.3.0)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -208,6 +209,7 @@ DEPENDENCIES
   byebug
   cancancan (~> 1.10)
   coffee-rails (~> 4.2)
+  dalli
   devise
   elevatezoom-rails
   factory_girl_rails (~> 4.0)

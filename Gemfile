@@ -48,6 +48,7 @@ gem 'cancancan', '~> 1.10'
 gem 'stripe'
 gem "brakeman", :require => false
 gem 'elevatezoom-rails'
+gem 'dalli'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
