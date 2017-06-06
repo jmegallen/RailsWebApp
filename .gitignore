@@ -42,3 +42,4 @@ Temporary Items
 .env
 coverage/  
 public/system/*
+redis-rails/
