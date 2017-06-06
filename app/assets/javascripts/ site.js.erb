@@ -21,8 +21,17 @@ var refreshRating = function(){
 $(document).on('turbolinks:load ajaxSuccess', function() {
   refreshRating();
 
-  $('.img-zoom').elevateZoom({
+  $('.img-zoom1').elevateZoom({
     zoomType: "inner",
+    cursor: "crosshair",
+    zoomWindowWidth: 400,
+    zoomWindowHeight:  400 
+  });
+
+  $('.img-zoom2').elevateZoom({
+    zoomType: "lens",
+    lensShape : "round",
+    lensSize    : 200,
     cursor: "crosshair"
   });
 });

@@ -59817,3 +59817,468 @@ Read fragment views/products/all-5-20170606093749/2e4f45daea97402eeb3340e7ca9ca1
 Completed 200 OK in 177ms (Views: 119.5ms | ActiveRecord: 52.7ms)
 
 
+Started GET "/products" for 127.0.0.1 at 2017-06-06 13:15:16 +0200
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (42.8ms)[0m  [1m[34mSELECT  "products".* FROM "products" ORDER BY created_at DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+Search Results: 5
+  Rendering products/index.html.erb within layouts/application
+  [1m[35m (38.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  [1m[35m (21.6ms)[0m  [1m[34mSELECT MAX("products"."updated_at") FROM "products"[0m
+Read fragment views/products/all-5-20170606093749/614da6d7feb94343c13d1868296a192c (0.7ms)
+  Rendered collection of products/_product.html.erb [5 times] (36.8ms)
+Write fragment views/products/all-5-20170606093749/614da6d7feb94343c13d1868296a192c (0.4ms)
+  Rendered products/index.html.erb within layouts/application (171.5ms)
+Completed 200 OK in 558ms (Views: 404.8ms | ActiveRecord: 102.7ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-06-06 13:18:01 +0200
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (18.6ms)[0m  [1m[34mSELECT  "products".* FROM "products" ORDER BY created_at DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+Search Results: 5
+  Rendering products/index.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  [1m[35m (6.1ms)[0m  [1m[34mSELECT MAX("products"."updated_at") FROM "products"[0m
+Read fragment views/products/all-5-20170606093749/614da6d7feb94343c13d1868296a192c (0.5ms)
+  Rendered products/index.html.erb within layouts/application (21.7ms)
+Completed 200 OK in 439ms (Views: 380.6ms | ActiveRecord: 25.1ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-06-06 13:34:34 +0200
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (2.5ms)[0m  [1m[34mSELECT  "products".* FROM "products" ORDER BY created_at DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+Search Results: 5
+  Rendering products/index.html.erb within layouts/application
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT MAX("products"."updated_at") FROM "products"[0m
+Read fragment views/products/all-5-20170606093749/614da6d7feb94343c13d1868296a192c (0.5ms)
+  Rendered products/index.html.erb within layouts/application (20.3ms)
+Completed 200 OK in 296ms (Views: 270.2ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-06-06 13:35:31 +0200
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (13.6ms)[0m  [1m[34mSELECT  "products".* FROM "products" ORDER BY created_at DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+Search Results: 5
+  Rendering products/index.html.erb within layouts/application
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  [1m[35m (11.7ms)[0m  [1m[34mSELECT MAX("products"."updated_at") FROM "products"[0m
+Read fragment views/products/all-5-20170606093749/614da6d7feb94343c13d1868296a192c (1.4ms)
+  Rendered products/index.html.erb within layouts/application (42.6ms)
+Completed 200 OK in 381ms (Views: 322.3ms | ActiveRecord: 25.8ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-06-06 13:36:29 +0200
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (7.9ms)[0m  [1m[34mSELECT  "products".* FROM "products" ORDER BY created_at DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+Search Results: 5
+  Rendering products/index.html.erb within layouts/application
+  [1m[35m (6.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  [1m[35m (6.8ms)[0m  [1m[34mSELECT MAX("products"."updated_at") FROM "products"[0m
+Read fragment views/products/all-5-20170606093749/614da6d7feb94343c13d1868296a192c (1.3ms)
+  Rendered products/index.html.erb within layouts/application (40.2ms)
+Completed 200 OK in 347ms (Views: 295.1ms | ActiveRecord: 21.7ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-06-06 13:36:51 +0200
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (21.8ms)[0m  [1m[34mSELECT  "products".* FROM "products" ORDER BY created_at DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+Search Results: 5
+  Rendering products/index.html.erb within layouts/application
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT MAX("products"."updated_at") FROM "products"[0m
+Read fragment views/products/all-5-20170606093749/614da6d7feb94343c13d1868296a192c (0.1ms)
+  Rendered products/index.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 170ms (Views: 141.7ms | ActiveRecord: 22.8ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-06-06 13:37:01 +0200
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (14.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" ORDER BY created_at DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+Search Results: 5
+  Rendering products/index.html.erb within layouts/application
+  [1m[35m (7.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT MAX("products"."updated_at") FROM "products"[0m
+Read fragment views/products/all-5-20170606093749/614da6d7feb94343c13d1868296a192c (0.1ms)
+  Rendered products/index.html.erb within layouts/application (22.3ms)
+Completed 200 OK in 190ms (Views: 160.6ms | ActiveRecord: 22.2ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-06-06 13:37:14 +0200
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (1.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" ORDER BY created_at DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+Search Results: 5
+  Rendering products/index.html.erb within layouts/application
+  [1m[35m (7.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT MAX("products"."updated_at") FROM "products"[0m
+Read fragment views/products/all-5-20170606093749/614da6d7feb94343c13d1868296a192c (0.1ms)
+  Rendered products/index.html.erb within layouts/application (18.9ms)
+Completed 200 OK in 150ms (Views: 137.1ms | ActiveRecord: 8.9ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-06-06 13:37:51 +0200
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (7.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" ORDER BY created_at DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+Search Results: 5
+  Rendering products/index.html.erb within layouts/application
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT MAX("products"."updated_at") FROM "products"[0m
+Read fragment views/products/all-5-20170606093749/78bcc825a74caaec8bf125b060085d6e (0.1ms)
+  Rendered collection of products/_product.html.erb [5 times] (5.4ms)
+Write fragment views/products/all-5-20170606093749/78bcc825a74caaec8bf125b060085d6e (0.2ms)
+  Rendered products/index.html.erb within layouts/application (17.5ms)
+Completed 200 OK in 111ms (Views: 97.2ms | ActiveRecord: 8.1ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-06-06 13:38:17 +0200
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (2.9ms)[0m  [1m[34mSELECT  "products".* FROM "products" ORDER BY created_at DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+Search Results: 5
+  Rendering products/index.html.erb within layouts/application
+  [1m[35m (6.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT MAX("products"."updated_at") FROM "products"[0m
+Read fragment views/products/all-5-20170606093749/78bcc825a74caaec8bf125b060085d6e (0.1ms)
+  Rendered products/index.html.erb within layouts/application (15.8ms)
+Completed 200 OK in 162ms (Views: 148.5ms | ActiveRecord: 9.9ms)
+
+
+Started GET "/products/2" for 127.0.0.1 at 2017-06-06 13:38:34 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProduct Load (30.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering products/show.html.erb within layouts/application
+Read fragment views/products/2-20170528165127883348/8c601f07a507018f12d7e7c4566fe3ab (0.1ms)
+  [1m[35m (6.9ms)[0m  [1m[34mSELECT AVG("comments"."rating") FROM "comments" WHERE "comments"."product_id" = $1[0m  [["product_id", 2]]
+  Rendered shared/_stripe_checkout_button.html.erb (4.9ms)
+  Rendered products/_new_comment.html.erb (1.0ms)
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT COUNT(*) AS "size", MAX(subquery_for_cache_key.updated_at) AS timestamp FROM (SELECT  "comments"."updated_at" FROM "comments" WHERE "comments"."product_id" = $1 ORDER BY created_at DESC LIMIT $2 OFFSET $3) subquery_for_cache_key[0m  [["product_id", 2], ["LIMIT", 3], ["OFFSET", 0]]
+Read fragment views/comments/query-0b38ba63c3afbb3464f896256e6a80de-0/8c601f07a507018f12d7e7c4566fe3ab (0.1ms)
+  Rendered products/show.html.erb within layouts/application (43.4ms)
+Completed 200 OK in 162ms (Views: 108.4ms | ActiveRecord: 38.7ms)
+
+
+Started GET "/products/5" for 127.0.0.1 at 2017-06-06 13:38:48 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mProduct Load (27.9ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering products/show.html.erb within layouts/application
+Read fragment views/products/5-20170602130116647386/8c601f07a507018f12d7e7c4566fe3ab (0.1ms)
+  [1m[35m (6.7ms)[0m  [1m[34mSELECT AVG("comments"."rating") FROM "comments" WHERE "comments"."product_id" = $1[0m  [["product_id", 5]]
+  Rendered shared/_stripe_checkout_button.html.erb (0.7ms)
+  Rendered products/_new_comment.html.erb (2.5ms)
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) AS "size", MAX(subquery_for_cache_key.updated_at) AS timestamp FROM (SELECT  "comments"."updated_at" FROM "comments" WHERE "comments"."product_id" = $1 ORDER BY created_at DESC LIMIT $2 OFFSET $3) subquery_for_cache_key[0m  [["product_id", 5], ["LIMIT", 3], ["OFFSET", 0]]
+Read fragment views/comments/query-3e0aca8d832169b7a4ad6847cc97a31e-3-20170605233727036276/8c601f07a507018f12d7e7c4566fe3ab (0.1ms)
+  Rendered products/show.html.erb within layouts/application (38.2ms)
+Completed 200 OK in 139ms (Views: 97.9ms | ActiveRecord: 35.6ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-06-06 13:39:11 +0200
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (12.7ms)[0m  [1m[34mSELECT  "products".* FROM "products" ORDER BY created_at DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+Search Results: 5
+  Rendering products/index.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  [1m[35m (6.2ms)[0m  [1m[34mSELECT MAX("products"."updated_at") FROM "products"[0m
+Read fragment views/products/all-5-20170606093749/78bcc825a74caaec8bf125b060085d6e (0.1ms)
+  Rendered products/index.html.erb within layouts/application (18.0ms)
+Completed 200 OK in 195ms (Views: 169.6ms | ActiveRecord: 19.3ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-06-06 13:42:20 +0200
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (3.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" ORDER BY created_at DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+Search Results: 5
+  Rendering products/index.html.erb within layouts/application
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT MAX("products"."updated_at") FROM "products"[0m
+Read fragment views/products/all-5-20170606093749/5893e56811e745a437cb0c5295cb314e (0.5ms)
+  Rendered collection of products/_product.html.erb [5 times] (5.5ms)
+Write fragment views/products/all-5-20170606093749/5893e56811e745a437cb0c5295cb314e (0.2ms)
+  Rendered products/index.html.erb within layouts/application (34.7ms)
+Completed 200 OK in 294ms (Views: 263.1ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-06-06 13:43:05 +0200
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (1.6ms)[0m  [1m[34mSELECT  "products".* FROM "products" ORDER BY created_at DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+Search Results: 5
+  Rendering products/index.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT MAX("products"."updated_at") FROM "products"[0m
+Read fragment views/products/all-5-20170606093749/5893e56811e745a437cb0c5295cb314e (0.5ms)
+  Rendered products/index.html.erb within layouts/application (24.3ms)
+Completed 200 OK in 376ms (Views: 335.7ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-06-06 13:44:44 +0200
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (1.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" ORDER BY created_at DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+Search Results: 5
+  Rendering products/index.html.erb within layouts/application
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  [1m[35m (7.4ms)[0m  [1m[34mSELECT MAX("products"."updated_at") FROM "products"[0m
+Read fragment views/products/all-5-20170606093749/5893e56811e745a437cb0c5295cb314e (0.6ms)
+  Rendered products/index.html.erb within layouts/application (32.9ms)
+Completed 200 OK in 259ms (Views: 230.5ms | ActiveRecord: 9.2ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-06-06 13:45:10 +0200
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (12.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" ORDER BY created_at DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+Search Results: 5
+  Rendering products/index.html.erb within layouts/application
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  [1m[35m (6.7ms)[0m  [1m[34mSELECT MAX("products"."updated_at") FROM "products"[0m
+Read fragment views/products/all-5-20170606093749/5893e56811e745a437cb0c5295cb314e (0.1ms)
+  Rendered products/index.html.erb within layouts/application (18.3ms)
+Completed 200 OK in 146ms (Views: 122.0ms | ActiveRecord: 19.6ms)
+
+
+Started GET "/products/1/edit" for 127.0.0.1 at 2017-06-06 13:45:35 +0200
+Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (31.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering products/edit.html.erb within layouts/application
+  Rendered products/_form.html.erb (49.2ms)
+  Rendered products/edit.html.erb within layouts/application (58.6ms)
+Completed 200 OK in 212ms (Views: 172.5ms | ActiveRecord: 31.1ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-06-06 13:47:42 +0200
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (1.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" ORDER BY created_at DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+Search Results: 5
+  Rendering products/index.html.erb within layouts/application
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT MAX("products"."updated_at") FROM "products"[0m
+Read fragment views/products/all-5-20170606093749/ef4382214c0eed07e939d10934811bfd (0.2ms)
+  Rendered collection of products/_product.html.erb [5 times] (8.6ms)
+Write fragment views/products/all-5-20170606093749/ef4382214c0eed07e939d10934811bfd (0.2ms)
+  Rendered products/index.html.erb within layouts/application (96.3ms)
+Completed 200 OK in 478ms (Views: 446.2ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-06-06 13:50:32 +0200
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (6.0ms)[0m  [1m[34mSELECT  "products".* FROM "products" ORDER BY created_at DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+Search Results: 5
+  Rendering products/index.html.erb within layouts/application
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT MAX("products"."updated_at") FROM "products"[0m
+Read fragment views/products/all-5-20170606093749/ef4382214c0eed07e939d10934811bfd (0.9ms)
+  Rendered products/index.html.erb within layouts/application (16.3ms)
+Completed 200 OK in 388ms (Views: 352.1ms | ActiveRecord: 6.9ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-06-06 13:51:53 +0200
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (7.6ms)[0m  [1m[34mSELECT  "products".* FROM "products" ORDER BY created_at DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+Search Results: 5
+  Rendering products/index.html.erb within layouts/application
+  [1m[35m (7.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT MAX("products"."updated_at") FROM "products"[0m
+Read fragment views/products/all-5-20170606093749/ef4382214c0eed07e939d10934811bfd (0.2ms)
+  Rendered products/index.html.erb within layouts/application (20.0ms)
+Completed 200 OK in 147ms (Views: 121.2ms | ActiveRecord: 15.8ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-06-06 13:52:04 +0200
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (1.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" ORDER BY created_at DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+Search Results: 5
+  Rendering products/index.html.erb within layouts/application
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT MAX("products"."updated_at") FROM "products"[0m
+Read fragment views/products/all-5-20170606093749/ef4382214c0eed07e939d10934811bfd (0.1ms)
+  Rendered products/index.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 103ms (Views: 96.5ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-06-06 13:52:23 +0200
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (12.9ms)[0m  [1m[34mSELECT  "products".* FROM "products" ORDER BY created_at DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+Search Results: 5
+  Rendering products/index.html.erb within layouts/application
+  [1m[35m (6.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  [1m[35m (6.9ms)[0m  [1m[34mSELECT MAX("products"."updated_at") FROM "products"[0m
+Read fragment views/products/all-5-20170606093749/ef4382214c0eed07e939d10934811bfd (0.1ms)
+  Rendered products/index.html.erb within layouts/application (25.5ms)
+Completed 200 OK in 93ms (Views: 62.5ms | ActiveRecord: 26.4ms)
+
+
+Started GET "/products/2" for 127.0.0.1 at 2017-06-06 13:52:45 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProduct Load (18.6ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering products/show.html.erb within layouts/application
+Read fragment views/products/2-20170528165127883348/897a42c02198878ed443466548d86721 (0.1ms)
+Write fragment views/products/2-20170528165127883348/897a42c02198878ed443466548d86721 (0.2ms)
+  [1m[35m (21.1ms)[0m  [1m[34mSELECT AVG("comments"."rating") FROM "comments" WHERE "comments"."product_id" = $1[0m  [["product_id", 2]]
+  Rendered shared/_stripe_checkout_button.html.erb (1.4ms)
+  Rendered products/_new_comment.html.erb (1.1ms)
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT COUNT(*) AS "size", MAX(subquery_for_cache_key.updated_at) AS timestamp FROM (SELECT  "comments"."updated_at" FROM "comments" WHERE "comments"."product_id" = $1 ORDER BY created_at DESC LIMIT $2 OFFSET $3) subquery_for_cache_key[0m  [["product_id", 2], ["LIMIT", 3], ["OFFSET", 0]]
+Read fragment views/comments/query-0b38ba63c3afbb3464f896256e6a80de-0/897a42c02198878ed443466548d86721 (0.1ms)
+Read fragment views/comments/query-0b38ba63c3afbb3464f896256e6a80de-0/9a7832d635d0d806149988e23c2dc728 (0.1ms)
+  Rendered products/_comments.html.erb (5.7ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."product_id" = $1[0m  [["product_id", 2]]
+Write fragment views/comments/query-0b38ba63c3afbb3464f896256e6a80de-0/897a42c02198878ed443466548d86721 (0.1ms)
+  Rendered products/show.html.erb within layouts/application (68.7ms)
+Completed 200 OK in 174ms (Views: 121.1ms | ActiveRecord: 42.2ms)
+
+
+Started GET "/products/2" for 127.0.0.1 at 2017-06-06 13:53:44 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProduct Load (7.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering products/show.html.erb within layouts/application
+Read fragment views/products/2-20170528165127883348/897a42c02198878ed443466548d86721 (0.3ms)
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT AVG("comments"."rating") FROM "comments" WHERE "comments"."product_id" = $1[0m  [["product_id", 2]]
+  Rendered shared/_stripe_checkout_button.html.erb (1.0ms)
+  Rendered products/_new_comment.html.erb (1.9ms)
+  [1m[35m (12.2ms)[0m  [1m[34mSELECT COUNT(*) AS "size", MAX(subquery_for_cache_key.updated_at) AS timestamp FROM (SELECT  "comments"."updated_at" FROM "comments" WHERE "comments"."product_id" = $1 ORDER BY created_at DESC LIMIT $2 OFFSET $3) subquery_for_cache_key[0m  [["product_id", 2], ["LIMIT", 3], ["OFFSET", 0]]
+Read fragment views/comments/query-0b38ba63c3afbb3464f896256e6a80de-0/897a42c02198878ed443466548d86721 (0.1ms)
+  Rendered products/show.html.erb within layouts/application (44.3ms)
+Completed 200 OK in 294ms (Views: 259.3ms | ActiveRecord: 20.3ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-06-06 13:56:32 +0200
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (18.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" ORDER BY created_at DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+Search Results: 5
+  Rendering products/index.html.erb within layouts/application
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT MAX("products"."updated_at") FROM "products"[0m
+Read fragment views/products/all-5-20170606093749/ef4382214c0eed07e939d10934811bfd (0.8ms)
+  Rendered products/index.html.erb within layouts/application (22.7ms)
+Completed 200 OK in 426ms (Views: 345.5ms | ActiveRecord: 19.7ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-06-06 13:56:40 +0200
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (7.5ms)[0m  [1m[34mSELECT  "products".* FROM "products" ORDER BY created_at DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+Search Results: 5
+  Rendering products/index.html.erb within layouts/application
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT MAX("products"."updated_at") FROM "products"[0m
+Read fragment views/products/all-5-20170606093749/ef4382214c0eed07e939d10934811bfd (0.1ms)
+  Rendered products/index.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 92ms (Views: 78.3ms | ActiveRecord: 8.8ms)
+
+
+Started GET "/products/2" for 127.0.0.1 at 2017-06-06 13:58:04 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProduct Load (18.7ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering products/show.html.erb within layouts/application
+Read fragment views/products/2-20170528165127883348/7ff6d505b673393c50380b26bb64d393 (0.5ms)
+Write fragment views/products/2-20170528165127883348/7ff6d505b673393c50380b26bb64d393 (0.2ms)
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT AVG("comments"."rating") FROM "comments" WHERE "comments"."product_id" = $1[0m  [["product_id", 2]]
+  Rendered shared/_stripe_checkout_button.html.erb (2.4ms)
+  Rendered products/_new_comment.html.erb (6.1ms)
+  [1m[35m (7.1ms)[0m  [1m[34mSELECT COUNT(*) AS "size", MAX(subquery_for_cache_key.updated_at) AS timestamp FROM (SELECT  "comments"."updated_at" FROM "comments" WHERE "comments"."product_id" = $1 ORDER BY created_at DESC LIMIT $2 OFFSET $3) subquery_for_cache_key[0m  [["product_id", 2], ["LIMIT", 3], ["OFFSET", 0]]
+Read fragment views/comments/query-0b38ba63c3afbb3464f896256e6a80de-0/7ff6d505b673393c50380b26bb64d393 (0.1ms)
+Read fragment views/comments/query-0b38ba63c3afbb3464f896256e6a80de-0/9a7832d635d0d806149988e23c2dc728 (0.1ms)
+  Rendered products/_comments.html.erb (7.6ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."product_id" = $1[0m  [["product_id", 2]]
+Write fragment views/comments/query-0b38ba63c3afbb3464f896256e6a80de-0/7ff6d505b673393c50380b26bb64d393 (0.1ms)
+  Rendered products/show.html.erb within layouts/application (77.5ms)
+Completed 200 OK in 376ms (Views: 284.5ms | ActiveRecord: 27.1ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-06-06 13:58:10 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (12.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering products/show.html.erb within layouts/application
+Read fragment views/products/1-20170606093749150519/7ff6d505b673393c50380b26bb64d393 (0.1ms)
+Write fragment views/products/1-20170606093749150519/7ff6d505b673393c50380b26bb64d393 (0.1ms)
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT AVG("comments"."rating") FROM "comments" WHERE "comments"."product_id" = $1[0m  [["product_id", 1]]
+  Rendered shared/_stripe_checkout_button.html.erb (0.9ms)
+  Rendered products/_new_comment.html.erb (2.5ms)
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) AS "size", MAX(subquery_for_cache_key.updated_at) AS timestamp FROM (SELECT  "comments"."updated_at" FROM "comments" WHERE "comments"."product_id" = $1 ORDER BY created_at DESC LIMIT $2 OFFSET $3) subquery_for_cache_key[0m  [["product_id", 1], ["LIMIT", 3], ["OFFSET", 0]]
+Read fragment views/comments/query-8ed1864cb89a737a202219078cf54634-3-20170601125251472191/7ff6d505b673393c50380b26bb64d393 (0.1ms)
+Read fragment views/comments/query-8ed1864cb89a737a202219078cf54634-3-20170601125251472191/9a7832d635d0d806149988e23c2dc728 (0.1ms)
+  Rendered products/_comments.html.erb (5.2ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."product_id" = $1[0m  [["product_id", 1]]
+Write fragment views/comments/query-8ed1864cb89a737a202219078cf54634-3-20170601125251472191/7ff6d505b673393c50380b26bb64d393 (0.1ms)
+  Rendered products/show.html.erb within layouts/application (38.6ms)
+Completed 200 OK in 126ms (Views: 106.3ms | ActiveRecord: 14.2ms)
+
+
+Started GET "/products/1/edit" for 127.0.0.1 at 2017-06-06 13:58:43 +0200
+Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (9.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering products/edit.html.erb within layouts/application
+  Rendered products/_form.html.erb (15.9ms)
+  Rendered products/edit.html.erb within layouts/application (52.0ms)
+Completed 200 OK in 175ms (Views: 160.3ms | ActiveRecord: 9.4ms)
+
+
+Started PATCH "/products/1" for 127.0.0.1 at 2017-06-06 14:00:27 +0200
+Processing by ProductsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xNhaMZOJq4NOuW+9V3YrIjszWUyj2x2EiAMQi3yX7lpNehnzvn3p8qBpczqrhlt5BgjSV1Tfj4E3+kWZ7LL6WQ==", "product"=>{"name"=>"Pink Panther", "colour"=>"Black", "price"=>"999.0", "rimsize"=>"28 Inch", "description"=>"Pink Panther goes fixie", "image_url"=>"http://www.bikesdirect.com/products/motobecane/road_bikes/fixie-cafe-blk-2100.jpg"}, "commit"=>"Update Product", "id"=>"1"}
+  [1m[36mProduct Load (1.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (24.9ms)[0m  [1m[33mUPDATE "products" SET "image_url" = $1, "updated_at" = $2 WHERE "products"."id" = $3[0m  [["image_url", "http://www.bikesdirect.com/products/motobecane/road_bikes/fixie-cafe-blk-2100.jpg"], ["updated_at", "2017-06-06 12:00:27.677764"], ["id", 1]]
+  [1m[35m (156.9ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/products/1
+Completed 302 Found in 296ms (ActiveRecord: 183.2ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-06-06 14:00:27 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering products/show.html.erb within layouts/application
+Read fragment views/products/1-20170606120027677764/7ff6d505b673393c50380b26bb64d393 (0.7ms)
+Write fragment views/products/1-20170606120027677764/7ff6d505b673393c50380b26bb64d393 (0.4ms)
+  [1m[35m (7.4ms)[0m  [1m[34mSELECT AVG("comments"."rating") FROM "comments" WHERE "comments"."product_id" = $1[0m  [["product_id", 1]]
+  Rendered shared/_stripe_checkout_button.html.erb (8.7ms)
+  Rendered products/_new_comment.html.erb (3.0ms)
+  [1m[35m (4.2ms)[0m  [1m[34mSELECT COUNT(*) AS "size", MAX(subquery_for_cache_key.updated_at) AS timestamp FROM (SELECT  "comments"."updated_at" FROM "comments" WHERE "comments"."product_id" = $1 ORDER BY created_at DESC LIMIT $2 OFFSET $3) subquery_for_cache_key[0m  [["product_id", 1], ["LIMIT", 3], ["OFFSET", 0]]
+Read fragment views/comments/query-8ed1864cb89a737a202219078cf54634-3-20170601125251472191/7ff6d505b673393c50380b26bb64d393 (0.5ms)
+  Rendered products/show.html.erb within layouts/application (136.9ms)
+Completed 200 OK in 279ms (Views: 245.2ms | ActiveRecord: 12.3ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-06-06 14:00:49 +0200
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (7.8ms)[0m  [1m[34mSELECT  "products".* FROM "products" ORDER BY created_at DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+Search Results: 5
+  Rendering products/index.html.erb within layouts/application
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT MAX("products"."updated_at") FROM "products"[0m
+Read fragment views/products/all-5-20170606120027/ef4382214c0eed07e939d10934811bfd (0.1ms)
+  Rendered collection of products/_product.html.erb [5 times] (4.5ms)
+Write fragment views/products/all-5-20170606120027/ef4382214c0eed07e939d10934811bfd (0.1ms)
+  Rendered products/index.html.erb within layouts/application (17.7ms)
+Completed 200 OK in 116ms (Views: 96.4ms | ActiveRecord: 9.5ms)
+
+
+Started GET "/products/2" for 127.0.0.1 at 2017-06-06 14:01:02 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProduct Load (18.0ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering products/show.html.erb within layouts/application
+Read fragment views/products/2-20170528165127883348/7ff6d505b673393c50380b26bb64d393 (0.1ms)
+  [1m[35m (12.4ms)[0m  [1m[34mSELECT AVG("comments"."rating") FROM "comments" WHERE "comments"."product_id" = $1[0m  [["product_id", 2]]
+  Rendered shared/_stripe_checkout_button.html.erb (1.8ms)
+  Rendered products/_new_comment.html.erb (2.9ms)
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) AS "size", MAX(subquery_for_cache_key.updated_at) AS timestamp FROM (SELECT  "comments"."updated_at" FROM "comments" WHERE "comments"."product_id" = $1 ORDER BY created_at DESC LIMIT $2 OFFSET $3) subquery_for_cache_key[0m  [["product_id", 2], ["LIMIT", 3], ["OFFSET", 0]]
+Read fragment views/comments/query-0b38ba63c3afbb3464f896256e6a80de-0/7ff6d505b673393c50380b26bb64d393 (0.1ms)
+  Rendered products/show.html.erb within layouts/application (48.5ms)
+Completed 200 OK in 157ms (Views: 115.8ms | ActiveRecord: 31.2ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-06-06 14:03:09 +0200
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (15.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" ORDER BY created_at DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+Search Results: 5
+  Rendering products/index.html.erb within layouts/application
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT MAX("products"."updated_at") FROM "products"[0m
+Read fragment views/products/all-5-20170606120027/ef4382214c0eed07e939d10934811bfd (1.6ms)
+  Rendered products/index.html.erb within layouts/application (21.4ms)
+Completed 200 OK in 833ms (Views: 240.8ms | ActiveRecord: 16.4ms)
+
+

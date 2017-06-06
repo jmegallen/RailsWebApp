@@ -1,6 +1,6 @@
 <div class="row col-sm-12 col-md-8">
   <% cache @product do %>
-    <%= image_tag( @product.image_url, class:"img-responsive card-img-top img-zoom", data_zoom_image: @product.image_url ) %>
+    <%= image_tag( @product.image_url, class:"img-responsive card-img-top img-zoom2", data_zoom_image: @product.image_url, style:'height: 100%; width: 100%; object-fit: contain' ) %>
 
     <div class="card-block col-sm-12 col-md-6">
       <h4 class="card-title"><%= @product.name %></h4>

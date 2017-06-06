@@ -2,7 +2,7 @@
 
 .img-prod {
   margin: 1em 0em;
-	overflow: hidden;
+
 }
 .field {
 	color: black;
@@ -23,7 +23,6 @@ label {
 	width: 5em;
 }
 .prodtile {
-	height: 50em;
 	padding: 2em 0.25em;
 	margin: 3em 0em;
 }
@@ -35,6 +34,9 @@ label {
 .card-img-top {
     overflow: hidden;
     width: 90%;
+}
+.card-block {
+    margin: 1em 0em;
 }
 
 
