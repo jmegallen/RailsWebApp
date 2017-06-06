@@ -23,8 +23,9 @@
 </div>  
 
 <div class="row col-sm-12 col-md-4 form-group">
-  <%= render 'new_comment' %>
+  
   <% cache @comments do %>    
+    <%= render 'new_comment' %>
     <%= render 'comments' %>
     <div class="apple_pagination">
       <%= will_paginate @comments %>
