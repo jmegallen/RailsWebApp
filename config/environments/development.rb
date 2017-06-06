@@ -56,4 +56,5 @@ Rails.application.configure do
   config.cache_store = :redis_store, "redis://localhost:6379/0/cache"
   config.action_controller.perform_caching = true
   
+  config.app_generators.javascript_engine = :javascript
 end

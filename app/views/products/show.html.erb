@@ -26,6 +26,7 @@
   
   <% cache @comments do %>    
     <%= render 'new_comment' %>
+    <div class="alert alert-info" style="display:none" role="alert">Love the update, thanks!</div>
     <%= render 'comments' %>
     <div class="apple_pagination">
       <%= will_paginate @comments %>
