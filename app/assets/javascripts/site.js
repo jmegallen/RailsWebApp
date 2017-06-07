@@ -1,16 +1,12 @@
 var refreshRating = function(){
 
   $('.rating').raty({
-    starHalf: '<%= asset_path 'star-half.png' %>',
-    starOff: '<%= asset_path 'star-off.png' %>',
-    starOn: '<%= asset_path 'star-on.png' %>',
+    path: '/assets',
     scoreName: 'comment[rating]'
   });
 
   $('.rated').raty({
-    starHalf: '<%= asset_path 'star-half.png' %>',
-    starOff: '<%= asset_path 'star-off.png' %>',
-    starOn: '<%= asset_path 'star-on.png' %>',
+    path: '/assets',
     readOnly: true,
     score: function() {
       return $(this).attr('data-score');
@@ -19,8 +15,11 @@ var refreshRating = function(){
 };
 
 $(document).on('turbolinks:load ajaxSuccess', function() {
+  $(".alert").delay(600).fadeOut(800);
+
   refreshRating();
 
+// I have two image zooms working one on the products page, the other on the product show page.
   $('.img-zoom1').elevateZoom({
     zoomType: "inner",
     cursor: "crosshair",
