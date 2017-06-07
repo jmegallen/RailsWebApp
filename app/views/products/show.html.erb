@@ -13,7 +13,7 @@
 
   <div class="card-block col-sm-12 col-md-6">
     <div class="rated row" id="#average-rating" data-score="<%= @product.average_rating %>">Average Rating: </div>
-    <p class="card-text"><small class="text-muted"><strong>Price:</strong><strong>€</strong><%= @product.price %></small></p>
+    <p class="card-text"><small class="text-muted"><strong>Price:</strong><strong><span class="glyphicon glyphicon-euro"></strong><%= @product.price %></small></p>
     <%= form_tag "/payments/create" do %>
       <%= hidden_field_tag(:product_id, @product.id) %>
       <%= render partial: "shared/stripe_checkout_button", class:"btn btn-default"  %>
@@ -23,15 +23,12 @@
 </div>  
 
 <div class="row col-sm-12 col-md-4 form-group">
-  
-  <% cache @comments do %>    
-    <%= render 'new_comment' %>
-    <div class="alert alert-info" style="display:none" role="alert">Love the update, thanks!</div>
-    <%= render 'comments' %>
+    <%= render partial: "new_comment"  %>
+    <p class="alert alert-info" style="display:none" role="alert">Love the update, thanks!</p>
+    <%= render partial: "comments" %>
     <div class="apple_pagination">
       <%= will_paginate @comments %>
     </div>
-  <% end %>   
 </div>
 <%= link_to 'Back', products_path, class:"btn btn-default" %> |
 <%= link_to 'Edit', edit_product_path(@product), class:"btn btn-default"%>
