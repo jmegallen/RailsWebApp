@@ -43,5 +43,3 @@ Temporary Items
 coverage/  
 public/system/*
 redis-rails/
-
-config/secrets.yml
