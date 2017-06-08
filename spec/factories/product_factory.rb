@@ -10,7 +10,6 @@ FactoryGirl.define do
   end
 
   factory :comment do
-    # first_name "Hamish"
     rating "5"
     body "Rad mint bike!"
   end

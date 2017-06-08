@@ -62993,3 +62993,67 @@ Finished "/cable/" [WebSocket] for 127.0.0.1 at 2017-06-07 19:37:06 +0200
 ProductChannel stopped streaming from product:1
 Finished "/cable/" [WebSocket] for 127.0.0.1 at 2017-06-07 19:37:08 +0200
 ProductChannel stopped streaming from product:1
+Started GET "/" for 127.0.0.1 at 2017-06-08 11:45:21 +0200
+Processing by StaticPagesController#landing_page as HTML
+  Rendering static_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (2.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT $1[0m  [["LIMIT", 3]]
+  Rendered static_pages/landing_page.html.erb within layouts/application (30.7ms)
+Completed 200 OK in 177ms (Views: 155.7ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/cable" for 127.0.0.1 at 2017-06-08 11:45:21 +0200
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-06-08 11:45:21 +0200
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+An unauthorized connection attempt was rejected
+Failed to upgrade to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2017-06-08 11:45:21 +0200
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2017-06-08 11:45:21 +0200
+Started GET "/cable" for 127.0.0.1 at 2017-06-08 11:45:31 +0200
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-06-08 11:45:31 +0200
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+An unauthorized connection attempt was rejected
+Failed to upgrade to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2017-06-08 11:45:31 +0200
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2017-06-08 11:45:31 +0200
+Started GET "/login" for 127.0.0.1 at 2017-06-08 11:45:33 +0200
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"/3vuZv0vObEaTYNw8qOJkHBMy/40OhW5eD6az5kKDAGijgAOlXIXMsTPUtYcJ8lZMpr7V3d5cpP9XscJFvNDEw=="}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (38.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (55.7ms)
+Completed 200 OK in 167ms (Views: 150.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/cable" for 127.0.0.1 at 2017-06-08 11:45:34 +0200
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-06-08 11:45:34 +0200
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+An unauthorized connection attempt was rejected
+Failed to upgrade to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2017-06-08 11:45:34 +0200
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2017-06-08 11:45:34 +0200
+Started POST "/login" for 127.0.0.1 at 2017-06-08 11:45:35 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+P0DNQb//hnakKFwPpDXVPIh6z+0vVPPLEtiDltRRxKlCO1dbqLQmgQScNbQFJedsPfblvf+NOWpKz/I1KgIAA==", "user"=>{"email"=>"jmegallen@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (16.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "jmegallen@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = $1, "last_sign_in_at" = $2, "sign_in_count" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["current_sign_in_at", "2017-06-08 09:45:36.196762"], ["last_sign_in_at", "2017-06-07 17:36:27.092149"], ["sign_in_count", 35], ["updated_at", "2017-06-08 09:45:36.199403"], ["id", 1]]
+  [1m[35m (8.7ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 256ms (ActiveRecord: 26.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-06-08 11:45:36 +0200
+Processing by StaticPagesController#landing_page as HTML
+  Rendering static_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT $1[0m  [["LIMIT", 3]]
+  Rendered static_pages/landing_page.html.erb within layouts/application (2.8ms)
+  [1m[36mUser Load (7.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 57ms (Views: 46.1ms | ActiveRecord: 8.1ms)
+
+
+Started GET "/cable" for 127.0.0.1 at 2017-06-08 11:45:36 +0200
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-06-08 11:45:36 +0200
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (7.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Registered connection (Z2lkOi8vd2ViYXBwMS9Vc2VyLzE)
+ProductChannel is transmitting the subscription confirmation
