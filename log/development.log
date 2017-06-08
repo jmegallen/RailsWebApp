@@ -63057,3 +63057,1323 @@ Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrad
   [1m[36mUser Load (7.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
 Registered connection (Z2lkOi8vd2ViYXBwMS9Vc2VyLzE)
 ProductChannel is transmitting the subscription confirmation
+Started GET "/products" for 127.0.0.1 at 2017-06-08 11:48:17 +0200
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (7.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" ORDER BY created_at DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+Search Results: 5
+  Rendering products/index.html.erb within layouts/application
+  [1m[35m (3.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT MAX("products"."updated_at") FROM "products"[0m
+Read fragment views/products/all-5-20170606120027/ef4382214c0eed07e939d10934811bfd (21.3ms)
+  Rendered collection of products/_product.html.erb [5 times] (6.8ms)
+Write fragment views/products/all-5-20170606120027/ef4382214c0eed07e939d10934811bfd (15.9ms)
+  Rendered products/index.html.erb within layouts/application (66.7ms)
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 166ms (Views: 144.1ms | ActiveRecord: 12.9ms)
+
+
+ProductChannel#listen
+ProductChannel is streaming from product:
+Started GET "/products/5" for 127.0.0.1 at 2017-06-08 11:48:21 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mProduct Load (2.9ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering products/show.html.erb within layouts/application
+Read fragment views/products/5-20170602130116647386/fbe2f1654469cdf6446c79b642aeb8b6 (13.8ms)
+Write fragment views/products/5-20170602130116647386/fbe2f1654469cdf6446c79b642aeb8b6 (12.2ms)
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT AVG("comments"."rating") FROM "comments" WHERE "comments"."product_id" = $1[0m  [["product_id", 5]]
+  Rendered shared/_stripe_checkout_button.html.erb (1.8ms)
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered products/_new_comment.html.erb (6.5ms)
+  [1m[36mComment Load (0.7ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."product_id" = $1 ORDER BY created_at DESC LIMIT $2 OFFSET $3[0m  [["product_id", 5], ["LIMIT", 3], ["OFFSET", 0]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered comments/_comment.html.erb (5.2ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered comments/_comment.html.erb (2.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered comments/_comment.html.erb (2.1ms)
+  Rendered products/_comments.html.erb (17.3ms)
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."product_id" = $1[0m  [["product_id", 5]]
+  Rendered products/show.html.erb within layouts/application (92.3ms)
+Completed 200 OK in 153ms (Views: 135.1ms | ActiveRecord: 7.7ms)
+
+
+ProductChannel#listen({"product_id"=>5})
+ProductChannel stopped streaming from product:
+ProductChannel is streaming from product:5
+Started POST "/payments/create" for 127.0.0.1 at 2017-06-08 11:48:30 +0200
+Processing by PaymentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0mkvXQTz1BnnpUalhfyobJBf/Qr9frG2wmK2eQ0aJT+GZSqcJBjsELdA94W3TAZ3cBrbweAhuJf6oeWEvDOKPA==", "product_id"=>"5", "stripeToken"=>"tok_1ASNFgLiVzgWNOcJ1ZbLD1Sn", "stripeTokenType"=>"card", "stripeEmail"=>"jmegallen@gmail.com"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (3.7ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 919ms (ActiveRecord: 4.8ms)
+
+
+  
+Stripe::AuthenticationError (Invalid API Key provided: ssk_test_********************3sh1):
+  
+app/controllers/payments_controller.rb:13:in `create'
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (13.1ms)
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.8ms)
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (111.1ms)
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2017-06-08 11:48:32 +0200
+ProductChannel stopped streaming from product:5
+Started GET "/cable" for 127.0.0.1 at 2017-06-08 11:50:28 +0200
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-06-08 11:50:28 +0200
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Registered connection (Z2lkOi8vd2ViYXBwMS9Vc2VyLzE)
+ProductChannel is transmitting the subscription confirmation
+Started POST "/payments/create" for 127.0.0.1 at 2017-06-08 11:50:37 +0200
+Processing by PaymentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xS43MaxoBRL0lTQ4cmiI2Boy9+fKhMoUvcYIVB9lJ3GRIjLwjIM9G6RwhRhA2CbD+nfRLNfbwzWFBVuprkyIcg==", "product_id"=>"5", "stripeToken"=>"tok_1ASNHiLiVzgWNOcJvzWiJkPS", "stripeTokenType"=>"card", "stripeEmail"=>"jmegallen@gmail.com"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 916ms (ActiveRecord: 1.1ms)
+
+
+  
+Stripe::AuthenticationError (Invalid API Key provided: ssk_test_********************3sh1):
+  
+app/controllers/payments_controller.rb:13:in `create'
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (8.0ms)
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.6ms)
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (78.7ms)
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2017-06-08 11:50:38 +0200
+Started GET "/cable" for 127.0.0.1 at 2017-06-08 11:50:52 +0200
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-06-08 11:50:52 +0200
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Registered connection (Z2lkOi8vd2ViYXBwMS9Vc2VyLzE)
+ProductChannel is transmitting the subscription confirmation
+Started POST "/payments/create" for 127.0.0.1 at 2017-06-08 11:50:59 +0200
+Processing by PaymentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xS43MaxoBRL0lTQ4cmiI2Boy9+fKhMoUvcYIVB9lJ3GRIjLwjIM9G6RwhRhA2CbD+nfRLNfbwzWFBVuprkyIcg==", "product_id"=>"5", "stripeToken"=>"tok_1ASNI4LiVzgWNOcJR00D87pt", "stripeTokenType"=>"card", "stripeEmail"=>"jmegallen@gmail.com"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 828ms (ActiveRecord: 0.9ms)
+
+
+  
+Stripe::AuthenticationError (Invalid API Key provided: ssk_test_********************3sh1):
+  
+app/controllers/payments_controller.rb:13:in `create'
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (8.0ms)
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.5ms)
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (81.4ms)
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2017-06-08 11:51:00 +0200
+Started GET "/cable" for 127.0.0.1 at 2017-06-08 11:53:32 +0200
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-06-08 11:53:32 +0200
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Registered connection (Z2lkOi8vd2ViYXBwMS9Vc2VyLzE)
+ProductChannel is transmitting the subscription confirmation
+Started GET "/products/5" for 127.0.0.1 at 2017-06-08 11:53:36 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering products/show.html.erb within layouts/application
+Read fragment views/products/5-20170602130116647386/fbe2f1654469cdf6446c79b642aeb8b6 (10.9ms)
+Write fragment views/products/5-20170602130116647386/fbe2f1654469cdf6446c79b642aeb8b6 (7.0ms)
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT AVG("comments"."rating") FROM "comments" WHERE "comments"."product_id" = $1[0m  [["product_id", 5]]
+  Rendered shared/_stripe_checkout_button.html.erb (0.7ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered products/_new_comment.html.erb (4.5ms)
+  [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."product_id" = $1 ORDER BY created_at DESC LIMIT $2 OFFSET $3[0m  [["product_id", 5], ["LIMIT", 3], ["OFFSET", 0]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered comments/_comment.html.erb (3.7ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered comments/_comment.html.erb (2.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered comments/_comment.html.erb (2.1ms)
+  Rendered products/_comments.html.erb (15.1ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."product_id" = $1[0m  [["product_id", 5]]
+  Rendered products/show.html.erb within layouts/application (62.2ms)
+Completed 200 OK in 136ms (Views: 126.7ms | ActiveRecord: 3.3ms)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2017-06-08 11:53:36 +0200
+Started GET "/cable" for 127.0.0.1 at 2017-06-08 11:53:37 +0200
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-06-08 11:53:37 +0200
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Registered connection (Z2lkOi8vd2ViYXBwMS9Vc2VyLzE)
+ProductChannel is transmitting the subscription confirmation
+ProductChannel#listen({"product_id"=>5})
+ProductChannel is streaming from product:5
+Started POST "/payments/create" for 127.0.0.1 at 2017-06-08 11:53:44 +0200
+Processing by PaymentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"muD4U8z8B+vRAQtChi+BOHi/3aMwtvhmX0UgOPQw8MLO7P2S7Bc/4oHkumK0ny8jmPr7aC3p8UdnhnPFRRlfwQ==", "product_id"=>"5", "stripeToken"=>"tok_1ASNKjLiVzgWNOcJuCFJEe6h", "stripeTokenType"=>"card", "stripeEmail"=>"jmegallen@gmail.com"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 865ms (ActiveRecord: 1.0ms)
+
+
+  
+Stripe::AuthenticationError (Invalid API Key provided: ssk_test_********************3sh1):
+  
+app/controllers/payments_controller.rb:13:in `create'
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (11.4ms)
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.5ms)
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (14.3ms)
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (114.2ms)
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2017-06-08 11:53:45 +0200
+ProductChannel stopped streaming from product:5
+Started GET "/cable" for 127.0.0.1 at 2017-06-08 11:56:44 +0200
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-06-08 11:56:44 +0200
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (3.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Registered connection (Z2lkOi8vd2ViYXBwMS9Vc2VyLzE)
+ProductChannel is transmitting the subscription confirmation
+Started POST "/payments/create" for 127.0.0.1 at 2017-06-08 11:56:52 +0200
+Processing by PaymentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"muD4U8z8B+vRAQtChi+BOHi/3aMwtvhmX0UgOPQw8MLO7P2S7Bc/4oHkumK0ny8jmPr7aC3p8UdnhnPFRRlfwQ==", "product_id"=>"5", "stripeToken"=>"tok_1ASNNlLiVzgWNOcJveNZZjyE", "stripeTokenType"=>"card", "stripeEmail"=>"jmegallen@gmail.com"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 970ms (ActiveRecord: 1.9ms)
+
+
+  
+Stripe::AuthenticationError (Invalid API Key provided: ssk_test_********************3sh1):
+  
+app/controllers/payments_controller.rb:13:in `create'
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (10.5ms)
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.0ms)
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.1ms)
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (99.9ms)
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2017-06-08 11:56:53 +0200
+Started GET "/cable" for 127.0.0.1 at 2017-06-08 11:58:03 +0200
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-06-08 11:58:03 +0200
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Registered connection (Z2lkOi8vd2ViYXBwMS9Vc2VyLzE)
+ProductChannel is transmitting the subscription confirmation
+Started POST "/payments/create" for 127.0.0.1 at 2017-06-08 11:58:12 +0200
+Processing by PaymentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"muD4U8z8B+vRAQtChi+BOHi/3aMwtvhmX0UgOPQw8MLO7P2S7Bc/4oHkumK0ny8jmPr7aC3p8UdnhnPFRRlfwQ==", "product_id"=>"5", "stripeToken"=>"tok_1ASNP3LiVzgWNOcJusNH6eVY", "stripeTokenType"=>"card", "stripeEmail"=>"jmegallen@gmail.com"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 1154ms (ActiveRecord: 7.9ms)
+
+
+  
+Stripe::AuthenticationError (Invalid API Key provided: ssk_test_********************3sh1):
+  
+app/controllers/payments_controller.rb:13:in `create'
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (7.9ms)
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.7ms)
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (96.5ms)
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2017-06-08 11:58:14 +0200
+Started GET "/cable" for 127.0.0.1 at 2017-06-08 11:58:58 +0200
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-06-08 11:58:58 +0200
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Registered connection (Z2lkOi8vd2ViYXBwMS9Vc2VyLzE)
+ProductChannel is transmitting the subscription confirmation
+Started POST "/payments/create" for 127.0.0.1 at 2017-06-08 11:59:05 +0200
+Processing by PaymentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"muD4U8z8B+vRAQtChi+BOHi/3aMwtvhmX0UgOPQw8MLO7P2S7Bc/4oHkumK0ny8jmPr7aC3p8UdnhnPFRRlfwQ==", "product_id"=>"5", "stripeToken"=>"tok_1ASNPvLiVzgWNOcJa8GQE1Z7", "stripeTokenType"=>"card", "stripeEmail"=>"jmegallen@gmail.com"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 951ms (ActiveRecord: 1.1ms)
+
+
+  
+Stripe::AuthenticationError (Invalid API Key provided: ssk_test_********************3sh1):
+  
+app/controllers/payments_controller.rb:14:in `create'
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.8ms)
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.6ms)
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (90.7ms)
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2017-06-08 11:59:07 +0200
+Started GET "/cable" for 127.0.0.1 at 2017-06-08 12:00:19 +0200
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-06-08 12:00:19 +0200
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Registered connection (Z2lkOi8vd2ViYXBwMS9Vc2VyLzE)
+ProductChannel is transmitting the subscription confirmation
+Started POST "/payments/create" for 127.0.0.1 at 2017-06-08 12:00:26 +0200
+Processing by PaymentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"muD4U8z8B+vRAQtChi+BOHi/3aMwtvhmX0UgOPQw8MLO7P2S7Bc/4oHkumK0ny8jmPr7aC3p8UdnhnPFRRlfwQ==", "product_id"=>"5", "stripeToken"=>"tok_1ASNRELiVzgWNOcJSqx9jEGq", "stripeTokenType"=>"card", "stripeEmail"=>"jmegallen@gmail.com"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 875ms (ActiveRecord: 1.1ms)
+
+
+  
+Stripe::AuthenticationError (Invalid API Key provided: ssk_test_********************3sh1):
+  
+app/controllers/payments_controller.rb:14:in `create'
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (7.6ms)
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.6ms)
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (82.3ms)
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2017-06-08 12:00:28 +0200
+Started GET "/cable" for 127.0.0.1 at 2017-06-08 12:00:32 +0200
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-06-08 12:00:32 +0200
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Registered connection (Z2lkOi8vd2ViYXBwMS9Vc2VyLzE)
+ProductChannel is transmitting the subscription confirmation
+Started GET "/products/5" for 127.0.0.1 at 2017-06-08 12:04:01 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mProduct Load (1.0ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering products/show.html.erb within layouts/application
+Read fragment views/products/5-20170602130116647386/fbe2f1654469cdf6446c79b642aeb8b6 (13.3ms)
+Write fragment views/products/5-20170602130116647386/fbe2f1654469cdf6446c79b642aeb8b6 (12.9ms)
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT AVG("comments"."rating") FROM "comments" WHERE "comments"."product_id" = $1[0m  [["product_id", 5]]
+  Rendered shared/_stripe_checkout_button.html.erb (1.1ms)
+  Rendered products/_new_comment.html.erb (1.9ms)
+  [1m[36mComment Load (0.9ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."product_id" = $1 ORDER BY created_at DESC LIMIT $2 OFFSET $3[0m  [["product_id", 5], ["LIMIT", 3], ["OFFSET", 0]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered comments/_comment.html.erb (7.9ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered comments/_comment.html.erb (2.2ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered comments/_comment.html.erb (2.5ms)
+  Rendered products/_comments.html.erb (35.2ms)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."product_id" = $1[0m  [["product_id", 5]]
+  Rendered products/show.html.erb within layouts/application (96.7ms)
+Completed 200 OK in 238ms (Views: 165.4ms | ActiveRecord: 9.4ms)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2017-06-08 12:04:01 +0200
+Started GET "/cable" for 127.0.0.1 at 2017-06-08 12:04:02 +0200
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-06-08 12:04:02 +0200
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+An unauthorized connection attempt was rejected
+Failed to upgrade to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2017-06-08 12:04:02 +0200
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2017-06-08 12:04:02 +0200
+Started POST "/payments/create" for 127.0.0.1 at 2017-06-08 12:04:09 +0200
+Processing by PaymentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HbJAALqKp7/vAuLqKv/sbPuCF/NNEc/fGOO6Ueo8wOEoHgOGwRTN9vL/rx8LJycEM6PuAR48AgwIq6csLI5wJQ==", "product_id"=>"5", "stripeToken"=>"tok_1ASNUpLiVzgWNOcJ9t7vtk7d", "stripeTokenType"=>"card", "stripeEmail"=>"jmegallen@gmail.com"}
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-06-08 12:04:09 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (4.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (12.3ms)
+Completed 200 OK in 83ms (Views: 81.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/cable" for 127.0.0.1 at 2017-06-08 12:04:10 +0200
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-06-08 12:04:10 +0200
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+An unauthorized connection attempt was rejected
+Failed to upgrade to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2017-06-08 12:04:10 +0200
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2017-06-08 12:04:10 +0200
+Started POST "/login" for 127.0.0.1 at 2017-06-08 12:04:13 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"y37vJvgHaPArxMiPCG6lbvjohr05hdCtDAVL/CvI+oz+0qygg5kCuTY5hXoptm4GMMl/T2qoHX4cTVaB7XpKSA==", "user"=>{"email"=>"jmegallen@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "jmegallen@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = $1, "last_sign_in_at" = $2, "sign_in_count" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["current_sign_in_at", "2017-06-08 10:04:13.494508"], ["last_sign_in_at", "2017-06-08 09:45:36.196762"], ["sign_in_count", 36], ["updated_at", "2017-06-08 10:04:13.496638"], ["id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 210ms (ActiveRecord: 3.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-06-08 12:04:13 +0200
+Processing by StaticPagesController#landing_page as HTML
+  Rendering static_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT $1[0m  [["LIMIT", 3]]
+  Rendered static_pages/landing_page.html.erb within layouts/application (3.7ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 57ms (Views: 52.1ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/cable" for 127.0.0.1 at 2017-06-08 12:04:14 +0200
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-06-08 12:04:14 +0200
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (6.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Registered connection (Z2lkOi8vd2ViYXBwMS9Vc2VyLzE)
+ProductChannel is transmitting the subscription confirmation
+Started GET "/products" for 127.0.0.1 at 2017-06-08 12:04:18 +0200
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT  "products".* FROM "products" ORDER BY created_at DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+Search Results: 5
+  Rendering products/index.html.erb within layouts/application
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT MAX("products"."updated_at") FROM "products"[0m
+Read fragment views/products/all-5-20170606120027/ef4382214c0eed07e939d10934811bfd (12.4ms)
+  Rendered collection of products/_product.html.erb [5 times] (4.2ms)
+Write fragment views/products/all-5-20170606120027/ef4382214c0eed07e939d10934811bfd (10.5ms)
+  Rendered products/index.html.erb within layouts/application (43.1ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 115ms (Views: 105.7ms | ActiveRecord: 3.5ms)
+
+
+ProductChannel#listen
+ProductChannel is streaming from product:
+Started GET "/products/1" for 127.0.0.1 at 2017-06-08 12:04:21 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering products/show.html.erb within layouts/application
+Read fragment views/products/1-20170606120027677764/fbe2f1654469cdf6446c79b642aeb8b6 (30.3ms)
+Write fragment views/products/1-20170606120027677764/fbe2f1654469cdf6446c79b642aeb8b6 (28.0ms)
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT AVG("comments"."rating") FROM "comments" WHERE "comments"."product_id" = $1[0m  [["product_id", 1]]
+  Rendered shared/_stripe_checkout_button.html.erb (0.8ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered products/_new_comment.html.erb (5.4ms)
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."product_id" = $1 ORDER BY created_at DESC LIMIT $2 OFFSET $3[0m  [["product_id", 1], ["LIMIT", 3], ["OFFSET", 0]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered comments/_comment.html.erb (4.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered comments/_comment.html.erb (2.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered comments/_comment.html.erb (2.2ms)
+  Rendered products/_comments.html.erb (15.8ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."product_id" = $1[0m  [["product_id", 1]]
+  Rendered products/show.html.erb within layouts/application (117.9ms)
+Completed 200 OK in 166ms (Views: 154.3ms | ActiveRecord: 3.5ms)
+
+
+ProductChannel#listen({"product_id"=>1})
+ProductChannel stopped streaming from product:
+ProductChannel is streaming from product:1
+Started POST "/payments/create" for 127.0.0.1 at 2017-06-08 12:04:29 +0200
+Processing by PaymentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cxJFN8shR8AEYD/MIJAh1N9USoLjzlDy31t1tyQiipEs1sUTkgxgUHuVax8VqXCIBNHqRQa3DKF9EPpKqJVBlg==", "product_id"=>"1", "stripeToken"=>"tok_1ASNV9LiVzgWNOcJ8aN34biR", "stripeTokenType"=>"card", "stripeEmail"=>"jmegallen@gmail.com"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (2.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 907ms (ActiveRecord: 3.3ms)
+
+
+  
+Stripe::AuthenticationError (Invalid API Key provided: ssk_test_********************3sh1):
+  
+app/controllers/payments_controller.rb:14:in `create'
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.4ms)
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (78.7ms)
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2017-06-08 12:04:31 +0200
+ProductChannel stopped streaming from product:1
+Started GET "/cable" for 127.0.0.1 at 2017-06-08 12:06:10 +0200
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-06-08 12:06:10 +0200
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (8.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Registered connection (Z2lkOi8vd2ViYXBwMS9Vc2VyLzE)
+ProductChannel is transmitting the subscription confirmation
+Started POST "/payments/create" for 127.0.0.1 at 2017-06-08 12:06:18 +0200
+Processing by PaymentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BE6a6ebpQlgCfeaj3r1efbQlpgEjIasvbEuqzC1zesVbihrNv8RlyH2IsnDrhA8hb6AGxsZY93zOACUxocSxwg==", "product_id"=>"1", "stripeToken"=>"tok_1ASNWtLiVzgWNOcJqxQgVYd4", "stripeTokenType"=>"card", "stripeEmail"=>"jmegallen@gmail.com"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 928ms (ActiveRecord: 1.9ms)
+
+
+  
+Stripe::AuthenticationError (Invalid API Key provided: ssk_test_********************3sh1):
+  
+app/controllers/payments_controller.rb:14:in `create'
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (10.6ms)
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.1ms)
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.5ms)
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (97.2ms)
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2017-06-08 12:06:20 +0200
+Started GET "/cable" for 127.0.0.1 at 2017-06-08 12:09:17 +0200
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-06-08 12:09:17 +0200
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Registered connection (Z2lkOi8vd2ViYXBwMS9Vc2VyLzE)
+ProductChannel is transmitting the subscription confirmation
+Started POST "/payments/create" for 127.0.0.1 at 2017-06-08 12:09:25 +0200
+Processing by PaymentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BE6a6ebpQlgCfeaj3r1efbQlpgEjIasvbEuqzC1zesVbihrNv8RlyH2IsnDrhA8hb6AGxsZY93zOACUxocSxwg==", "product_id"=>"1", "stripeToken"=>"tok_1ASNZuLiVzgWNOcJlXjiFgSz", "stripeTokenType"=>"card", "stripeEmail"=>"jmegallen@gmail.com"}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 986ms (ActiveRecord: 36.1ms)
+
+
+  
+Stripe::PermissionError (This API call cannot be made with a publishable API key. Please use a secret API key. You can find a list of your API keys at https://dashboard.stripe.com/account/apikeys.):
+  
+app/controllers/payments_controller.rb:14:in `create'
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (15.8ms)
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.1ms)
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (89.3ms)
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2017-06-08 12:09:26 +0200
+Started GET "/cable" for 127.0.0.1 at 2017-06-08 12:09:51 +0200
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-06-08 12:09:51 +0200
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Registered connection (Z2lkOi8vd2ViYXBwMS9Vc2VyLzE)
+ProductChannel is transmitting the subscription confirmation
+Started POST "/payments/create" for 127.0.0.1 at 2017-06-08 12:09:58 +0200
+Processing by PaymentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BE6a6ebpQlgCfeaj3r1efbQlpgEjIasvbEuqzC1zesVbihrNv8RlyH2IsnDrhA8hb6AGxsZY93zOACUxocSxwg==", "product_id"=>"1", "stripeToken"=>"tok_1ASNaRLiVzgWNOcJfoA5gTGD", "stripeTokenType"=>"card", "stripeEmail"=>"jmegallen@gmail.com"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 906ms (ActiveRecord: 1.0ms)
+
+
+  
+Stripe::AuthenticationError (Invalid API Key provided: ssk_test_********************3sh1):
+  
+app/controllers/payments_controller.rb:14:in `create'
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (11.4ms)
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.5ms)
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.4ms)
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (97.5ms)
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2017-06-08 12:09:59 +0200
+Started GET "/cable" for 127.0.0.1 at 2017-06-08 12:12:34 +0200
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-06-08 12:12:34 +0200
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Registered connection (Z2lkOi8vd2ViYXBwMS9Vc2VyLzE)
+ProductChannel is transmitting the subscription confirmation
+Started POST "/payments/create" for 127.0.0.1 at 2017-06-08 12:12:41 +0200
+Processing by PaymentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BE6a6ebpQlgCfeaj3r1efbQlpgEjIasvbEuqzC1zesVbihrNv8RlyH2IsnDrhA8hb6AGxsZY93zOACUxocSxwg==", "product_id"=>"1", "stripeToken"=>"tok_1ASNd5LiVzgWNOcJMRX2Bs5X", "stripeTokenType"=>"card", "stripeEmail"=>"jmegallen@gmail.com"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 1118ms (ActiveRecord: 2.2ms)
+
+
+  
+Stripe::InvalidRequestError (Must provide source or customer.):
+  
+app/controllers/payments_controller.rb:15:in `create'
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (7.6ms)
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.1ms)
+  Rendering /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (94.2ms)
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2017-06-08 12:12:43 +0200
+Started GET "/cable" for 127.0.0.1 at 2017-06-08 12:12:56 +0200
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-06-08 12:12:57 +0200
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Registered connection (Z2lkOi8vd2ViYXBwMS9Vc2VyLzE)
+ProductChannel is transmitting the subscription confirmation
+Started POST "/payments/create" for 127.0.0.1 at 2017-06-08 12:13:03 +0200
+Processing by PaymentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BE6a6ebpQlgCfeaj3r1efbQlpgEjIasvbEuqzC1zesVbihrNv8RlyH2IsnDrhA8hb6AGxsZY93zOACUxocSxwg==", "product_id"=>"1", "stripeToken"=>"tok_1ASNdQLiVzgWNOcJC7opEGFY", "stripeTokenType"=>"card", "stripeEmail"=>"jmegallen@gmail.com"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (33.1ms)[0m  [1m[32mINSERT INTO "orders" ("user_id", "product_id", "total") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 1], ["product_id", 1], ["total", 999.0]]
+  [1m[35m (130.2ms)[0m  [1m[35mCOMMIT[0m
+  Rendering user_mailer/payment_received.html.erb within layouts/mailer
+  Rendered user_mailer/payment_received.html.erb within layouts/mailer (1.6ms)
+UserMailer#payment_received: processed outbound mail in 657.2ms
+Sent mail to jmegallen@gmail.com (470.4ms)
+Date: Thu, 08 Jun 2017 12:13:05 +0200
+From: jmegallen@gmail.com
+To: jmegallen@gmail.com
+Message-ID: <59392331dab2e_4cd3fd9d1d273d8928@JmeMca.local.mail>
+Subject: Thank you for your order.
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <style>
+
+  body {
+      padding: 0;
+      margin: 0;
+  }
+
+  html { -webkit-text-size-adjust:none; -ms-text-size-adjust: none;}
+
+  @media only screen and (max-device-width: 680px), only screen and (max-width: 680px) {
+    *[class="table_width_100"] {
+      width: 96% !important;
+    }
+    *[class="border-right_mob"] {
+      border-right: 1px solid #dddddd;
+    }
+    *[class="mob_100"] {
+      width: 100% !important;
+    }
+    *[class="mob_center"] {
+      text-align: center !important;
+    }
+    *[class="mob_center_bl"] {
+      float: none !important;
+      display: block !important;
+      margin: 0px auto;
+    }
+    .iage_footer a {
+      text-decoration: none;
+      color: #929ca8;
+    }
+    img.mob_display_none {
+      width: 0px !important;
+      height: 0px !important;
+      display: none !important;
+    }
+    img.mob_width_50 {
+      width: 40% !important;
+      height: auto !important;
+    }
+  }
+  .table_width_100 {
+    width: 680px;
+  }
+
+</style>
+
+<div align="center" class="notification" id="mailsub">
+
+  <table border="0" cellpadding="0" cellspacing="0" style="min-width: 300px;" style="max-width: 680px;" width="100%">
+
+    <!--header -->
+    <tr>
+      <td align="center" bgcolor="#EFF3F8">
+        <div style="height: 50px; line-height: 50px; font-size: 10px;"></div>
+        <table border="0" cellpadding="0" cellspacing="0" class="table_width_100" style="max-width: 680px; min-width: 300px;" width="100%">
+          <tr>
+            <td align="center">
+              <img class="img-responsive" width="360" alt="Ontytung" border="0" src="https://upload.wikimedia.org/wikipedia/commons/4/41/Left_side_of_Flying_Pigeon.jpg" />
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+
+    <!--content 1 -->
+    <tr>
+      <td align="center" bgcolor="#FBFCFD">
+        <table border="0" cellpadding="0" cellspacing="0" width="90%">
+          <tr>
+            <td align="center">
+              <!-- padding -->
+              <div style="height: 60px; line-height: 60px; font-size: 10px;"></div>
+              <div style="line-height: 44px;">
+                <font color="#57697E" face="" size="5" style="font-size: 34px;">
+                  <span style="font-family:">
+                    Thanks for the Order :)
+                  </span>
+                </font>
+              </div>
+              <!-- padding -->
+              <div style="height: 40px; line-height: 40px; font-size: 10px;"></div>
+            </td>
+          </tr>
+          <tr>
+            <td align="center">
+              <div style="line-height: 24px;">
+                <font color="#57697E" face="" size="4" style="font-size: 15px;">
+                  <span style="font-family:">
+                    Dear Valued Customer, please enjoy you're new bike.
+                  </span>
+                </font>
+              </div>
+              <!-- padding -->
+              <div style="height: 40px; line-height: 40px; font-size: 10px;"></div>
+            </td>
+          </tr>
+          <tr>
+            <td align="center">
+              <div style="line-height: 24px;">
+                <font color="#57697E" face="" size="4" style="font-size: 15px;">
+                  <span style="font-family:">
+                    We will send you bike very soon......
+                  </span>
+                </font>
+              </div>
+              <!-- padding -->
+              <div style="height: 40px; line-height: 40px; font-size: 10px;"></div>
+            </td>
+          </tr>
+          <tr>
+            <td align="center">
+              <div style="line-height: 24px;">
+                <a class="btn btn-danger block-center" target="_blank" href="https://jmebikeshop.herokuapp.com/">Bike Shop</a>
+              </div>
+              <!-- padding -->
+              <div style="height: 60px; line-height: 60px; font-size: 10px;">
+              </div>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr><!--content 1 END-->
+
+    <!--footer -->
+    <tr>
+      <td align="center" bgcolor="#FFFFFF" class="iage_footer">
+        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+          <tr>
+            <td align="center" style="padding:20px;flaot:left;width:100%; text-align:center;">
+              <font color="#96A5B5" face="" size="3" style="font-size: 13px;">
+                <span style="font-family:">
+                  2017 Ontytung
+                </span>
+              </font>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr><!--footer END-->
+
+  </table>
+</div>
+
+  </body>
+</html>
+
+Redirected to http://localhost:3000/products/1
+Completed 302 Found in 2983ms (ActiveRecord: 191.5ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-06-08 12:13:06 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering products/show.html.erb within layouts/application
+Read fragment views/products/1-20170606120027677764/fbe2f1654469cdf6446c79b642aeb8b6 (6.6ms)
+Write fragment views/products/1-20170606120027677764/fbe2f1654469cdf6446c79b642aeb8b6 (6.1ms)
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT AVG("comments"."rating") FROM "comments" WHERE "comments"."product_id" = $1[0m  [["product_id", 1]]
+  Rendered shared/_stripe_checkout_button.html.erb (0.7ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered products/_new_comment.html.erb (23.4ms)
+  [1m[36mComment Load (0.8ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."product_id" = $1 ORDER BY created_at DESC LIMIT $2 OFFSET $3[0m  [["product_id", 1], ["LIMIT", 3], ["OFFSET", 0]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered comments/_comment.html.erb (10.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered comments/_comment.html.erb (1.8ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered comments/_comment.html.erb (1.6ms)
+  Rendered products/_comments.html.erb (21.8ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."product_id" = $1[0m  [["product_id", 1]]
+  Rendered products/show.html.erb within layouts/application (92.9ms)
+Completed 200 OK in 175ms (Views: 145.7ms | ActiveRecord: 9.2ms)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2017-06-08 12:13:06 +0200
+Started GET "/cable" for 127.0.0.1 at 2017-06-08 12:13:06 +0200
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-06-08 12:13:06 +0200
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Registered connection (Z2lkOi8vd2ViYXBwMS9Vc2VyLzE)
+ProductChannel is transmitting the subscription confirmation
+ProductChannel#listen({"product_id"=>1})
+ProductChannel is streaming from product:1
+Started POST "/payments/create" for 127.0.0.1 at 2017-06-08 12:17:48 +0200
+Processing by PaymentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UCvX+MWSzrohvKlDwAADQCCzsETy9zV62FQ0CnFLjfoP71fcnL/pKl5J/ZD1OVIc+zYQgxeOaSl6H7v3/fxG/Q==", "product_id"=>"1", "stripeToken"=>"tok_1ASNi1LiVzgWNOcJMdPxY1hR", "stripeTokenType"=>"card", "stripeEmail"=>"jmegallen@gmail.com"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "orders" ("user_id", "product_id", "total") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 1], ["product_id", 1], ["total", 999.0]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  Rendering user_mailer/payment_received.html.erb within layouts/mailer
+  Rendered user_mailer/payment_received.html.erb within layouts/mailer (2.2ms)
+UserMailer#payment_received: processed outbound mail in 26.5ms
+Sent mail to jmegallen@gmail.com (667.8ms)
+Date: Thu, 08 Jun 2017 12:17:50 +0200
+From: jmegallen@gmail.com
+To: jmegallen@gmail.com
+Message-ID: <5939244e5bad5_4cd3fd9d1d277841094@JmeMca.local.mail>
+Subject: Thank you for your order.
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <style>
+
+  body {
+      padding: 0;
+      margin: 0;
+  }
+
+  html { -webkit-text-size-adjust:none; -ms-text-size-adjust: none;}
+
+  @media only screen and (max-device-width: 680px), only screen and (max-width: 680px) {
+    *[class="table_width_100"] {
+      width: 96% !important;
+    }
+    *[class="border-right_mob"] {
+      border-right: 1px solid #dddddd;
+    }
+    *[class="mob_100"] {
+      width: 100% !important;
+    }
+    *[class="mob_center"] {
+      text-align: center !important;
+    }
+    *[class="mob_center_bl"] {
+      float: none !important;
+      display: block !important;
+      margin: 0px auto;
+    }
+    .iage_footer a {
+      text-decoration: none;
+      color: #929ca8;
+    }
+    img.mob_display_none {
+      width: 0px !important;
+      height: 0px !important;
+      display: none !important;
+    }
+    img.mob_width_50 {
+      width: 40% !important;
+      height: auto !important;
+    }
+  }
+  .table_width_100 {
+    width: 680px;
+  }
+
+</style>
+
+<div align="center" class="notification" id="mailsub">
+
+  <table border="0" cellpadding="0" cellspacing="0" style="min-width: 300px;" style="max-width: 680px;" width="100%">
+
+    <!--header -->
+    <tr>
+      <td align="center" bgcolor="#EFF3F8">
+        <div style="height: 50px; line-height: 50px; font-size: 10px;"></div>
+        <table border="0" cellpadding="0" cellspacing="0" class="table_width_100" style="max-width: 680px; min-width: 300px;" width="100%">
+          <tr>
+            <td align="center">
+              <img class="img-responsive" width="360" alt="Ontytung" border="0" src="https://upload.wikimedia.org/wikipedia/commons/4/41/Left_side_of_Flying_Pigeon.jpg" />
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+
+    <!--content 1 -->
+    <tr>
+      <td align="center" bgcolor="#FBFCFD">
+        <table border="0" cellpadding="0" cellspacing="0" width="90%">
+          <tr>
+            <td align="center">
+              <!-- padding -->
+              <div style="height: 60px; line-height: 60px; font-size: 10px;"></div>
+              <div style="line-height: 44px;">
+                <font color="#57697E" face="" size="5" style="font-size: 34px;">
+                  <span style="font-family:">
+                    Thanks for the Order :)
+                  </span>
+                </font>
+              </div>
+              <!-- padding -->
+              <div style="height: 40px; line-height: 40px; font-size: 10px;"></div>
+            </td>
+          </tr>
+          <tr>
+            <td align="center">
+              <div style="line-height: 24px;">
+                <font color="#57697E" face="" size="4" style="font-size: 15px;">
+                  <span style="font-family:">
+                    Dear Valued Customer, please enjoy you're new bike.
+                  </span>
+                </font>
+              </div>
+              <!-- padding -->
+              <div style="height: 40px; line-height: 40px; font-size: 10px;"></div>
+            </td>
+          </tr>
+          <tr>
+            <td align="center">
+              <div style="line-height: 24px;">
+                <font color="#57697E" face="" size="4" style="font-size: 15px;">
+                  <span style="font-family:">
+                    We will send you bike very soon......
+                  </span>
+                </font>
+              </div>
+              <!-- padding -->
+              <div style="height: 40px; line-height: 40px; font-size: 10px;"></div>
+            </td>
+          </tr>
+          <tr>
+            <td align="center">
+              <div style="line-height: 24px;">
+                <a class="btn btn-danger block-center" target="_blank" href="https://jmebikeshop.herokuapp.com/">Bike Shop</a>
+              </div>
+              <!-- padding -->
+              <div style="height: 60px; line-height: 60px; font-size: 10px;">
+              </div>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr><!--content 1 END-->
+
+    <!--footer -->
+    <tr>
+      <td align="center" bgcolor="#FFFFFF" class="iage_footer">
+        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+          <tr>
+            <td align="center" style="padding:20px;flaot:left;width:100%; text-align:center;">
+              <font color="#96A5B5" face="" size="3" style="font-size: 13px;">
+                <span style="font-family:">
+                  2017 Ontytung
+                </span>
+              </font>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr><!--footer END-->
+
+  </table>
+</div>
+
+  </body>
+</html>
+
+Redirected to http://localhost:3000/products/1
+Completed 302 Found in 2736ms (ActiveRecord: 58.3ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-06-08 12:17:51 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering products/show.html.erb within layouts/application
+Read fragment views/products/1-20170606120027677764/fbe2f1654469cdf6446c79b642aeb8b6 (8.8ms)
+Write fragment views/products/1-20170606120027677764/fbe2f1654469cdf6446c79b642aeb8b6 (8.1ms)
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT AVG("comments"."rating") FROM "comments" WHERE "comments"."product_id" = $1[0m  [["product_id", 1]]
+  Rendered shared/_stripe_checkout_button.html.erb (0.8ms)
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered products/_new_comment.html.erb (36.7ms)
+  [1m[36mComment Load (0.8ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."product_id" = $1 ORDER BY created_at DESC LIMIT $2 OFFSET $3[0m  [["product_id", 1], ["LIMIT", 3], ["OFFSET", 0]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered comments/_comment.html.erb (57.9ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered comments/_comment.html.erb (2.3ms)
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered comments/_comment.html.erb (2.8ms)
+  Rendered products/_comments.html.erb (72.7ms)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."product_id" = $1[0m  [["product_id", 1]]
+  Rendered products/show.html.erb within layouts/application (158.6ms)
+Completed 200 OK in 250ms (Views: 223.1ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/cable" for 127.0.0.1 at 2017-06-08 12:17:51 +0200
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-06-08 12:17:51 +0200
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Registered connection (Z2lkOi8vd2ViYXBwMS9Vc2VyLzE)
+ProductChannel is transmitting the subscription confirmation
+ProductChannel#listen({"product_id"=>1})
+ProductChannel is streaming from product:1
+Started GET "/products/1" for 127.0.0.1 at 2017-06-08 12:18:50 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering products/show.html.erb within layouts/application
+Read fragment views/products/1-20170606120027677764/fbe2f1654469cdf6446c79b642aeb8b6 (14.6ms)
+Write fragment views/products/1-20170606120027677764/fbe2f1654469cdf6446c79b642aeb8b6 (12.3ms)
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT AVG("comments"."rating") FROM "comments" WHERE "comments"."product_id" = $1[0m  [["product_id", 1]]
+  Rendered shared/_stripe_checkout_button.html.erb (1.5ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered products/_new_comment.html.erb (83.7ms)
+  [1m[36mComment Load (1.0ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."product_id" = $1 ORDER BY created_at DESC LIMIT $2 OFFSET $3[0m  [["product_id", 1], ["LIMIT", 3], ["OFFSET", 0]]
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered comments/_comment.html.erb (10.8ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered comments/_comment.html.erb (3.8ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered comments/_comment.html.erb (3.4ms)
+  Rendered products/_comments.html.erb (32.3ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."product_id" = $1[0m  [["product_id", 1]]
+  Rendered products/show.html.erb within layouts/application (184.0ms)
+Completed 200 OK in 375ms (Views: 255.1ms | ActiveRecord: 55.6ms)
+
+
+Started GET "/cable" for 127.0.0.1 at 2017-06-08 12:18:51 +0200
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-06-08 12:18:51 +0200
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Registered connection (Z2lkOi8vd2ViYXBwMS9Vc2VyLzE)
+ProductChannel is transmitting the subscription confirmation
+ProductChannel#listen({"product_id"=>1})
+ProductChannel is streaming from product:1
+Started GET "/cable" for 127.0.0.1 at 2017-06-08 12:18:55 +0200
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-06-08 12:18:55 +0200
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Registered connection (Z2lkOi8vd2ViYXBwMS9Vc2VyLzE)
+ProductChannel is transmitting the subscription confirmation
+Started POST "/products/1/comments" for 127.0.0.1 at 2017-06-08 12:19:03 +0200
+Processing by CommentsController#create as JS
+  Parameters: {"utf8"=>"✓", "comment"=>{"body"=>"fuck yeaah", "rating"=>""}, "commit"=>"Submit", "product_id"=>"1"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+Redirected to http://localhost:3000/products/1
+Completed 200 OK in 17ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-06-08 12:19:03 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering products/show.html.erb within layouts/application
+Read fragment views/products/1-20170606120027677764/fbe2f1654469cdf6446c79b642aeb8b6 (9.0ms)
+Write fragment views/products/1-20170606120027677764/fbe2f1654469cdf6446c79b642aeb8b6 (8.7ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT AVG("comments"."rating") FROM "comments" WHERE "comments"."product_id" = $1[0m  [["product_id", 1]]
+  Rendered shared/_stripe_checkout_button.html.erb (1.1ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered products/_new_comment.html.erb (3.8ms)
+  [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."product_id" = $1 ORDER BY created_at DESC LIMIT $2 OFFSET $3[0m  [["product_id", 1], ["LIMIT", 3], ["OFFSET", 0]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered comments/_comment.html.erb (3.7ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered comments/_comment.html.erb (2.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered comments/_comment.html.erb (2.2ms)
+  Rendered products/_comments.html.erb (14.8ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."product_id" = $1[0m  [["product_id", 1]]
+  Rendered products/show.html.erb within layouts/application (61.6ms)
+Completed 200 OK in 143ms (Views: 115.3ms | ActiveRecord: 3.2ms)
+
+
+ProductChannel#listen({"product_id"=>1})
+ProductChannel is streaming from product:1
+Started POST "/products/1/comments" for 127.0.0.1 at 2017-06-08 12:19:29 +0200
+Processing by CommentsController#create as JS
+  Parameters: {"utf8"=>"✓", "comment"=>{"body"=>"hajja", "rating"=>""}, "commit"=>"Submit", "product_id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+Redirected to http://localhost:3000/products/1
+Completed 200 OK in 9ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-06-08 12:19:29 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (54.7ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering products/show.html.erb within layouts/application
+Read fragment views/products/1-20170606120027677764/fbe2f1654469cdf6446c79b642aeb8b6 (12.6ms)
+Write fragment views/products/1-20170606120027677764/fbe2f1654469cdf6446c79b642aeb8b6 (12.6ms)
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT AVG("comments"."rating") FROM "comments" WHERE "comments"."product_id" = $1[0m  [["product_id", 1]]
+  Rendered shared/_stripe_checkout_button.html.erb (1.1ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered products/_new_comment.html.erb (5.3ms)
+  [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."product_id" = $1 ORDER BY created_at DESC LIMIT $2 OFFSET $3[0m  [["product_id", 1], ["LIMIT", 3], ["OFFSET", 0]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered comments/_comment.html.erb (5.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered comments/_comment.html.erb (3.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered comments/_comment.html.erb (2.6ms)
+  Rendered products/_comments.html.erb (20.1ms)
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."product_id" = $1[0m  [["product_id", 1]]
+  Rendered products/show.html.erb within layouts/application (89.2ms)
+Completed 200 OK in 228ms (Views: 151.6ms | ActiveRecord: 58.5ms)
+
+
+ProductChannel#listen({"product_id"=>1})
+ProductChannel stopped streaming from product:1
+ProductChannel is streaming from product:1
+Started POST "/products/1/comments" for 127.0.0.1 at 2017-06-08 12:19:33 +0200
+Processing by CommentsController#create as JS
+  Parameters: {"utf8"=>"✓", "comment"=>{"body"=>"aevvF", "rating"=>"3"}, "commit"=>"Submit", "product_id"=>"1"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (10.2ms)[0m  [1m[32mINSERT INTO "comments" ("user_id", "body", "rating", "product_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["user_id", 1], ["body", "aevvF"], ["rating", 3], ["product_id", 1], ["created_at", "2017-06-08 10:19:33.956729"], ["updated_at", "2017-06-08 10:19:33.956729"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] Enqueued CommentUpdateJob (Job ID: 6ee6ca67-6abe-4196-a0cc-1b0b59d365d8) to Async(default) with arguments: #<GlobalID:0x007fb3abbc63d8 @uri=#<URI::GID gid://webapp1/Comment/46>>, nil
+  [1m[36mComment Load (2.6ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT $2[0m  [["id", 46], ["LIMIT", 1]]
+[ActiveJob] [CommentUpdateJob] [6ee6ca67-6abe-4196-a0cc-1b0b59d365d8] Performing CommentUpdateJob from Async(default) with arguments: #<GlobalID:0x007fb3aba3b068 @uri=#<URI::GID gid://webapp1/Comment/46>>, nil
+  Rendering comments/create.js.erb
+  Rendered comments/create.js.erb (0.5ms)
+[ActiveJob] [CommentUpdateJob] [6ee6ca67-6abe-4196-a0cc-1b0b59d365d8]   [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 60ms (Views: 28.5ms | ActiveRecord: 12.4ms)
+
+
+[ActiveJob] [CommentUpdateJob] [6ee6ca67-6abe-4196-a0cc-1b0b59d365d8]   Rendered comments/_comment.html.erb (4.0ms)
+[ActiveJob] [CommentUpdateJob] [6ee6ca67-6abe-4196-a0cc-1b0b59d365d8]   [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[ActiveJob] [CommentUpdateJob] [6ee6ca67-6abe-4196-a0cc-1b0b59d365d8]   [1m[35m (0.5ms)[0m  [1m[34mSELECT AVG("comments"."rating") FROM "comments" WHERE "comments"."product_id" = $1[0m  [["product_id", 1]]
+[ActiveJob] [CommentUpdateJob] [6ee6ca67-6abe-4196-a0cc-1b0b59d365d8] [ActionCable] Broadcasting to product:1: {:comment=>"<form> \n  <div class=\"row form-group\">\n    <input class=\"form-control\" type=\"text\" placeholder=\"Jamie commented less than a minute ago\" readonly>\n    <input class=\"form-control\" type=\"text\" rows=\"3\" placeholder=\"aevvF\" readonly>\n    <div class=\"rated form-control\" data-score=\"3\"></div>\n    <p>aevvF</p>\n  </div>\n</form>\n", :average_rating=>2.888888888888889}
+[ActiveJob] [CommentUpdateJob] [6ee6ca67-6abe-4196-a0cc-1b0b59d365d8] Performed CommentUpdateJob from Async(default) in 35.63ms
+ProductChannel transmitting {"comment"=>"<form> \n  <div class=\"row form-group\">\n    <input class=\"form-control\" type=\"text\" placeholder=\"Jamie commented less than a minute ago\" readonly>\n    <input class=\"form-control\" type=\"text\" rows=\"3\" placeholder=\"aevvF\" readonly>\n    <div class=\"rated form-control... (via streamed from product:1)
+ProductChannel transmitting {"comment"=>"<form> \n  <div class=\"row form-group\">\n    <input class=\"form-control\" type=\"text\" placeholder=\"Jamie commented less than a minute ago\" readonly>\n    <input class=\"form-control\" type=\"text\" rows=\"3\" placeholder=\"aevvF\" readonly>\n    <div class=\"rated form-control... (via streamed from product:1)
+Started GET "/static_pages/contact" for 127.0.0.1 at 2017-06-08 12:19:42 +0200
+Processing by StaticPagesController#contact as HTML
+  Rendering static_pages/contact.html.erb within layouts/application
+  Rendered static_pages/contact.html.erb within layouts/application (3.3ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 65ms (Views: 61.4ms | ActiveRecord: 0.6ms)
+
+
+ProductChannel#listen
+ProductChannel stopped streaming from product:1
+ProductChannel is streaming from product:
+Started POST "/static_pages/thank_you" for 127.0.0.1 at 2017-06-08 12:19:49 +0200
+Processing by StaticPagesController#thank_you as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"y72SwyE+MVYewZ27Dj1PeToU35snngGDX4qn88Ur6jSUeRLneBMWxmE0yWg7BB4l4ZF/XMLnXdD9wSgOSZwhMw==", "name"=>"Jamie Gallen", "phone"=>"17687641738", "email"=>"jmegallen@gmail.com", "message"=>"DB`SFB", "commit"=>"Submit"}
+  Rendering user_mailer/contact_form.html.erb within layouts/mailer
+  Rendered user_mailer/contact_form.html.erb within layouts/mailer (1.8ms)
+UserMailer#contact_form: processed outbound mail in 28.1ms
+Sent mail to jmegallen@gmail.com (634.8ms)
+Date: Thu, 08 Jun 2017 12:19:49 +0200
+From: jmegallen@gmail.com
+To: jmegallen@gmail.com
+Message-ID: <593924c54c463_4cd3fd9d1d276a8114b@JmeMca.local.mail>
+Subject: A new contact form message from Jamie Gallen
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <style>
+
+  body {
+      padding: 0;
+      margin: 0;
+  }
+
+  html { -webkit-text-size-adjust:none; -ms-text-size-adjust: none;}
+
+  @media only screen and (max-device-width: 680px), only screen and (max-width: 680px) { 
+    *[class="table_width_100"] {
+      width: 96% !important;
+    }
+    *[class="border-right_mob"] {
+      border-right: 1px solid #dddddd;
+    }
+    *[class="mob_100"] {
+      width: 100% !important;
+    }
+    *[class="mob_center"] {
+      text-align: center !important;
+    }
+    *[class="mob_center_bl"] {
+      float: none !important;
+      display: block !important;
+      margin: 0px auto;
+    } 
+    .iage_footer a {
+      text-decoration: none;
+      color: #929ca8;
+    }
+    img.mob_display_none {
+      width: 0px !important;
+      height: 0px !important;
+      display: none !important;
+    }
+    img.mob_width_50 {
+      width: 40% !important;
+      height: auto !important;
+    }
+  }
+  .table_width_100 {
+    width: 680px;
+  }
+
+</style>
+
+<div align="center" class="notification" id="mailsub">
+
+  <table border="0" cellpadding="0" cellspacing="0" style="min-width: 300px;" style="max-width: 680px;" width="100%">
+
+    <!--header -->
+    <tr>
+      <td align="center" bgcolor="#EFF3F8">
+        <div style="height: 50px; line-height: 50px; font-size: 10px;"></div>
+        <table border="0" cellpadding="0" cellspacing="0" class="table_width_100" style="max-width: 680px; min-width: 300px;" width="100%">
+          <tr>
+            <td align="center">
+              <img class="img-responsive" width="360" alt="Ontytung" border="0" src="https://upload.wikimedia.org/wikipedia/commons/4/41/Left_side_of_Flying_Pigeon.jpg" />
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>      
+
+
+
+    <!--content 1 -->
+    <tr>
+      <td align="center" bgcolor="#FBFCFD">
+        <table border="0" cellpadding="0" cellspacing="0" width="90%">
+          <tr>
+            <td align="center">
+              <!-- padding -->
+              <div style="height: 60px; line-height: 60px; font-size: 10px;"></div>
+              <div style="line-height: 44px;">
+                <font color="#57697E" face="" size="5" style="font-size: 34px;">
+                  <span style="font-family:"> Thanks for the info....</span></font>
+              </div>
+              <!-- padding -->
+              <div style="height: 40px; line-height: 40px; font-size: 10px;"></div>
+            </td>
+          </tr>
+          <tr>
+            <td align="center">
+              <div style="line-height: 24px;">
+                <font color="#57697E" face="" size="4" style="font-size: 15px;"><span style="font-family:">Dear Jamie Gallen we will add your 17687641738 to our systems and contact you asap, with a response to your query. Many thanks</span></font>
+              </div>
+              <!-- padding -->
+              <div style="height: 40px; line-height: 40px; font-size: 10px;"></div>
+            </td>
+          </tr>
+          <tr>
+            <td align="center">
+              <div style="line-height: 24px;">
+                <font color="#57697E" face="" size="4" style="font-size: 15px;"><span style="font-family:">DB`SFB</span></font>
+              </div><!-- padding -->
+              <div style="height: 40px; line-height: 40px; font-size: 10px;"></div>
+            </td>
+          </tr>
+          <tr>
+            <td align="center">
+              <div style="line-height: 24px;">
+                <a class="btn btn-danger block-center" target="_blank" href="https://jmebikeshop.herokuapp.com/">Bike Shop</a>
+              </div>
+              <!-- padding -->
+              <div style="height: 60px; line-height: 60px; font-size: 10px;">
+              </div>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr><!--content 1 END-->
+
+    <!--footer -->
+    <tr>
+      <td align="center" bgcolor="#FFFFFF" class="iage_footer">
+        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+          <tr>
+            <td align="center" style="padding:20px;flaot:left;width:100%; text-align:center;">
+              <font color="#96A5B5" face="" size="3" style="font-size: 13px;">
+                <span style="font-family:">
+                  2017 Ontytung
+                </span>
+              </font>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr><!--footer END-->
+    
+  </table>
+</div>
+  </body>
+</html>
+
+  Rendering static_pages/thank_you.html.erb within layouts/application
+  Rendered static_pages/thank_you.html.erb within layouts/application (1.2ms)
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 742ms (Views: 58.8ms | ActiveRecord: 1.1ms)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2017-06-08 12:19:50 +0200
+ProductChannel stopped streaming from product:
+Started GET "/cable" for 127.0.0.1 at 2017-06-08 12:19:50 +0200
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-06-08 12:19:50 +0200
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Registered connection (Z2lkOi8vd2ViYXBwMS9Vc2VyLzE)
+ProductChannel is transmitting the subscription confirmation
+Started GET "/static_pages/landing_page" for 127.0.0.1 at 2017-06-08 12:19:53 +0200
+Processing by StaticPagesController#landing_page as HTML
+  Rendering static_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (1.8ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT $1[0m  [["LIMIT", 3]]
+  Rendered static_pages/landing_page.html.erb within layouts/application (5.8ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 65ms (Views: 57.3ms | ActiveRecord: 2.7ms)
+
+
+ProductChannel#listen
+ProductChannel is streaming from product:

@@ -1,5 +1,6 @@
 class PaymentsController < ApplicationController
   before_action :authenticate_user!
+  require "stripe"
 
   def new
   end
