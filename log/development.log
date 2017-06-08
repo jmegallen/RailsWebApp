@@ -64381,3 +64381,281 @@ Finished "/cable/" [WebSocket] for 127.0.0.1 at 2017-06-08 12:22:21 +0200
 ProductChannel stopped streaming from product:
 Finished "/cable/" [WebSocket] for 127.0.0.1 at 2017-06-08 12:22:23 +0200
 ProductChannel stopped streaming from product:1
+Started GET "/" for 127.0.0.1 at 2017-06-08 12:29:36 +0200
+Processing by StaticPagesController#landing_page as HTML
+  Rendering static_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (2.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT $1[0m  [["LIMIT", 3]]
+  Rendered static_pages/landing_page.html.erb within layouts/application (24.1ms)
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 182ms (Views: 153.4ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/cable" for 127.0.0.1 at 2017-06-08 12:29:37 +0200
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-06-08 12:29:37 +0200
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (17.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Registered connection (Z2lkOi8vd2ViYXBwMS9Vc2VyLzE)
+ProductChannel is transmitting the subscription confirmation
+ProductChannel#listen
+ProductChannel is streaming from product:
+Started GET "/products" for 127.0.0.1 at 2017-06-08 12:29:40 +0200
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (14.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" ORDER BY created_at DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+Search Results: 5
+  Rendering products/index.html.erb within layouts/application
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT MAX("products"."updated_at") FROM "products"[0m
+Read fragment views/products/all-5-20170606120027/ef4382214c0eed07e939d10934811bfd (17.3ms)
+  Rendered collection of products/_product.html.erb [5 times] (7.9ms)
+Write fragment views/products/all-5-20170606120027/ef4382214c0eed07e939d10934811bfd (17.0ms)
+  Rendered products/index.html.erb within layouts/application (59.3ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 257ms (Views: 222.0ms | ActiveRecord: 16.9ms)
+
+
+ProductChannel#listen
+ProductChannel stopped streaming from product:
+ProductChannel is streaming from product:
+Started GET "/products/3" for 127.0.0.1 at 2017-06-08 12:29:45 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mProduct Load (1.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering products/show.html.erb within layouts/application
+Read fragment views/products/3-20170606093430919308/fbe2f1654469cdf6446c79b642aeb8b6 (13.8ms)
+Write fragment views/products/3-20170606093430919308/fbe2f1654469cdf6446c79b642aeb8b6 (8.1ms)
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT AVG("comments"."rating") FROM "comments" WHERE "comments"."product_id" = $1[0m  [["product_id", 3]]
+  Rendered shared/_stripe_checkout_button.html.erb (4.2ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered products/_new_comment.html.erb (7.3ms)
+  [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."product_id" = $1 ORDER BY created_at DESC LIMIT $2 OFFSET $3[0m  [["product_id", 3], ["LIMIT", 3], ["OFFSET", 0]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered comments/_comment.html.erb (4.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered comments/_comment.html.erb (2.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered comments/_comment.html.erb (1.7ms)
+  Rendered products/_comments.html.erb (16.0ms)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."product_id" = $1[0m  [["product_id", 3]]
+  Rendered products/show.html.erb within layouts/application (81.2ms)
+Completed 200 OK in 139ms (Views: 125.9ms | ActiveRecord: 4.6ms)
+
+
+ProductChannel#listen({"product_id"=>3})
+ProductChannel stopped streaming from product:
+ProductChannel is streaming from product:3
+Started POST "/payments/create" for 127.0.0.1 at 2017-06-08 12:29:53 +0200
+Processing by PaymentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rtCk7J59V1iy7QmmWiTyHyuw4TAh9JtZhDDR1AqMQMrxFCTIx1BwyM0YXXVvHaND8DVB98SNxwome14phjuLzQ==", "product_id"=>"3", "stripeToken"=>"tok_1ASNtiLiVzgWNOcJGzfHFIAO", "stripeTokenType"=>"card", "stripeEmail"=>"jmegallen@gmail.com"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "orders" ("user_id", "product_id", "total") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 1], ["product_id", 3], ["total", 999.0]]
+  [1m[35m (5.0ms)[0m  [1m[35mCOMMIT[0m
+  Rendering user_mailer/payment_received.html.erb within layouts/mailer
+  Rendered user_mailer/payment_received.html.erb within layouts/mailer (1.4ms)
+UserMailer#payment_received: processed outbound mail in 25.3ms
+Sent mail to jmegallen@gmail.com (498.9ms)
+Date: Thu, 08 Jun 2017 12:29:54 +0200
+From: jmegallen@gmail.com
+To: jmegallen@gmail.com
+Message-ID: <59392722992aa_4cd3fd9d1d273d81229@JmeMca.local.mail>
+Subject: Thank you for your order.
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <style>
+
+  body {
+      padding: 0;
+      margin: 0;
+  }
+
+  html { -webkit-text-size-adjust:none; -ms-text-size-adjust: none;}
+
+  @media only screen and (max-device-width: 680px), only screen and (max-width: 680px) {
+    *[class="table_width_100"] {
+      width: 96% !important;
+    }
+    *[class="border-right_mob"] {
+      border-right: 1px solid #dddddd;
+    }
+    *[class="mob_100"] {
+      width: 100% !important;
+    }
+    *[class="mob_center"] {
+      text-align: center !important;
+    }
+    *[class="mob_center_bl"] {
+      float: none !important;
+      display: block !important;
+      margin: 0px auto;
+    }
+    .iage_footer a {
+      text-decoration: none;
+      color: #929ca8;
+    }
+    img.mob_display_none {
+      width: 0px !important;
+      height: 0px !important;
+      display: none !important;
+    }
+    img.mob_width_50 {
+      width: 40% !important;
+      height: auto !important;
+    }
+  }
+  .table_width_100 {
+    width: 680px;
+  }
+
+</style>
+
+<div align="center" class="notification" id="mailsub">
+
+  <table border="0" cellpadding="0" cellspacing="0" style="min-width: 300px;" style="max-width: 680px;" width="100%">
+
+    <!--header -->
+    <tr>
+      <td align="center" bgcolor="#EFF3F8">
+        <div style="height: 50px; line-height: 50px; font-size: 10px;"></div>
+        <table border="0" cellpadding="0" cellspacing="0" class="table_width_100" style="max-width: 680px; min-width: 300px;" width="100%">
+          <tr>
+            <td align="center">
+              <img class="img-responsive" width="360" alt="Ontytung" border="0" src="https://upload.wikimedia.org/wikipedia/commons/4/41/Left_side_of_Flying_Pigeon.jpg" />
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+
+    <!--content 1 -->
+    <tr>
+      <td align="center" bgcolor="#FBFCFD">
+        <table border="0" cellpadding="0" cellspacing="0" width="90%">
+          <tr>
+            <td align="center">
+              <!-- padding -->
+              <div style="height: 60px; line-height: 60px; font-size: 10px;"></div>
+              <div style="line-height: 44px;">
+                <font color="#57697E" face="" size="5" style="font-size: 34px;">
+                  <span style="font-family:">
+                    Thanks for the Order :)
+                  </span>
+                </font>
+              </div>
+              <!-- padding -->
+              <div style="height: 40px; line-height: 40px; font-size: 10px;"></div>
+            </td>
+          </tr>
+          <tr>
+            <td align="center">
+              <div style="line-height: 24px;">
+                <font color="#57697E" face="" size="4" style="font-size: 15px;">
+                  <span style="font-family:">
+                    Dear Valued Customer, please enjoy you're new bike.
+                  </span>
+                </font>
+              </div>
+              <!-- padding -->
+              <div style="height: 40px; line-height: 40px; font-size: 10px;"></div>
+            </td>
+          </tr>
+          <tr>
+            <td align="center">
+              <div style="line-height: 24px;">
+                <font color="#57697E" face="" size="4" style="font-size: 15px;">
+                  <span style="font-family:">
+                    We will send you bike very soon......
+                  </span>
+                </font>
+              </div>
+              <!-- padding -->
+              <div style="height: 40px; line-height: 40px; font-size: 10px;"></div>
+            </td>
+          </tr>
+          <tr>
+            <td align="center">
+              <div style="line-height: 24px;">
+                <a class="btn btn-danger block-center" target="_blank" href="https://jmebikeshop.herokuapp.com/">Bike Shop</a>
+              </div>
+              <!-- padding -->
+              <div style="height: 60px; line-height: 60px; font-size: 10px;">
+              </div>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr><!--content 1 END-->
+
+    <!--footer -->
+    <tr>
+      <td align="center" bgcolor="#FFFFFF" class="iage_footer">
+        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+          <tr>
+            <td align="center" style="padding:20px;flaot:left;width:100%; text-align:center;">
+              <font color="#96A5B5" face="" size="3" style="font-size: 13px;">
+                <span style="font-family:">
+                  2017 Ontytung
+                </span>
+              </font>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr><!--footer END-->
+
+  </table>
+</div>
+
+  </body>
+</html>
+
+Redirected to http://localhost:3000/products/3
+Completed 302 Found in 1752ms (ActiveRecord: 12.7ms)
+
+
+Started GET "/products/3" for 127.0.0.1 at 2017-06-08 12:29:55 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering products/show.html.erb within layouts/application
+Read fragment views/products/3-20170606093430919308/fbe2f1654469cdf6446c79b642aeb8b6 (17.7ms)
+Write fragment views/products/3-20170606093430919308/fbe2f1654469cdf6446c79b642aeb8b6 (9.8ms)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT AVG("comments"."rating") FROM "comments" WHERE "comments"."product_id" = $1[0m  [["product_id", 3]]
+  Rendered shared/_stripe_checkout_button.html.erb (0.8ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered products/_new_comment.html.erb (4.5ms)
+  [1m[36mComment Load (0.7ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."product_id" = $1 ORDER BY created_at DESC LIMIT $2 OFFSET $3[0m  [["product_id", 3], ["LIMIT", 3], ["OFFSET", 0]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered comments/_comment.html.erb (4.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered comments/_comment.html.erb (2.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered comments/_comment.html.erb (1.7ms)
+  Rendered products/_comments.html.erb (14.4ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."product_id" = $1[0m  [["product_id", 3]]
+  Rendered products/show.html.erb within layouts/application (65.3ms)
+Completed 200 OK in 109ms (Views: 101.6ms | ActiveRecord: 3.3ms)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2017-06-08 12:29:55 +0200
+ProductChannel stopped streaming from product:3
+Started GET "/cable" for 127.0.0.1 at 2017-06-08 12:29:55 +0200
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-06-08 12:29:55 +0200
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (16.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Registered connection (Z2lkOi8vd2ViYXBwMS9Vc2VyLzE)
+Could not execute command from {"command"=>"message", "identifier"=>"{\"channel\":\"ProductChannel\"}", "data"=>"{\"product_id\":3,\"action\":\"listen\"}"}) [RuntimeError - Unable to find subscription with identifier: {"channel":"ProductChannel"}]: /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actioncable-5.0.3/lib/action_cable/connection/subscriptions.rb:74:in `find' | /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actioncable-5.0.3/lib/action_cable/connection/subscriptions.rb:53:in `perform_action' | /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actioncable-5.0.3/lib/action_cable/connection/subscriptions.rb:17:in `execute_command' | /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actioncable-5.0.3/lib/action_cable/connection/base.rb:88:in `dispatch_websocket_message' | /Users/JmeG/.rvm/gems/ruby-2.4.0/gems/actioncable-5.0.3/lib/action_cable/server/worker.rb:58:in `block in invoke'
+ProductChannel is transmitting the subscription confirmation
