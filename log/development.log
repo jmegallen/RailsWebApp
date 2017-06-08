@@ -64377,3 +64377,7 @@ Completed 200 OK in 65ms (Views: 57.3ms | ActiveRecord: 2.7ms)
 
 ProductChannel#listen
 ProductChannel is streaming from product:
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2017-06-08 12:22:21 +0200
+ProductChannel stopped streaming from product:
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2017-06-08 12:22:23 +0200
+ProductChannel stopped streaming from product:1
