@@ -1,12 +1,12 @@
 var refreshRating = function(){
 
   $('.rating').raty({
-    path: '../assets/images',
+    path: '../images',
     scoreName: 'comment[rating]'
   });
 
   $('.rated').raty({
-    path: '../assets/images',
+    path: '../images',
     readOnly: true,
     score: function() {
       return $(this).attr('data-score');
