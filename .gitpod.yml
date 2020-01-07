@@ -1,1 +1,8 @@
 { image: { file: .gitpod.Dockerfile } }
+
+vscode:
+  extensions:
+    - bung87.rails@0.13.2:zfx5mIPUQwz6ck5TiqDurA==
+vscode:
+  extensions:
+    - rebornix.ruby@0.26.0:RN+gv0dPjYfMqlcEEralhg==
