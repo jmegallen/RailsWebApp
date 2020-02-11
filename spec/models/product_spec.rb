@@ -6,8 +6,8 @@ describe Product do
 
     before do
       @product = Product.create!(name: "Mint Polo", description: "Minty Bike Polo", price: "993", rimsize: "28 inch", colour: "Mint Green", image_url: "https://foffabikes.com/wp-content/uploads/2016/01/SSGrey01b.jpg")
-      @user = FactoryGirl.create(:user)
-      @product = FactoryGirl.create(:product)
+      @user = FactoryBot.create(:user)
+      @product = FactoryBot.create(:product)
       @user = User.create!(first_name: "Jimmy", last_name: "Walsh", email: "jimw@gmail.com", password: "123456")
       @product.comments.create!(rating: 1, user: @user, body: "Shady work on the frame, ditch it!")
       @product.comments.create!(rating: 2, user: @user, body: "Just looks to geeky to me?")

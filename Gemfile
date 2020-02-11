@@ -7,7 +7,7 @@ end
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.0.2' 
+gem 'rails', '~> 5.0.2'
 
 # Use sqlite3 as the database for Active Record
 #gem 'sqlite3'
@@ -40,7 +40,7 @@ gem 'jbuilder', '~> 2.5'
 # Added Gems
 
 gem 'rails-controller-testing'
-gem "factory_girl_rails", "~> 4.0"
+gem "factory_bot_rails"
 gem 'pg'
 gem 'devise'
 gem 'will_paginate', '~> 3.1.1'
@@ -54,12 +54,12 @@ gem 'newrelic_rpm'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platform: :mri  
+  gem 'byebug', platform: :mri
 end
 
 group :development, :test do
   # sqlite3
-  gem 'sqlite3'  
+  gem 'sqlite3'
 end
 
 group :development do
@@ -72,11 +72,11 @@ group :development do
 end
 
 group :development do
-  gem 'pg'
+
   gem 'rspec-rails', '~> 3.5'
 end
 
-ruby '2.4.0'
+ruby '2.6.3'
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

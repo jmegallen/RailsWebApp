@@ -19,15 +19,15 @@ describe ProductsController, :type => :controller do
 
   context 'POST #create' do
     it 'is an invalid product' do
-    @product = FactoryGirl.build(:product, name: "")
+    @product = FactoryBot.build(:product, name: "")
     expect(@product).not_to be_valid
     end
   end
 
   context "PUT #update/:price" do
     before do
-      @product = FactoryGirl.create(:product)
-      @user = FactoryGirl.build(:admin)
+      @product = FactoryBot.create(:product)
+      @user = FactoryBot.build(:admin)
       sign_in @user
     end
 
@@ -42,8 +42,8 @@ describe ProductsController, :type => :controller do
   context "DELETE #destroy" do
 
     before do
-      @product = FactoryGirl.create(:product)
-      @user = FactoryGirl.build(:admin)
+      @product = FactoryBot.create(:product)
+      @user = FactoryBot.build(:admin)
       sign_in @user
     end
 

@@ -3,7 +3,7 @@ require 'rails_helper'
 describe UsersController, type: :controller do
 
   before do
-    @user1 = FactoryGirl.create(:user)
+    @user1 = FactoryBot.create(:user)
     @user2 = User.create!(first_name: "Jonny", last_name: "Gallen", email: "jong@gmail.com", password: "567891", admin: true)
   end
 

@@ -63,7 +63,8 @@ Rails.application.configure do
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation cannot be found).
-  config.i18n.fallbacks = true
+  #config.i18n.fallbacks = true
+  config.i18n.fallbacks = [I18n.default_locale]
 
   # Send deprecation notices to registered listeners.
   config.active_support.deprecation = :notify
@@ -109,8 +110,8 @@ Rails.application.configure do
                      :socket_failure_delay => 0.2,
                      :down_retry_delay => 60
                     }
-      
+
   config.web_socket_server_url = "wss://jmebikeshop.herokuapp.com/cable"
   config.action_cable.allowed_request_origins = ['https://jmebikeshop.herokuapp.com', 'http://jmebikeshop.herokuapp.com']
-                
+
 end
